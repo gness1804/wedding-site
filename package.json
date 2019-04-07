@@ -20,7 +20,9 @@
     "eject": "react-scripts eject",
     "lint": "eslint src/",
     "lint:fix": "npm run lint -- --fix",
-    "prettier": "prettier --write src/**/**"
+    "prettier": "prettier --write src/**/**",
+    "stylelint": "stylelint src/**/*.css",
+    "stylelint:fix": "npm run stylelint --fix"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -32,6 +34,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "prettier": "1.16.4"
+    "prettier": "1.16.4",
+    "stylelint": "^9.10.1"
   }
 }
