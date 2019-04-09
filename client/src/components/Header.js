@@ -5,10 +5,16 @@ import axios from 'axios';
 const Header = () => {
   const [content, setContent] = useState({});
 
-  // TODO: replace hardcoded url with variable
   const loadContent = async () => {
-    const res = await axios.get('http://localhost:8080/');
-    setContent(res.data.content);
+    try {
+      const url = '/api/v1/content/main';
+      const res = await axios.get(url);
+      setContent(res.data.content);
+    } catch (err) {
+      throw new Error(
+        `Error fetching page content: ${err.message || JSON.stringify(err)}`,
+      );
+    }
   };
 
   useEffect(() => {
