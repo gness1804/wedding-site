@@ -10,7 +10,7 @@
     "add:client": "cd client && npm run reset $* && cd -",
     "add:server": "cd server && npm run reset $* && cd -",
     "add:root": "npm run reset $*",
-    "add": "npm run add:client $* && npm run add:server $*",
+    "add": "npm run add:root && npm run add:client $* && npm run add:server $*",
     "client": "cd client && npm run start",
     "server": "nodemon server.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
