@@ -6,6 +6,11 @@
     "nodemon": "^1.18.11"
   },
   "scripts": {
+    "reset": "npm prune && npm install $*",
+    "add:client": "cd client && npm run reset $* && cd -",
+    "add:server": "cd server && npm run reset $* && cd -",
+    "add:root": "npm run reset $*",
+    "add": "npm run add:client $* && npm run add:server $*",
     "client": "cd client && npm run start",
     "server": "nodemon server.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
@@ -13,7 +18,9 @@
     "start": "nodemon server/app.js",
     "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "npm run test:client && npm run test:server",
+    "test:client": "cd client && npm run test && cd -",
+    "test:server": "cd server && npm run test && cd -",
     "eject": "react-scripts eject",
     "lint": "npm run lint:server && npm run lint:client",
     "lint:server": "cd server && npm run lint && cd -",
