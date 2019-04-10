@@ -6,5 +6,6 @@ cache:
     - node_modules
 script:
   - npm run add
+  - npm run stylelint
   - npm run lint
   - npm test
