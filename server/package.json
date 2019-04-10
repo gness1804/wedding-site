@@ -1,7 +1,7 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "description": "The server for the wedding website.",
   "main": "app.js",
   "dependencies": {
     "babel-eslint": "9.0.0",
@@ -15,12 +15,14 @@
     "express": "^4.16.4"
   },
   "devDependencies": {
+    "jest": "^24.7.1",
     "prettier": "1.16.4"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "reset": "npm prune && npm install $*",
+    "test": "jest",
     "lint": "eslint .",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write *.js **/**"
   },
   "keywords": [],
   "author": "",

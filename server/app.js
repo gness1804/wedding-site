@@ -24,3 +24,5 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.listen(port, () => process.stdout.write(`Server running on port ${port}`));
+
+module.exports = app;
