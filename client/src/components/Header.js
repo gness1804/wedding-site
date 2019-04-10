@@ -7,9 +7,9 @@ const Header = () => {
 
   const loadContent = async () => {
     try {
-      const url = '/api/v1/content/main';
+      const url = '/api/v1/content/header';
       const res = await axios.get(url);
-      setContent(res.data.content);
+      setContent(res.data);
     } catch (err) {
       throw new Error(
         `Error fetching page content: ${err.message || JSON.stringify(err)}`,
