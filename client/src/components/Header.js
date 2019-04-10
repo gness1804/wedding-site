@@ -26,6 +26,8 @@ const Header = () => {
       {Object.keys(content) && (
         <div className="header-main-container">
           <h1>{content.title}</h1>
+          <p>{content.counterWedding}</p>
+          <p>{content.counterReception}</p>
         </div>
       )}
     </div>

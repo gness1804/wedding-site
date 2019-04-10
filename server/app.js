@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-const getContent = require('./helpers/getContent');
+const getContentFromCMS = require('./middleware/getContentFromCMS');
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -10,10 +10,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Add site content to the req object
-app.use(async (req, res, next) => {
-  req.content = await getContent();
-  return next();
-});
+app.use(getContentFromCMS);
 
 // API calls
 app.get('/api/v1/content/header', (req, res) => {

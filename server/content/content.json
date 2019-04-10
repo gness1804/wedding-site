@@ -1,5 +1,7 @@
 {
   "header": {
-    "title": "Flora and Graham's Wedding"
+    "title": "Flora and Graham's Wedding",
+    "counterWedding": "{{counter}} days to go to the wedding!!",
+    "counterReception": "{{counter}} days to go to the reception!!"
   }
 }
