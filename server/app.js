@@ -14,7 +14,7 @@ app.use(getContentFromCMS);
 
 // API calls
 app.get('/api/v1/content/header', (req, res) => {
-  res.send(req.content.header);
+  res.send({ header: req.content.header, dates: req.dates });
 });
 
 if (process.env.NODE_ENV === 'production') {
