@@ -26,9 +26,11 @@ it('renders correctly.', () => {
       <h1 />
     </div>
   </div>
-  <p>
-    I am the main component.
-  </p>
+  <div>
+    <p>
+      I am the home page.
+    </p>
+  </div>
 </div>
 `);
 });
