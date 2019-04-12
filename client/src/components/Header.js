@@ -31,8 +31,12 @@ const Header = () => {
   if (daysUntilCeremony && daysUntilReception) {
     counterElem = (
       <div className="counter-elem">
-        <p>{content.counterWedding.replace('{{counter}}', daysUntilCeremony)}</p>
-        <p>{content.counterReception.replace('{{counter}}', daysUntilReception)}</p>
+        <p>
+          {content.counterWedding.replace('{{counter}}', daysUntilCeremony)}
+        </p>
+        <p>
+          {content.counterReception.replace('{{counter}}', daysUntilReception)}
+        </p>
       </div>
     );
   }
