@@ -1,6 +1,7 @@
 /* eslint-disable-next-line no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import HeaderLinks from './HeaderLinks.js';
 import calcCountDownDate from '../helpers/calcCountdownDate';
 
 const Header = () => {
@@ -43,6 +44,7 @@ const Header = () => {
 
   return (
     <div>
+      <HeaderLinks />
       {Object.keys(content) && (
         <div className="header-main-container">
           <h1>{content.title}</h1>

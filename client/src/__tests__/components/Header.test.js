@@ -18,6 +18,52 @@ it('renders correctly.', () => {
   expect(tree).toMatchInlineSnapshot(`
 <div>
   <div
+    className="header-links"
+  >
+    <ul>
+      <li>
+        <a
+          href="/"
+          onClick={[Function]}
+        >
+          Home
+        </a>
+      </li>
+      <li>
+        <a
+          href="/ceremony"
+          onClick={[Function]}
+        >
+          Ceremony
+        </a>
+      </li>
+      <li>
+        <a
+          href="/reception"
+          onClick={[Function]}
+        >
+          Reception
+        </a>
+      </li>
+      <li>
+        <a
+          href="/rsvp"
+          onClick={[Function]}
+        >
+          RSVP
+        </a>
+      </li>
+      <li>
+        <a
+          href="/our-story"
+          onClick={[Function]}
+        >
+          Our Story
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div
     className="header-main-container"
   >
     <h1 />
