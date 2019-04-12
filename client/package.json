@@ -15,7 +15,9 @@
   },
   "devDependencies": {
     "concurrently": "^4.1.0",
+    "jest": "23.6.0",
     "prettier": "1.16.4",
+    "react-test-renderer": "^16.8.6",
     "stylelint": "^9.10.1"
   },
   "scripts": {

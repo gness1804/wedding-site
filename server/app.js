@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const getContentFromCMS = require('./middleware/getContentFromCMS');
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -8,9 +9,12 @@ const port = process.env.PORT || 5000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// Add site content to the req object
+app.use(getContentFromCMS);
+
 // API calls
-app.get('/api/v1/content/main', (req, res) => {
-  res.send({ content: { title: "Flora and Graham's Wedding" } });
+app.get('/api/v1/content/header', (req, res) => {
+  res.send({ header: req.content.header, dates: req.dates });
 });
 
 if (process.env.NODE_ENV === 'production') {
