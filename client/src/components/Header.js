@@ -6,6 +6,7 @@ import calcCountDownDate from '../helpers/calcCountdownDate';
 const Header = () => {
   const [content, setContent] = useState({});
   const [dates, setDates] = useState({});
+  let counterElem = null;
 
   const loadContent = async () => {
     try {
@@ -24,15 +25,24 @@ const Header = () => {
     loadContent();
   }, []);
 
-  const ceremonyDateCounter =  calcCountDownDate(dates.ceremony);
+  const daysUntilCeremony = Math.floor(calcCountDownDate(dates.ceremony));
+  const daysUntilReception = Math.floor(calcCountDownDate(dates.reception));
+
+  if (daysUntilCeremony && daysUntilReception) {
+    counterElem = (
+      <div className="counter-elem">
+        <p>{content.counterWedding.replace('{{counter}}', daysUntilCeremony)}</p>
+        <p>{content.counterReception.replace('{{counter}}', daysUntilReception)}</p>
+      </div>
+    );
+  }
 
   return (
     <div>
       {Object.keys(content) && (
         <div className="header-main-container">
           <h1>{content.title}</h1>
-          <p>{content.counterWedding}</p>
-          <p>{content.counterReception}</p>
+          {counterElem}
         </div>
       )}
     </div>
