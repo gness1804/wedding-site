@@ -8,6 +8,7 @@ const Header = () => {
   const [content, setContent] = useState({});
   const [dates, setDates] = useState({});
   let counterElem = null;
+  let headerElem = null;
 
   const loadContent = async () => {
     try {
@@ -42,10 +43,14 @@ const Header = () => {
     );
   }
 
+  if (content.links && Object.keys(content.links).length > 0) {
+    headerElem = <HeaderLinks {...content.links} />;
+  }
+
   return (
     <div>
-      <HeaderLinks />
-      {Object.keys(content) && (
+      {headerElem}
+      {Object.keys(content).length > 0 && (
         <div className="header-main-container">
           <h1>{content.title}</h1>
           {counterElem}

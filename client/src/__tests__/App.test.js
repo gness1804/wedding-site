@@ -19,54 +19,7 @@ it('renders correctly.', () => {
 <div
   className="App"
 >
-  <div>
-    <div
-      className="header-links"
-    >
-      <ul>
-        <li>
-          <a
-            href="/"
-          >
-            Home
-          </a>
-        </li>
-        <li>
-          <a
-            href="/ceremony"
-          >
-            Ceremony
-          </a>
-        </li>
-        <li>
-          <a
-            href="/reception"
-          >
-            Reception
-          </a>
-        </li>
-        <li>
-          <a
-            href="/rsvp"
-          >
-            RSVP
-          </a>
-        </li>
-        <li>
-          <a
-            href="/our-story"
-          >
-            Our Story
-          </a>
-        </li>
-      </ul>
-    </div>
-    <div
-      className="header-main-container"
-    >
-      <h1 />
-    </div>
-  </div>
+  <div />
   <div>
     <p>
       I am the home page.

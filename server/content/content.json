@@ -2,6 +2,28 @@
   "header": {
     "title": "Flora and Graham's Wedding",
     "counterWedding": "{{counter}} days to go to the wedding!!",
-    "counterReception": "{{counter}} days to go to the reception!!"
+    "counterReception": "{{counter}} days to go to the reception!!",
+    "links": {
+      "home": {
+        "text": "Home",
+        "url": "/"
+      },
+      "ceremony": {
+        "text": "Ceremony",
+        "url": "/ceremony"
+      },
+      "reception": {
+        "text": "Reception",
+        "url": "/reception"
+      },
+      "rsvp": {
+        "text": "RSVP",
+        "url": "/rsvp"
+      },
+      "ourStory": {
+        "text": "Our Story",
+        "url": "/our-story"
+      }
+    }
   }
 }
