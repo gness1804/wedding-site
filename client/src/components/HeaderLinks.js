@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BrowserRouter as Router} from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 class HeaderLinks extends React.Component {
   // TODO: replace hardcoded text with CMS data
@@ -31,4 +31,3 @@ class HeaderLinks extends React.Component {
 }
 
 export default HeaderLinks;
-

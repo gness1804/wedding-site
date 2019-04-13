@@ -23,7 +23,6 @@ it('renders correctly.', () => {
     <li>
       <a
         href="/"
-        onClick={[Function]}
       >
         Home
       </a>
@@ -31,7 +30,6 @@ it('renders correctly.', () => {
     <li>
       <a
         href="/ceremony"
-        onClick={[Function]}
       >
         Ceremony
       </a>
@@ -39,7 +37,6 @@ it('renders correctly.', () => {
     <li>
       <a
         href="/reception"
-        onClick={[Function]}
       >
         Reception
       </a>
@@ -47,7 +44,6 @@ it('renders correctly.', () => {
     <li>
       <a
         href="/rsvp"
-        onClick={[Function]}
       >
         RSVP
       </a>
@@ -55,7 +51,6 @@ it('renders correctly.', () => {
     <li>
       <a
         href="/our-story"
-        onClick={[Function]}
       >
         Our Story
       </a>
