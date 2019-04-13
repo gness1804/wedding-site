@@ -1,27 +1,27 @@
 import * as React from 'react';
-import { BrowserRouter as Router, Link} from 'react-router-dom';
+import { BrowserRouter as Router} from 'react-router-dom';
 
 class HeaderLinks extends React.Component {
-  // TODO: replacehardcoded text with CMS data
+  // TODO: replace hardcoded text with CMS data
   render() {
     return (
       <div className="header-links">
         <Router>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <a href="/">Home</a>
             </li>
             <li>
-              <Link to="/ceremony">Ceremony</Link>
+              <a href="/ceremony">Ceremony</a>
             </li>
             <li>
-              <Link to="/reception">Reception</Link>
+              <a href="/reception">Reception</a>
             </li>
             <li>
-              <Link to="/rsvp">RSVP</Link>
+              <a href="/rsvp">RSVP</a>
             </li>
             <li>
-              <Link to="/our-story">Our Story</Link>
+              <a href="/our-story">Our Story</a>
             </li>
           </ul>
         </Router>
