@@ -19,7 +19,9 @@ it('renders correctly.', () => {
 <div
   className="App"
 >
-  <div />
+  <h1>
+    Loading...
+  </h1>
   <div>
     <p>
       I am the home page.
