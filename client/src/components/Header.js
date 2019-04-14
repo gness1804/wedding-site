@@ -1,7 +1,7 @@
 /* eslint-disable-next-line no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import HeaderLinks from './HeaderLinks.js';
+import { Link } from 'react-router-dom';
 import calcCountDownDate from '../helpers/calcCountdownDate';
 
 const Header = () => {
@@ -44,7 +44,26 @@ const Header = () => {
   }
 
   if (content.links && Object.keys(content.links).length > 0) {
-    headerElem = <HeaderLinks {...content.links} />;
+    const { home, ceremony, reception, rsvp, ourStory } = content.links;
+    headerElem = (
+      <ul>
+        <li>
+          <Link to={home.url}>{home.text} </Link>
+        </li>
+        <li>
+          <Link to={ceremony.url}>{ceremony.text}</Link>
+        </li>
+        <li>
+          <Link to={reception.url}>{reception.text}</Link>
+        </li>
+        <li>
+          <Link to={rsvp.url}>{rsvp.text}</Link>
+        </li>
+        <li>
+          <Link to={ourStory.url}>{ourStory.text}</Link>
+        </li>
+      </ul>
+    );
   }
 
   return (

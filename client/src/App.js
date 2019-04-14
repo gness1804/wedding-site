@@ -10,19 +10,20 @@ import OurStory from './components/OurStory';
 import Reception from './components/Reception';
 import RSVP from './components/RSVP';
 
+// TODO: replace the hardcoded routes with data from CMS
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Header />
-        <Router>
+      <Router>
+        <div className="App">
+          <Header />
           <Route exact path="/" component={Home} />
           <Route path="/ceremony" component={Ceremony} />
           <Route path="/reception" component={Reception} />
           <Route path="/rsvp" component={RSVP} />
           <Route path="/our-story" component={OurStory} />
-        </Router>
-      </div>
+        </div>
+      </Router>
     );
   }
 }
