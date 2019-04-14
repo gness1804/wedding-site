@@ -27,9 +27,7 @@ const Header = () => {
   if (daysUntilCeremony && daysUntilReception) {
     counterElem = (
       <div className="counter-elem">
-        <p>
-          {header.counterWedding.replace('{{counter}}', daysUntilCeremony)}
-        </p>
+        <p>{header.counterWedding.replace('{{counter}}', daysUntilCeremony)}</p>
         <p>
           {header.counterReception.replace('{{counter}}', daysUntilReception)}
         </p>
@@ -37,26 +35,26 @@ const Header = () => {
     );
   }
 
-    const { home, ceremony, reception, rsvp, ourStory } = header.links;
-    const headerElem = (
-      <ul>
-        <li>
-          <Link to={home.url}>{home.text} </Link>
-        </li>
-        <li>
-          <Link to={ceremony.url}>{ceremony.text}</Link>
-        </li>
-        <li>
-          <Link to={reception.url}>{reception.text}</Link>
-        </li>
-        <li>
-          <Link to={rsvp.url}>{rsvp.text}</Link>
-        </li>
-        <li>
-          <Link to={ourStory.url}>{ourStory.text}</Link>
-        </li>
-      </ul>
-    );
+  const { home, ceremony, reception, rsvp, ourStory } = header.links;
+  const headerElem = (
+    <ul>
+      <li>
+        <Link to={home.url}>{home.text} </Link>
+      </li>
+      <li>
+        <Link to={ceremony.url}>{ceremony.text}</Link>
+      </li>
+      <li>
+        <Link to={reception.url}>{reception.text}</Link>
+      </li>
+      <li>
+        <Link to={rsvp.url}>{rsvp.text}</Link>
+      </li>
+      <li>
+        <Link to={ourStory.url}>{ourStory.text}</Link>
+      </li>
+    </ul>
+  );
 
   return (
     <div>
