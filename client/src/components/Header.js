@@ -1,12 +1,14 @@
 /* eslint-disable-next-line no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import calcCountDownDate from '../helpers/calcCountdownDate';
 
 const Header = () => {
   const [content, setContent] = useState({});
   const [dates, setDates] = useState({});
   let counterElem = null;
+  let headerElem = null;
 
   const loadContent = async () => {
     try {
@@ -41,9 +43,33 @@ const Header = () => {
     );
   }
 
+  if (content.links && Object.keys(content.links).length > 0) {
+    const { home, ceremony, reception, rsvp, ourStory } = content.links;
+    headerElem = (
+      <ul>
+        <li>
+          <Link to={home.url}>{home.text} </Link>
+        </li>
+        <li>
+          <Link to={ceremony.url}>{ceremony.text}</Link>
+        </li>
+        <li>
+          <Link to={reception.url}>{reception.text}</Link>
+        </li>
+        <li>
+          <Link to={rsvp.url}>{rsvp.text}</Link>
+        </li>
+        <li>
+          <Link to={ourStory.url}>{ourStory.text}</Link>
+        </li>
+      </ul>
+    );
+  }
+
   return (
     <div>
-      {Object.keys(content) && (
+      {headerElem}
+      {Object.keys(content).length > 0 && (
         <div className="header-main-container">
           <h1>{content.title}</h1>
           {counterElem}

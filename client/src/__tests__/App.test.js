@@ -19,16 +19,12 @@ it('renders correctly.', () => {
 <div
   className="App"
 >
+  <div />
   <div>
-    <div
-      className="header-main-container"
-    >
-      <h1 />
-    </div>
+    <p>
+      I am the home page.
+    </p>
   </div>
-  <p>
-    I am the main component.
-  </p>
 </div>
 `);
 });

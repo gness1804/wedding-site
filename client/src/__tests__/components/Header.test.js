@@ -15,13 +15,5 @@ it('renders without crashing', () => {
 
 it('renders correctly.', () => {
   const tree = renderer.create(<App />).toJSON();
-  expect(tree).toMatchInlineSnapshot(`
-<div>
-  <div
-    className="header-main-container"
-  >
-    <h1 />
-  </div>
-</div>
-`);
+  expect(tree).toMatchInlineSnapshot(`<div />`);
 });
