@@ -11,7 +11,9 @@ import App from '../../components/NotFound';
 describe('NotFound.', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<App />, div);
+    ReactDOM.render(<Router>
+      <App />
+    </Router>, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 
