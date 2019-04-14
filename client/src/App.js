@@ -15,24 +15,22 @@ import NotFound from './components/NotFound';
 // Try making this a functional component and use react hooks to bring in all content and pass it as children down
 // or as context?
 
-class App extends Component {
-  render() {
-    return (
-      <Router>
-        <div className="App">
-          <Header />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/ceremony" component={Ceremony} />
-            <Route path="/reception" component={Reception} />
-            <Route path="/rsvp" component={RSVP} />
-            <Route path="/our-story" component={OurStory} />
-            <Route component={NotFound}/>
-          </Switch>
-        </div>
-      </Router>
-    );
-  }
+const App = () => {
+  return (
+    <Router>
+      <div className="App">
+        <Header />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/ceremony" component={Ceremony} />
+          <Route path="/reception" component={Reception} />
+          <Route path="/rsvp" component={RSVP} />
+          <Route path="/our-story" component={OurStory} />
+          <Route component={NotFound} />
+        </Switch>
+      </div>
+    </Router>
+  );
 }
 
 export default App;
