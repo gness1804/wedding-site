@@ -57,7 +57,7 @@ const Header = () => {
   );
 
   return (
-    <div>
+    <div className="card-panel teal lighten-2">
       {headerElem}
       <div className="header-main-container">
         <h1>{header.title}</h1>
