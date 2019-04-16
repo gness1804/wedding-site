@@ -14,6 +14,7 @@ import OurStory from './components/OurStory';
 import Reception from './components/Reception';
 import RSVP from './components/RSVP';
 import NotFound from './components/NotFound';
+import mdl from './design/masterDesignLanguage';
 
 // TODO: replace the hardcoded routes with data from CMS.
 
@@ -53,7 +54,7 @@ const App = () => {
   return (
     <SiteContext.Provider value={{ state, dispatch }}>
       <Router>
-        <div className="App">
+        <div className={`container ${mdl.colors.mainBackground}`}>
           <Header />
           <Switch>
             <Route exact path="/" component={Home} />
