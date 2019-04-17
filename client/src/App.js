@@ -2,7 +2,6 @@
 import React, { useContext, useReducer, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import axios from 'axios';
-import './App.css';
 /* eslint-disable-next-line no-unused-vars */
 import SiteContext from './context';
 import reducer from './reducer';

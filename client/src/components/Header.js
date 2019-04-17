@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import SiteContext from '../context';
 import calcCountDownDate from '../helpers/calcCountdownDate';
 import mdl from '../design/masterDesignLanguage';
+import '../styles/Header.css';
 
 const Header = () => {
   const { state } = useContext(SiteContext);
@@ -41,19 +42,29 @@ const Header = () => {
     <div className="nav-content">
       <ul className="tabs tabs-transparent center">
         <li className="tab">
-          <Link className={`${mdl.colors.mainText}`} to={home.url}>{home.text} </Link>
+          <Link className={`${mdl.colors.mainText}`} to={home.url}>
+            {home.text}
+          </Link>
         </li>
         <li className="tab">
-          <Link className={`${mdl.colors.mainText}`} to={ceremony.url}>{ceremony.text}</Link>
+          <Link className={`${mdl.colors.mainText}`} to={ceremony.url}>
+            {ceremony.text}
+          </Link>
         </li>
         <li className="tab">
-          <Link className={`${mdl.colors.mainText}`} to={reception.url}>{reception.text}</Link>
+          <Link className={`${mdl.colors.mainText}`} to={reception.url}>
+            {reception.text}
+          </Link>
         </li>
         <li className="tab">
-          <Link className={`${mdl.colors.mainText}`} to={rsvp.url}>{rsvp.text}</Link>
+          <Link className={`${mdl.colors.mainText}`} to={rsvp.url}>
+            {rsvp.text}
+          </Link>
         </li>
         <li className="tab">
-          <Link className={`${mdl.colors.mainText}`} to={ourStory.url}>{ourStory.text}</Link>
+          <Link className={`${mdl.colors.mainText}`} to={ourStory.url}>
+            {ourStory.text}
+          </Link>
         </li>
       </ul>
     </div>
@@ -64,7 +75,9 @@ const Header = () => {
       <div className={`header-main-container ${mdl.colors.primaryCard}`}>
         <div className="nav-wrapper">
           <a href={header.links.home.url}>
-          <h1 className={`brand-logo center ${mdl.colors.mainText}`}>{header.title}</h1>
+            <h1 className={`brand-logo center ${mdl.colors.mainText}`}>
+              {header.title}
+            </h1>
           </a>
         </div>
         {linksElem}
