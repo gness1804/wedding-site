@@ -1,3 +1,23 @@
 .header-main-container {
   padding: 0.3rem 1.5rem;
 }
+
+.header-links-desktop {
+  display: none;
+}
+
+.header-links-mobile {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+
+@media (min-width: 900px) {
+  .header-links-desktop {
+    display: block;
+  }
+
+  .header-links-mobile {
+    display: none;
+  }
+}

@@ -39,8 +39,8 @@ const Header = () => {
 
   const { home, ceremony, reception, rsvp, ourStory } = header.links;
   const linksElem = (
-    <div className="nav-content">
-      <ul className="tabs tabs-transparent center">
+    <div className="nav-content header-links">
+      <ul className="tabs tabs-transparent center header-links-desktop">
         <li className="tab">
           <Link className={`${mdl.colors.mainText}`} to={home.url}>
             {home.text}
@@ -64,6 +64,34 @@ const Header = () => {
         <li className="tab">
           <Link className={`${mdl.colors.mainText}`} to={ourStory.url}>
             {ourStory.text}
+          </Link>
+        </li>
+      </ul>
+
+      <ul className="center header-links-mobile">
+        <li>
+          <Link className={`${mdl.colors.mainText}`} to={home.url}>
+            <i className="material-icons">home</i>
+          </Link>
+        </li>
+        <li>
+          <Link className={`${mdl.colors.mainText}`} to={ceremony.url}>
+            <i className="material-icons">account_balance</i>
+          </Link>
+        </li>
+        <li>
+          <Link className={`${mdl.colors.mainText}`} to={reception.url}>
+            <i className="material-icons">local_bar</i>
+          </Link>
+        </li>
+        <li>
+          <Link className={`${mdl.colors.mainText}`} to={rsvp.url}>
+            <i className="material-icons">person_add</i>
+          </Link>
+        </li>
+        <li>
+          <Link className={`${mdl.colors.mainText}`} to={ourStory.url}>
+            <i className="material-icons">library_books</i>
           </Link>
         </li>
       </ul>
