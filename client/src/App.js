@@ -2,7 +2,6 @@
 import React, { useContext, useReducer, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import axios from 'axios';
-import './App.css';
 /* eslint-disable-next-line no-unused-vars */
 import SiteContext from './context';
 import reducer from './reducer';
@@ -14,6 +13,7 @@ import OurStory from './components/OurStory';
 import Reception from './components/Reception';
 import RSVP from './components/RSVP';
 import NotFound from './components/NotFound';
+import mdl from './design/masterDesignLanguage';
 
 // TODO: replace the hardcoded routes with data from CMS.
 
@@ -53,7 +53,7 @@ const App = () => {
   return (
     <SiteContext.Provider value={{ state, dispatch }}>
       <Router>
-        <div className="App">
+        <div className={`container ${mdl.colors.mainBackground}`}>
           <Header />
           <Switch>
             <Route exact path="/" component={Home} />

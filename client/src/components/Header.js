@@ -3,6 +3,8 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import SiteContext from '../context';
 import calcCountDownDate from '../helpers/calcCountdownDate';
+import mdl from '../design/masterDesignLanguage';
+import '../styles/Header.css';
 
 const Header = () => {
   const { state } = useContext(SiteContext);
@@ -26,44 +28,100 @@ const Header = () => {
 
   if (daysUntilCeremony && daysUntilReception) {
     counterElem = (
-      <div className="counter-elem">
-        <p>{header.counterWedding.replace('{{counter}}', daysUntilCeremony)}</p>
-        <p>
+      <div
+        className={`counter-elem card center z-depth-2 ${
+          mdl.colors.secondary
+        } ${mdl.padding.mainPaddingAllSides}`}
+      >
+        <h3 className={`${mdl.colors.mainText} ${mdl.text.mainShadow}`}>
+          {header.counterWedding.replace('{{counter}}', daysUntilCeremony)}
+        </h3>
+        <h3 className={`${mdl.colors.mainText} ${mdl.text.mainShadow}`}>
           {header.counterReception.replace('{{counter}}', daysUntilReception)}
-        </p>
+        </h3>
       </div>
     );
   }
 
   const { home, ceremony, reception, rsvp, ourStory } = header.links;
-  const headerElem = (
-    <ul>
-      <li>
-        <Link to={home.url}>{home.text} </Link>
-      </li>
-      <li>
-        <Link to={ceremony.url}>{ceremony.text}</Link>
-      </li>
-      <li>
-        <Link to={reception.url}>{reception.text}</Link>
-      </li>
-      <li>
-        <Link to={rsvp.url}>{rsvp.text}</Link>
-      </li>
-      <li>
-        <Link to={ourStory.url}>{ourStory.text}</Link>
-      </li>
-    </ul>
+  const linksElem = (
+    <div className="nav-content header-links">
+      <ul className="tabs tabs-transparent center header-links-desktop">
+        <li className="tab">
+          <Link className={`${mdl.colors.mainText}`} to={home.url}>
+            {home.text}
+          </Link>
+        </li>
+        <li className="tab">
+          <Link className={`${mdl.colors.mainText}`} to={ceremony.url}>
+            {ceremony.text}
+          </Link>
+        </li>
+        <li className="tab">
+          <Link className={`${mdl.colors.mainText}`} to={reception.url}>
+            {reception.text}
+          </Link>
+        </li>
+        <li className="tab">
+          <Link className={`${mdl.colors.mainText}`} to={rsvp.url}>
+            {rsvp.text}
+          </Link>
+        </li>
+        <li className="tab">
+          <Link className={`${mdl.colors.mainText}`} to={ourStory.url}>
+            {ourStory.text}
+          </Link>
+        </li>
+      </ul>
+
+      <ul className="center header-links-mobile">
+        <li>
+          <Link className={`${mdl.colors.mainText}`} to={home.url}>
+            <i className="material-icons">home</i>
+          </Link>
+        </li>
+        <li>
+          <Link className={`${mdl.colors.mainText}`} to={ceremony.url}>
+            <i className="material-icons">account_balance</i>
+          </Link>
+        </li>
+        <li>
+          <Link className={`${mdl.colors.mainText}`} to={reception.url}>
+            <i className="material-icons">local_bar</i>
+          </Link>
+        </li>
+        <li>
+          <Link className={`${mdl.colors.mainText}`} to={rsvp.url}>
+            <i className="material-icons">person_add</i>
+          </Link>
+        </li>
+        <li>
+          <Link className={`${mdl.colors.mainText}`} to={ourStory.url}>
+            <i className="material-icons">library_books</i>
+          </Link>
+        </li>
+      </ul>
+    </div>
   );
 
   return (
-    <div>
-      {headerElem}
-      <div className="header-main-container">
-        <h1>{header.title}</h1>
-        {counterElem}
+    <>
+      <div className={`header-main-container z-depth-3 ${mdl.colors.primary}`}>
+        <div className="nav-wrapper">
+          <a href={header.links.home.url}>
+            <h1
+              className={`brand-logo center ${mdl.colors.mainText} ${
+                mdl.text.mainShadow
+              }`}
+            >
+              {header.title}
+            </h1>
+          </a>
+        </div>
+        {linksElem}
       </div>
-    </div>
+      {counterElem}
+    </>
   );
 };
 

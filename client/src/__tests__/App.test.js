@@ -17,16 +17,14 @@ it('renders correctly.', () => {
   const tree = renderer.create(<App />).toJSON();
   expect(tree).toMatchInlineSnapshot(`
 <div
-  className="App"
+  className="container pink lighten-5"
 >
   <h1>
     Loading...
   </h1>
-  <div>
-    <p>
-      I am the home page.
-    </p>
-  </div>
+  <h1>
+    Loading...
+  </h1>
 </div>
 `);
 });
