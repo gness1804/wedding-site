@@ -12,6 +12,10 @@
   margin-top: 3rem;
 }
 
+.counter-elem {
+  padding: 1rem;
+}
+
 @media (min-width: 900px) {
   .header-links-desktop {
     display: block;

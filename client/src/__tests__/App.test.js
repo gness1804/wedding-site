@@ -17,7 +17,7 @@ it('renders correctly.', () => {
   const tree = renderer.create(<App />).toJSON();
   expect(tree).toMatchInlineSnapshot(`
 <div
-  className="container grey lighten-5"
+  className="container pink lighten-5"
 >
   <h1>
     Loading...
