@@ -22,7 +22,7 @@
     "reset": "npm prune && npm install $*",
     "test": "jest",
     "lint": "eslint .",
-    "prettier": "prettier --write *.js **/**"
+    "prettier": "prettier --write *.js **/** /content/*.json"
   },
   "keywords": [],
   "author": "",

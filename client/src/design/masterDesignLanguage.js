@@ -5,9 +5,13 @@ const masterDesignLanguage = {
     tertiary: 'pink darken-4',
     mainBackground: 'pink lighten-5',
     mainText: 'grey-text text-darken-4',
+    whiteText: 'grey-text text-lighten-5',
   },
   text: {
     mainShadow: 'mainShadow',
+  },
+  padding: {
+    mainPaddingAllSides: 'mainPaddingAllSides',
   },
 };
 

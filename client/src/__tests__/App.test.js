@@ -22,13 +22,9 @@ it('renders correctly.', () => {
   <h1>
     Loading...
   </h1>
-  <div
-    className="card page-component z-depth-1 pink darken-4"
-  >
-    <p>
-      I am the home page.
-    </p>
-  </div>
+  <h1>
+    Loading...
+  </h1>
 </div>
 `);
 });
