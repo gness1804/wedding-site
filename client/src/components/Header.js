@@ -28,7 +28,9 @@ const Header = () => {
 
   if (daysUntilCeremony && daysUntilReception) {
     counterElem = (
-      <div className={`counter-elem card center ${mdl.colors.secondary}`}>
+      <div
+        className={`counter-elem card center z-depth-2 ${mdl.colors.secondary}`}
+      >
         <h3 className={`${mdl.colors.mainText} ${mdl.text.mainShadow}`}>
           {header.counterWedding.replace('{{counter}}', daysUntilCeremony)}
         </h3>
@@ -102,7 +104,7 @@ const Header = () => {
 
   return (
     <>
-      <div className={`header-main-container ${mdl.colors.primary}`}>
+      <div className={`header-main-container z-depth-3 ${mdl.colors.primary}`}>
         <div className="nav-wrapper">
           <a href={header.links.home.url}>
             <h1

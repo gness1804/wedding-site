@@ -17,7 +17,9 @@ describe('OurStory.', () => {
   it('renders correctly.', () => {
     const tree = renderer.create(<App />).toJSON();
     expect(tree).toMatchInlineSnapshot(`
-<div>
+<div
+  className="card page-component z-depth-1 pink darken-4"
+>
   <p>
     I am the our story component.
   </p>

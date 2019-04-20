@@ -11,9 +11,12 @@ import App from '../../components/NotFound';
 describe('NotFound.', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Router>
-      <App />
-    </Router>, div);
+    ReactDOM.render(
+      <Router>
+        <App />
+      </Router>,
+      div,
+    );
     ReactDOM.unmountComponentAtNode(div);
   });
 
@@ -27,7 +30,7 @@ describe('NotFound.', () => {
       .toJSON();
     expect(tree).toMatchInlineSnapshot(`
 <div
-  className="not-found"
+  className="card page-component not-found z-depth-1 pink darken-4"
 >
   <h1>
     Sorry, this page does not exist. Please try again.
