@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import ReactMarkdown from 'react-markdown';
 import mdl from '../design/masterDesignLanguage';
 import SiteContext from '../context';
 
@@ -23,7 +24,10 @@ const Home = () => {
         mdl.padding.mainPaddingAllSides
       }`}
     >
-      <p className={`${mdl.colors.whiteText}`}>{home.introText}</p>
+      <ReactMarkdown
+        className={`${mdl.colors.whiteText}`}
+        source={home.introText}
+      />
     </div>
   );
 };
