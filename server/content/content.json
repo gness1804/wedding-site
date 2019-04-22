@@ -1,8 +1,8 @@
 {
   "header": {
     "title": "Flora and Graham's Wedding",
-    "counterWedding": "{{counter}} days to go to the wedding!!",
-    "counterReception": "{{counter}} days to go to the reception!!",
+    "counterWedding": "### **{{counter}}** days to go to the ceremony!!",
+    "counterReception": "### **{{counter}}** days to go to the reception!!",
     "links": {
       "home": {
         "text": "Home",
