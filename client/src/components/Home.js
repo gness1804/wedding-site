@@ -21,7 +21,7 @@ const Home = () => {
 
   return (
     <div
-      className={`card page-component z-depth-1 ${mdl.colors.tertiary} ${
+      className={`card page-component z-depth-1 ${mdl.colors.primary} ${
         mdl.padding.mainPaddingAllSides
       }`}
     >

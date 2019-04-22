@@ -30,9 +30,9 @@ const Header = () => {
   if (daysUntilCeremony && daysUntilReception) {
     counterElem = (
       <div
-        className={`counter-elem card center z-depth-2 ${
-          mdl.colors.secondary
-        } ${mdl.padding.mainPaddingAllSides}`}
+        className={`counter-elem card center z-depth-2 ${mdl.colors.primary} ${
+          mdl.padding.mainPaddingAllSides
+        }`}
       >
         <ReactMarkdown
           className={`${mdl.colors.mainText} ${mdl.text.mainShadow}`}
