@@ -7,7 +7,7 @@ const NotFound = () => {
   return (
     <div
       className={`card page-component not-found z-depth-1 ${
-        mdl.colors.tertiary
+        mdl.colors.primary
       }`}
     >
       <h1>Sorry, this page does not exist. Please try again.</h1>

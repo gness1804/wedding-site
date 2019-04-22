@@ -5,3 +5,11 @@
 .mainPaddingAllSides {
   padding: 1rem;
 }
+
+.mainContent {
+  font-family: 'Crimson Text', serif;
+}
+
+.mainHeading {
+  font-family: 'Tangerine', cursive;
+}

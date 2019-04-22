@@ -10,6 +10,10 @@ const masterDesignLanguage = {
   },
   text: {
     mainShadow: 'mainShadow',
+    fonts: {
+      mainHeading: 'mainHeading',
+      mainContent: 'mainContent',
+    },
   },
   padding: {
     mainPaddingAllSides: 'mainPaddingAllSides',
