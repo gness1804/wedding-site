@@ -1,5 +1,6 @@
 /* eslint-disable-next-line no-unused-vars */
 import React, { useContext } from 'react';
+import ReactMarkdown from 'react-markdown';
 import { Link } from 'react-router-dom';
 import SiteContext from '../context';
 import calcCountDownDate from '../helpers/calcCountdownDate';
@@ -33,12 +34,20 @@ const Header = () => {
           mdl.colors.secondary
         } ${mdl.padding.mainPaddingAllSides}`}
       >
-        <h3 className={`${mdl.colors.mainText} ${mdl.text.mainShadow}`}>
-          {header.counterWedding.replace('{{counter}}', daysUntilCeremony)}
-        </h3>
-        <h3 className={`${mdl.colors.mainText} ${mdl.text.mainShadow}`}>
-          {header.counterReception.replace('{{counter}}', daysUntilReception)}
-        </h3>
+        <ReactMarkdown
+          className={`${mdl.colors.mainText} ${mdl.text.mainShadow}`}
+          source={header.counterWedding.replace(
+            '{{counter}}',
+            daysUntilCeremony,
+          )}
+        />
+        <ReactMarkdown
+          className={`${mdl.colors.mainText} ${mdl.text.mainShadow}`}
+          source={header.counterReception.replace(
+            '{{counter}}',
+            daysUntilReception,
+          )}
+        />
       </div>
     );
   }
