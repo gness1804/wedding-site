@@ -37,6 +37,10 @@ const Home = () => {
         className={`${mdl.colors.whiteText}`}
         source={home.introText}
       />
+      <ReactMarkdown
+        className={`${mdl.colors.whiteText}`}
+        source={home.callToAction}
+      />
     </div>
   );
 };
