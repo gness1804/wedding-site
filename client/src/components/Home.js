@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import ReactMarkdown from 'react-markdown';
 import mdl from '../design/masterDesignLanguage';
 import SiteContext from '../context';
+import '../styles/Home.css';
 
 const Home = () => {
   const { state } = useContext(SiteContext);
@@ -24,6 +25,14 @@ const Home = () => {
         mdl.padding.mainPaddingAllSides
       }`}
     >
+      <div className={`card ${mdl.colors.whiteBackground}`}>
+        <div className="card-image main-pic">
+          <img src={home.mainPic} alt={home.mainPicAltText} />
+        </div>
+        <div className="card-content">
+          <p>{home.mainPicDescription}</p>
+        </div>
+      </div>
       <ReactMarkdown
         className={`${mdl.colors.whiteText}`}
         source={home.introText}

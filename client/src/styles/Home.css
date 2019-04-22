@@ -1,0 +1,10 @@
+@media (min-width: 900px) {
+  .card {
+    text-align: center;
+    padding-top: 1rem;
+  }
+  .main-pic {
+    max-width: 70%;
+    margin: 0 auto;
+  }
+}
