@@ -7,6 +7,7 @@ const masterDesignLanguage = {
     whiteBackground: 'grey lighten-5',
     mainText: 'grey-text text-darken-4',
     whiteText: 'grey-text text-lighten-5',
+    // for links, see client/src/styles/index.css
   },
   text: {
     mainShadow: 'mainShadow',

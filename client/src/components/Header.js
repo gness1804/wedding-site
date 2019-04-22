@@ -157,7 +157,7 @@ const Header = () => {
     <>
       <div className={`header-main-container z-depth-3 ${mdl.colors.primary}`}>
         <div className="nav-wrapper">
-          <a href={header.links.home.url}>
+          <a href={header.links.home.url} title={header.title}>
             <h1
               className={`brand-logo center ${mdl.colors.mainText} ${
                 mdl.text.mainShadow
