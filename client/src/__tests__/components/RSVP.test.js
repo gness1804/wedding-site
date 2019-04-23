@@ -18,7 +18,7 @@ describe('RSVP.', () => {
     const tree = renderer.create(<App />).toJSON();
     expect(tree).toMatchInlineSnapshot(`
 <div
-  className="card page-component z-depth-1 pink darken-1"
+  className="card page-component z-depth-1 red darken-4"
 >
   <p>
     I am the RSVP component.

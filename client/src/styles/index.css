@@ -21,3 +21,7 @@ a:hover {
 .mainHeading {
   font-family: 'Tangerine', cursive;
 }
+
+.mainText {
+  color: #edce8e;
+}

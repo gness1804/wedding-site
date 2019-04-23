@@ -34,8 +34,12 @@ const Home = () => {
         </div>
       </div>
       <ReactMarkdown
-        className={`${mdl.colors.whiteText}`}
+        className={`${mdl.colors.mainText}`}
         source={home.introText}
+      />
+      <ReactMarkdown
+        className={`${mdl.colors.whiteText}`}
+        source={home.detailsText}
       />
       <ReactMarkdown
         className={`${mdl.colors.whiteText}`}

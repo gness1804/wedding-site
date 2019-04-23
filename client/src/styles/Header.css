@@ -12,6 +12,10 @@
   margin-top: 3rem;
 }
 
+.headline-text {
+  font-weight: 700;
+}
+
 @media (min-width: 900px) {
   .header-links-desktop {
     display: block;
