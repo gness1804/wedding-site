@@ -32,6 +32,11 @@
     "ngrok": "node scripts/ngrok.js",
     "ngrok:stop": "node scripts/ngrok.js --stop"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
+  },
   "browserslist": [
     ">0.2%",
     "not dead",
@@ -39,6 +44,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "concurrently": "^4.1.0"
+    "concurrently": "^4.1.0",
+    "husky": "^1.3.1"
   }
 }
