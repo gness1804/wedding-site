@@ -26,7 +26,7 @@
     "reset": "npm prune && npm install $*",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test --env=jsdom --no-watch",
     "eject": "react-scripts eject",
     "lint": "eslint src",
     "prettier": "prettier --write src/**/** src/*",
