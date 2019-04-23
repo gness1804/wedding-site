@@ -105,47 +105,27 @@ const Header = () => {
 
       <ul className="center header-links-mobile">
         <li>
-          <Link
-            className={`${mdl.colors.mainText}`}
-            to={home.url}
-            title={home.text}
-          >
+          <Link to={home.url} title={home.text}>
             <i className="material-icons">home</i>
           </Link>
         </li>
         <li>
-          <Link
-            className={`${mdl.colors.mainText}`}
-            to={ceremony.url}
-            title={ceremony.text}
-          >
+          <Link to={ceremony.url} title={ceremony.text}>
             <i className="material-icons">account_balance</i>
           </Link>
         </li>
         <li>
-          <Link
-            className={`${mdl.colors.mainText}`}
-            to={reception.url}
-            title={reception.text}
-          >
+          <Link to={reception.url} title={reception.text}>
             <i className="material-icons">local_bar</i>
           </Link>
         </li>
         <li>
-          <Link
-            className={`${mdl.colors.mainText}`}
-            to={rsvp.url}
-            title={rsvp.text}
-          >
+          <Link to={rsvp.url} title={rsvp.text}>
             <i className="material-icons">person_add</i>
           </Link>
         </li>
         <li>
-          <Link
-            className={`${mdl.colors.mainText}`}
-            to={ourStory.url}
-            title={ourStory.text}
-          >
+          <Link to={ourStory.url} title={ourStory.text}>
             <i className="material-icons">library_books</i>
           </Link>
         </li>

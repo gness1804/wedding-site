@@ -1,5 +1,7 @@
-a {
+a,
+.mainText a {
   color: #0a4580;
+  background: none;
 }
 
 a:hover {
@@ -23,5 +25,7 @@ a:hover {
 }
 
 .mainText {
-  color: #edce8e;
+  background: -webkit-linear-gradient(right, #edce8e, #b09053);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
