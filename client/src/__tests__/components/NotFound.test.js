@@ -30,7 +30,7 @@ describe('NotFound.', () => {
       .toJSON();
     expect(tree).toMatchInlineSnapshot(`
 <div
-  className="card page-component not-found z-depth-1 pink darken-4"
+  className="card page-component not-found z-depth-1 red darken-4"
 >
   <h1>
     Sorry, this page does not exist. Please try again.

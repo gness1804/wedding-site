@@ -53,7 +53,11 @@ const App = () => {
   return (
     <SiteContext.Provider value={{ state, dispatch }}>
       <Router>
-        <div className={`container ${mdl.colors.mainBackground}`}>
+        <div
+          className={`container ${mdl.colors.mainBackground} ${
+            mdl.text.fonts.mainContent
+          }`}
+        >
           <Header />
           <Switch>
             <Route exact path="/" component={Home} />

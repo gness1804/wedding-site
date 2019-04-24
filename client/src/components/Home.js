@@ -21,7 +21,7 @@ const Home = () => {
 
   return (
     <div
-      className={`card page-component z-depth-1 ${mdl.colors.tertiary} ${
+      className={`card page-component z-depth-1 ${mdl.colors.primary} ${
         mdl.padding.mainPaddingAllSides
       }`}
     >
@@ -34,8 +34,12 @@ const Home = () => {
         </div>
       </div>
       <ReactMarkdown
-        className={`${mdl.colors.whiteText}`}
+        className={`${mdl.colors.mainText}`}
         source={home.introText}
+      />
+      <ReactMarkdown
+        className={`${mdl.colors.whiteText}`}
+        source={home.detailsText}
       />
       <ReactMarkdown
         className={`${mdl.colors.whiteText}`}
