@@ -2,9 +2,16 @@
   "version": 2,
   "name": "Flora and Graham's Wedding",
   "builds": [
-    { "src": "package.json", "use": "@now/static-build", "config": { "distDir": "client/build" } }
+    {
+      "src": "package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "client/build" }
+    },
+    { "src": "server/app.js", "use": "@now/node-server" },
+    { "src": "server/contentService.js", "use": "@now/node" }
   ],
   "routes": [
+    { "src": "/server/(.*)", "dest": "/server/$1" },
     {
       "src": "/static/(.*)",
       "headers": { "cache-control": "s-maxage=31536000,immutable" },
