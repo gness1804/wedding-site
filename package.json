@@ -33,7 +33,8 @@
     "prettier:server": "cd server && npm run prettier && cd -",
     "prettier": "npm run prettier:client && npm run prettier:server",
     "ngrok": "node scripts/ngrok.js",
-    "ngrok:stop": "node scripts/ngrok.js --stop"
+    "ngrok:stop": "node scripts/ngrok.js --stop",
+    "now-build": "cd client && npm run reset && npm run build"
   },
   "husky": {
     "hooks": {
