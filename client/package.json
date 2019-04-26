@@ -32,7 +32,8 @@
     "lint": "eslint src",
     "prettier": "prettier --write src/**/** src/*",
     "stylelint": "stylelint src/**/*.css",
-    "stylelint:fix": "npm run stylelint --fix"
+    "stylelint:fix": "npm run stylelint --fix",
+    "now-build": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
