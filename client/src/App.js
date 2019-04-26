@@ -1,7 +1,7 @@
 /* eslint-disable-next-line no-unused-vars */
 import React, { useContext, useReducer, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import axios from 'axios';
+import 'isomorphic-unfetch';
 /* eslint-disable-next-line no-unused-vars */
 import SiteContext from './context';
 import reducer from './reducer';
@@ -14,8 +14,6 @@ import Reception from './components/Reception';
 import RSVP from './components/RSVP';
 import NotFound from './components/NotFound';
 import mdl from './design/masterDesignLanguage';
-
-// TODO: replace the hardcoded routes with data from CMS.
 
 const App = () => {
   const initState = useContext(SiteContext);
@@ -35,10 +33,15 @@ const App = () => {
 
   const loadContent = async () => {
     try {
-      const url = '/api/v1/content';
-      const res = await axios.get(url);
-      dispatch(getPageContentCreator(res.data.pageContent));
-      dispatch(getDatesCreator(res.data.dates));
+      // const url = '/api/v1/content';
+      // eslint-disable-next-line no-restricted-globals
+      const contentUrl = `${location.href}/server/contentService.js`;
+      const contentRes = await fetch(contentUrl);
+      dispatch(getPageContentCreator(contentRes.data));
+      // eslint-disable-next-line no-restricted-globals
+      const datesUrl = `${location.href}/server/datesService.js`;
+      const datesRes = await fetch(datesUrl);
+      dispatch(getDatesCreator(datesRes.data));
     } catch (err) {
       throw new Error(
         `Error fetching page content: ${err.message || JSON.stringify(err)}`,

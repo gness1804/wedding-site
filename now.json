@@ -7,8 +7,8 @@
       "use": "@now/static-build",
       "config": { "distDir": "client/build" }
     },
-    { "src": "server/app.js", "use": "@now/node-server" },
-    { "src": "server/contentService.js", "use": "@now/node" }
+    { "src": "server/contentService.js", "use": "@now/node" },
+    { "src": "server/datesService.js", "use": "@now/node" }
   ],
   "routes": [
     { "src": "/server/(.*)", "dest": "/server/$1" },
