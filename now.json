@@ -3,9 +3,9 @@
   "name": "Flora and Graham's Wedding",
   "builds": [
     {
-      "src": "package.json",
+      "src": "client/package.json",
       "use": "@now/static-build",
-      "config": { "distDir": "client/build" }
+      "config": { "distDir": "build" }
     },
     { "src": "server/contentService.js", "use": "@now/node" },
     { "src": "server/datesService.js", "use": "@now/node" }
