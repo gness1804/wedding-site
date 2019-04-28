@@ -31,15 +31,16 @@ const App = () => {
     dates: data,
   });
 
+  // TODO: add conditional to use server for dev and serverless for prod
   const loadContent = async () => {
     try {
-      // const url = '/api/v1/content';
+      // const url = '/api/v1/content'; // for dev
       // eslint-disable-next-line no-restricted-globals
-      const contentUrl = `${location.href}/server/contentService.js`;
+      const contentUrl = '/server/contentService.js';
       const contentRes = await fetch(contentUrl);
       dispatch(getPageContentCreator(contentRes.data));
       // eslint-disable-next-line no-restricted-globals
-      const datesUrl = `${location.href}/server/datesService.js`;
+      const datesUrl = '/server/datesService.js';
       const datesRes = await fetch(datesUrl);
       dispatch(getDatesCreator(datesRes.data));
     } catch (err) {
