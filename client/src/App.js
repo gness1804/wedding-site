@@ -15,8 +15,6 @@ import RSVP from './components/RSVP';
 import NotFound from './components/NotFound';
 import mdl from './design/masterDesignLanguage';
 
-// TODO: replace the hardcoded routes with data from CMS.
-
 const App = () => {
   const initState = useContext(SiteContext);
   const [state, dispatch] = useReducer(reducer, initState);
@@ -33,12 +31,22 @@ const App = () => {
     dates: data,
   });
 
+  // TODO: add conditional to use server for dev and serverless for prod
   const loadContent = async () => {
     try {
-      const url = '/api/v1/content';
-      const res = await axios.get(url);
-      dispatch(getPageContentCreator(res.data.pageContent));
-      dispatch(getDatesCreator(res.data.dates));
+      // const url = '/api/v1/content'; // for dev
+      // eslint-disable-next-line no-restricted-globals
+      const contentUrl =
+        'https://flora-and-grahams-wedding.grahamnessler.now.sh/server/contentService.js';
+      const contentRes = await axios.get(contentUrl);
+
+      dispatch(getPageContentCreator(contentRes.data));
+      // eslint-disable-next-line no-restricted-globals
+      const datesUrl =
+        'https://flora-and-grahams-wedding.grahamnessler.now.sh/server/datesService.js';
+      const datesRes = await axios.get(datesUrl);
+
+      dispatch(getDatesCreator(datesRes.data));
     } catch (err) {
       throw new Error(
         `Error fetching page content: ${err.message || JSON.stringify(err)}`,
