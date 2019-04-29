@@ -11,7 +11,7 @@
     { "src": "server/datesService.js", "use": "@now/node" }
   ],
   "routes": [
-    { "src": "/server/(.*)", "dest": "/server/$1" },
+    { "src": "/server/(.*)", "dest": "/server/$1", "headers": {"access-control-allow-origin":  "*"} },
     {
       "src": "/static/(.*)",
       "headers": { "cache-control": "s-maxage=31536000,immutable" },

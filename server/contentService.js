@@ -7,10 +7,9 @@ const promisifiedReadFile = util.promisify(readFile);
 const contentService = (req, res) => {
   const file = path.join(__dirname, './content/content.json');
   promisifiedReadFile(file, 'utf-8')
-    .then(result => JSON.parse(result))
-    .then(result => res.send(result))
+    .then(result => res.end(result))
     .catch(err =>
-      res.status(500).send({
+      res.end({
         error: `Error reading from ${file}: ${err.message ||
           JSON.stringify(err)}`,
       }),

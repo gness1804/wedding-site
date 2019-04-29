@@ -1,7 +1,7 @@
 /* eslint-disable-next-line no-unused-vars */
 import React, { useContext, useReducer, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import 'isomorphic-unfetch';
+import axios from 'axios';
 /* eslint-disable-next-line no-unused-vars */
 import SiteContext from './context';
 import reducer from './reducer';
@@ -36,12 +36,16 @@ const App = () => {
     try {
       // const url = '/api/v1/content'; // for dev
       // eslint-disable-next-line no-restricted-globals
-      const contentUrl = '/server/contentService.js';
-      const contentRes = await fetch(contentUrl);
+      const contentUrl =
+        'https://flora-and-grahams-wedding.grahamnessler.now.sh/server/contentService.js';
+      const contentRes = await axios.get(contentUrl);
+
       dispatch(getPageContentCreator(contentRes.data));
       // eslint-disable-next-line no-restricted-globals
-      const datesUrl = '/server/datesService.js';
-      const datesRes = await fetch(datesUrl);
+      const datesUrl =
+        'https://flora-and-grahams-wedding.grahamnessler.now.sh/server/datesService.js';
+      const datesRes = await axios.get(datesUrl);
+
       dispatch(getDatesCreator(datesRes.data));
     } catch (err) {
       throw new Error(
