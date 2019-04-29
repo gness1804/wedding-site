@@ -31,19 +31,20 @@ const App = () => {
     dates: data,
   });
 
-  // TODO: add conditional to use server for dev and serverless for prod
   const loadContent = async () => {
     try {
-      // const url = '/api/v1/content'; // for dev
-      // eslint-disable-next-line no-restricted-globals
       const contentUrl =
-        'https://flora-and-grahams-wedding.grahamnessler.now.sh/server/contentService.js';
+        process.env.NODE_ENV !== 'development'
+          ? 'https://flora-and-grahams-wedding.grahamnessler.now.sh/server/contentService.js'
+          : '/api/v1/content/page-content';
       const contentRes = await axios.get(contentUrl);
 
       dispatch(getPageContentCreator(contentRes.data));
-      // eslint-disable-next-line no-restricted-globals
+
       const datesUrl =
-        'https://flora-and-grahams-wedding.grahamnessler.now.sh/server/datesService.js';
+        process.env.NODE_ENV !== 'development'
+          ? 'https://flora-and-grahams-wedding.grahamnessler.now.sh/server/datesService.js'
+          : '/api/v1/content/dates';
       const datesRes = await axios.get(datesUrl);
 
       dispatch(getDatesCreator(datesRes.data));

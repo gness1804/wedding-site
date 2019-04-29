@@ -13,8 +13,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(getContentFromCMS);
 
 // API calls
-app.get('/api/v1/content', (req, res) => {
-  res.send({ pageContent: req.content, dates: req.dates });
+app.get('/api/v1/content/page-content', (req, res) => {
+  res.send(req.content);
+});
+
+app.get('/api/v1/content/dates', (req, res) => {
+  res.send(req.dates);
 });
 
 if (process.env.NODE_ENV === 'production') {
