@@ -17,6 +17,7 @@ mongoose.connection.on('error', err => {
   );
 });
 require('./db/models');
+const addGuest = require('./db/controllers/addGuest');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -32,6 +33,8 @@ app.get('/api/v1/content/page-content', (req, res) => {
 app.get('/api/v1/content/dates', (req, res) => {
   res.send(req.dates);
 });
+
+app.post('/guests', addGuest);
 
 if (process.env.NODE_ENV === 'production') {
   // Serve any static files
