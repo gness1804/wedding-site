@@ -23,6 +23,11 @@ describe('RSVP.', () => {
   <p>
     I am the RSVP component.
   </p>
+  <button
+    onClick={[Function]}
+  >
+    Send
+  </button>
 </div>
 `);
   });

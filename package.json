@@ -32,7 +32,8 @@
     "prettier:server": "cd server && npm run prettier && cd -",
     "prettier": "npm run prettier:client && npm run prettier:server",
     "deploy": "now",
-    "now-debug": "now-lambda"
+    "deploy:debug": "now -d",
+    "lambda-debug": "now-lambda"
   },
   "husky": {
     "hooks": {

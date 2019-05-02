@@ -8,10 +8,16 @@
       "config": { "distDir": "build" }
     },
     { "src": "server/contentService.js", "use": "@now/node" },
-    { "src": "server/datesService.js", "use": "@now/node" }
+    { "src": "server/datesService.js", "use": "@now/node" },
+    { "src": "server/rsvpService.js", "use": "@now/node" }
   ],
   "routes": [
-    { "src": "/server/(.*)", "dest": "/server/$1", "headers": {"access-control-allow-origin":  "*"} },
+    {
+      "src": "/server/(.*)",
+      "dest": "/server/$1",
+      "headers": {"access-control-allow-origin":  "*"},
+      "methods": ["POST", "GET"]
+    },
     {
       "src": "/static/(.*)",
       "headers": { "cache-control": "s-maxage=31536000,immutable" },
