@@ -1,4 +1,4 @@
-// const { text } = require('micro');
+const { text } = require('micro');
 const mongoose = require('mongoose');
 require('dotenv').config();
 
@@ -15,17 +15,16 @@ require('./db/models');
 const Guest = mongoose.model('Guest');
 
 const rsvpService = async (req, res) => {
-  // console.log('res', res);
-  // TODO: parse the req to get the data sent by the client
-  // const data = await text(req);
-  // const cleanedData = decodeURI(data)
-  //   .replace(/'/g, '')
-  //   .split('&');
-  // console.log('cleanedData:', cleanedData);
-  // res.end('done');
+  const data = await text(req);
+  const parsedData = JSON.parse(data);
+  if (parsedData.accessCode !== process.env.ACCESS_CODE) {
+    res.statusCode = 403;
+    res.statusMessage =
+      'Error: you are not authorized to modify this resource.';
+    return res.end();
+  }
   try {
-    // TODO: replace dummy object below with data from above parsing
-    const guest = await new Guest({}).save();
+    const guest = await new Guest(parsedData).save();
     return res.end(JSON.stringify(guest));
   } catch (err) {
     res.statusCode = 500;
