@@ -31,17 +31,17 @@ a:hover {
 }
 
 /*radio buttons*/
-[type='radio']:checked +span:after {
+[type='radio']:checked + span:after {
   background-color: #b09053;
   border: 2px solid #b09053;
 }
 
-[type='radio']:not(:checked) +span:before,
-[type='radio']:not(:checked) +span:after {
+[type='radio']:not(:checked) + span:before,
+[type='radio']:not(:checked) + span:after {
   border: 2px solid #b09053;
 }
 
-[type='radio'].with-gap:checked +span:after {
+[type='radio'].with-gap:checked + span:after {
   background-color: #b09053;
   border: 2px solid #b09053;
 }

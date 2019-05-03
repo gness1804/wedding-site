@@ -6,6 +6,8 @@ import '../styles/RSVP.css';
 
 const RSVP = () => {
   const [isComing, setIsComing] = useState(true);
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const { state } = useContext(SiteContext);
   const {
     pageContent: { rsvp },
@@ -35,12 +37,18 @@ const RSVP = () => {
     );
   };
 
-  const { title, isComingYes, isComingNo } = rsvp;
+  const {
+    title,
+    isComingYes,
+    isComingNo,
+    firstNameLabel,
+    lastNameLabel,
+  } = rsvp;
   let showBottomPartClass = 'hide';
   if (isComing) {
     showBottomPartClass = 'show';
   }
-
+  // TODO: build out access code part
   return (
     <div
       className={`card page-component z-depth-1 center ${mdl.colors.primary}`}
@@ -53,7 +61,38 @@ const RSVP = () => {
         {title}
       </h2>
       {/*access* code entry goes here */}
-      {/*name forms go here*/}
+      <form className="names-entry-form" action="#">
+        <>
+          <div className="input-field">
+            <label htmlFor="first-name">
+              {firstNameLabel}
+              <input
+                type="text"
+                value={firstName}
+                className="validate"
+                id="first-name"
+                onChange={e => {
+                  setFirstName(e.target.value);
+                }}
+              />
+            </label>
+          </div>
+          <div className="input-field">
+            <label htmlFor="last-name">
+              {lastNameLabel}
+              <input
+                type="text"
+                value={lastName}
+                className="validate"
+                id="last-name"
+                onChange={e => {
+                  setLastName(e.target.value);
+                }}
+              />
+            </label>
+          </div>
+        </>
+      </form>
       <form action="#" className="confirmation-form">
         <p>
           <label>
@@ -85,6 +124,7 @@ const RSVP = () => {
       <div className={`is-coming-form-container ${showBottomPartClass}`}>
         <p>I should only show when the user is coming.</p>
       </div>
+      {/*maybe include a textarea where they can add any notes to us*/}
       <button onClick={sendData}>Send</button>
     </div>
   );

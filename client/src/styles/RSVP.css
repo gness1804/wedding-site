@@ -11,6 +11,16 @@
   font-size: 1.25rem;
 }
 
+.names-entry-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.names-entry-form label {
+  position: relative;
+}
+
 @media (min-width: 900px) {
   .page-header-text {
     margin-top: 0;
