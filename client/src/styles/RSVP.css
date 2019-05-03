@@ -1,0 +1,10 @@
+.page-header-text {
+  font-weight: 700;
+  font-size: 4rem;
+}
+
+@media (min-width: 900px) {
+  .page-header-text {
+    margin-top: 0;
+  }
+}

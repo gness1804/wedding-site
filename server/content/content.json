@@ -33,5 +33,8 @@
     "introText": "### 你 好 and welcome everyone!",
     "detailsText": "We are thrilled to be tying the knot soon and hope that each and every one of you will be able to join us. \n\n Our ceremony will take place in Flora's home city of Beijing, China. Due to logistical constraints, only close family members will attend. However, we will also have a reception in Austin, Texas, where we live.",
     "callToAction": "Come out and help us celebrate! Be sure to **[RSVP](/rsvp)**."
+  },
+  "rsvp": {
+    "title": "RSVP for Reception"
   }
 }
