@@ -3,6 +3,14 @@
   font-size: 4rem;
 }
 
+.confirmation-form label {
+  color: #edce8e;
+}
+
+.confirmation-form label .radio-button-text {
+  font-size: 1.25rem;
+}
+
 @media (min-width: 900px) {
   .page-header-text {
     margin-top: 0;

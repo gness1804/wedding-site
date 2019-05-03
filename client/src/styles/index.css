@@ -29,3 +29,19 @@ a:hover {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/*radio buttons*/
+[type='radio']:checked +span:after {
+  background-color: #b09053;
+  border: 2px solid #b09053;
+}
+
+[type='radio']:not(:checked) +span:before,
+[type='radio']:not(:checked) +span:after {
+  border: 2px solid #b09053;
+}
+
+[type='radio'].with-gap:checked +span:after {
+  background-color: #b09053;
+  border: 2px solid #b09053;
+}

@@ -35,6 +35,8 @@
     "callToAction": "Come out and help us celebrate! Be sure to **[RSVP](/rsvp)**."
   },
   "rsvp": {
-    "title": "RSVP for Reception"
+    "title": "RSVP for Reception",
+    "isComingYes": "Yes! Count me in!",
+    "isComingNo": "I am sorry, but I must send my regrets."
   }
 }
