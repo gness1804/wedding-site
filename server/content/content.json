@@ -39,6 +39,7 @@
     "isComingYes": "Yes! Count me in!",
     "isComingNo": "I am sorry, but I must send my regrets.",
     "firstNameLabel": "First Name",
-    "lastNameLabel": "Last Name"
+    "lastNameLabel": "Last Name",
+    "accessCodeLabel": "Enter Access Code"
   }
 }

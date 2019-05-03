@@ -8,6 +8,7 @@ const RSVP = () => {
   const [isComing, setIsComing] = useState(true);
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
+  const [accessCode, setAccessCode] = useState('');
   const { state } = useContext(SiteContext);
   const {
     pageContent: { rsvp },
@@ -43,6 +44,7 @@ const RSVP = () => {
     isComingNo,
     firstNameLabel,
     lastNameLabel,
+    accessCodeLabel,
   } = rsvp;
   let showBottomPartClass = 'hide';
   if (isComing) {
@@ -60,7 +62,23 @@ const RSVP = () => {
       >
         {title}
       </h2>
-      {/*access* code entry goes here */}
+      <form className="access-code-entry-form">
+        <div className="input-field">
+          <label htmlFor="access-code">
+            {accessCodeLabel}
+            <input
+              type="password"
+              value={accessCode}
+              className="validate"
+              id="access-code"
+              onChange={e => {
+                setAccessCode(e.target.value);
+              }}
+            />
+          </label>
+          {/*<span className="helper-text">Helper text</span>*/}
+        </div>
+      </form>
       <form className="names-entry-form" action="#">
         <>
           <div className="input-field">
