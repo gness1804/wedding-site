@@ -45,3 +45,12 @@ a:hover {
   background-color: #b09053;
   border: 2px solid #b09053;
 }
+
+/*text inputs*/
+.input-field {
+  position: static;
+}
+
+.input-field > label {
+  position: static;
+}

@@ -62,83 +62,85 @@ const RSVP = () => {
       >
         {title}
       </h2>
-      <form className="access-code-entry-form">
-        <div className="input-field">
-          <label htmlFor="access-code">
-            {accessCodeLabel}
-            <input
-              type="password"
-              value={accessCode}
-              className="validate"
-              id="access-code"
-              onChange={e => {
-                setAccessCode(e.target.value);
-              }}
-            />
-          </label>
-          {/*<span className="helper-text">Helper text</span>*/}
-        </div>
-      </form>
-      <form className="names-entry-form" action="#">
-        <>
+      <div className="forms-container">
+        <form className="access-code-entry-form">
           <div className="input-field">
-            <label htmlFor="first-name">
-              {firstNameLabel}
+            <label htmlFor="access-code">
+              {accessCodeLabel}
               <input
-                type="text"
-                value={firstName}
+                type="password"
+                value={accessCode}
                 className="validate"
-                id="first-name"
+                id="access-code"
                 onChange={e => {
-                  setFirstName(e.target.value);
+                  setAccessCode(e.target.value);
                 }}
               />
             </label>
+            {/*<span className="helper-text">Helper text</span>*/}
           </div>
-          <div className="input-field">
-            <label htmlFor="last-name">
-              {lastNameLabel}
+        </form>
+        <form className="names-entry-form" action="#">
+          <>
+            <div className="input-field">
+              <label htmlFor="first-name">
+                {firstNameLabel}
+                <input
+                  type="text"
+                  value={firstName}
+                  className="validate"
+                  id="first-name"
+                  onChange={e => {
+                    setFirstName(e.target.value);
+                  }}
+                />
+              </label>
+            </div>
+            <div className="input-field">
+              <label htmlFor="last-name">
+                {lastNameLabel}
+                <input
+                  type="text"
+                  value={lastName}
+                  className="validate"
+                  id="last-name"
+                  onChange={e => {
+                    setLastName(e.target.value);
+                  }}
+                />
+              </label>
+            </div>
+          </>
+        </form>
+        <form action="#" className="confirmation-form">
+          <p>
+            <label>
               <input
-                type="text"
-                value={lastName}
-                className="validate"
-                id="last-name"
-                onChange={e => {
-                  setLastName(e.target.value);
+                name="confirmation-radio"
+                type="radio"
+                checked={isComing}
+                onChange={() => {
+                  setIsComing(true);
                 }}
               />
+              <span className="radio-button-text">{isComingYes}</span>
             </label>
-          </div>
-        </>
-      </form>
-      <form action="#" className="confirmation-form">
-        <p>
-          <label>
-            <input
-              name="confirmation-radio"
-              type="radio"
-              checked={isComing}
-              onChange={() => {
-                setIsComing(true);
-              }}
-            />
-            <span className="radio-button-text">{isComingYes}</span>
-          </label>
-        </p>
-        <p>
-          <label>
-            <input
-              name="confirmation-radio"
-              type="radio"
-              checked={!isComing}
-              onChange={() => {
-                setIsComing(false);
-              }}
-            />
-            <span className="radio-button-text">{isComingNo}</span>
-          </label>
-        </p>
-      </form>
+          </p>
+          <p>
+            <label>
+              <input
+                name="confirmation-radio"
+                type="radio"
+                checked={!isComing}
+                onChange={() => {
+                  setIsComing(false);
+                }}
+              />
+              <span className="radio-button-text">{isComingNo}</span>
+            </label>
+          </p>
+        </form>
+      </div>
       <div className={`is-coming-form-container ${showBottomPartClass}`}>
         <p>I should only show when the user is coming.</p>
       </div>

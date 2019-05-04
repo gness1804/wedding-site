@@ -3,6 +3,17 @@
   font-size: 4rem;
 }
 
+.forms-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.forms-container form {
+  margin-bottom: 2.25rem;
+}
+
 .confirmation-form label {
   color: #edce8e;
 }
@@ -15,6 +26,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .names-entry-form label {
@@ -24,5 +36,9 @@
 @media (min-width: 900px) {
   .page-header-text {
     margin-top: 0;
+  }
+
+  .names-entry-form {
+    flex-direction: row;
   }
 }
