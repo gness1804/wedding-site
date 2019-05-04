@@ -40,6 +40,10 @@
     "isComingNo": "I am sorry, but I must send my regrets.",
     "firstNameLabel": "First Name",
     "lastNameLabel": "Last Name",
-    "accessCodeLabel": "Enter Access Code"
+    "accessCodeLabel": "Enter Access Code",
+    "accessCodeInputHelperText": "Please see your invitation for the code.",
+    "accessCodeErrorMessage": "Wrong access code. You should have received an access code in your wedding invitation. If you have lost or do not remember it, please contact Flora or Graham.",
+    "altAccessCodeErrorMessage": "Sorry, but something went wrong on our end. Please try again later.",
+    "confirmationQuery": "Can you make our celebration at [Steiner Ranch Steakhouse](https://www.steinersteakhouse.com/) in Austin, TX, on Sunday, January 12, 2020?"
   }
 }

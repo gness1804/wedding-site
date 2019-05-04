@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import axios from 'axios';
+import ReactMarkdown from 'react-markdown';
 import SiteContext from '../context';
 import mdl from '../design/masterDesignLanguage';
 import '../styles/RSVP.css';
@@ -23,21 +24,6 @@ const RSVP = () => {
     );
   }
 
-  const sendData = async () => {
-    // TODO: be sure to add try catch block
-    await axios.post(
-      'http://localhost:8004/server/rsvpService.js', // replace with actual endpoint
-      {
-        // stub
-        isTest: true,
-        firstName: 'Donald',
-        lastName: 'Duck',
-        isComing: false,
-        // accessCode: process.env.REACT_APP_ACCESS_CODE,
-      },
-    );
-  };
-
   const {
     title,
     isComingYes,
@@ -45,12 +31,40 @@ const RSVP = () => {
     firstNameLabel,
     lastNameLabel,
     accessCodeLabel,
+    confirmationQuery,
+    accessCodeErrorMessage,
+    altAccessCodeErrorMessage,
+    accessCodeInputHelperText,
   } = rsvp;
+
+  const sendData = async () => {
+    const url =
+      process.env.NODE_ENV !== 'development'
+        ? 'https://flora-and-grahams-wedding.grahamnessler.now.sh/server/rsvpService.js'
+        : '/guests';
+    try {
+      await axios.post(url, {
+        // stub
+        isTest: true,
+        firstName: 'Donald',
+        lastName: 'Duck',
+        isComing: false,
+        // accessCode: process.env.REACT_APP_ACCESS_CODE,
+      });
+    } catch (error) {
+      if (error.response && error.response.status === 403) {
+        alert(accessCodeErrorMessage);
+      } else {
+        alert(altAccessCodeErrorMessage);
+      }
+    }
+  };
+
   let showBottomPartClass = 'hide';
   if (isComing) {
     showBottomPartClass = 'show';
   }
-  // TODO: build out access code part
+
   return (
     <div
       className={`card page-component z-depth-1 center ${mdl.colors.primary}`}
@@ -77,7 +91,7 @@ const RSVP = () => {
                 }}
               />
             </label>
-            {/*<span className="helper-text">Helper text</span>*/}
+            <span>{accessCodeInputHelperText}</span>
           </div>
         </form>
         <form className="names-entry-form" action="#">
@@ -113,6 +127,7 @@ const RSVP = () => {
           </>
         </form>
         <form action="#" className="confirmation-form">
+          <ReactMarkdown source={confirmationQuery} />
           <p>
             <label>
               <input

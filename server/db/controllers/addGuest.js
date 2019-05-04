@@ -8,7 +8,10 @@ const addGuest = async (req, res) => {
   if (accessCode !== process.env.ACCESS_CODE) {
     return res
       .status(403)
-      .send('Error: you are not authorized to modify this resource.');
+      .send({
+        code: 403,
+        message: 'Error: you are not authorized to modify this resource.',
+      });
   }
   try {
     const guest = await new Guest(req.body).save();
