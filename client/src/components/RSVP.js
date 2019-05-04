@@ -10,6 +10,7 @@ const RSVP = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [accessCode, setAccessCode] = useState('');
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const { state } = useContext(SiteContext);
   const {
     pageContent: { rsvp },
@@ -35,22 +36,42 @@ const RSVP = () => {
     accessCodeErrorMessage,
     altAccessCodeErrorMessage,
     accessCodeInputHelperText,
+    successfulSubmitMessage,
+    invalidInputError,
   } = rsvp;
+
+  const activateSuccessState = () => {
+    setAccessCode('');
+    setFirstName('');
+    setLastName('');
+    setIsComing(true);
+    // reset meal choices and any other states that I add
+    setIsSubmitted(true);
+  };
 
   const sendData = async () => {
     const url =
       process.env.NODE_ENV !== 'development'
         ? 'https://flora-and-grahams-wedding.grahamnessler.now.sh/server/rsvpService.js'
         : '/guests';
+    if (!firstName || !lastName) {
+      alert(invalidInputError);
+      return;
+    }
     try {
-      await axios.post(url, {
-        // stub
-        isTest: true,
-        firstName: 'Donald',
-        lastName: 'Duck',
-        isComing: false,
-        // accessCode: process.env.REACT_APP_ACCESS_CODE,
+      const response = await axios.post(url, {
+        isTest: process.env.NODE_ENV === 'development',
+        firstName,
+        lastName,
+        isComing,
+        accessCode,
+        // plus meal choices and any other states that I add
       });
+      if (response && response.status && response.status === 200) {
+        activateSuccessState();
+      } else {
+        alert(altAccessCodeErrorMessage);
+      }
     } catch (error) {
       if (error.response && error.response.status === 403) {
         alert(accessCodeErrorMessage);
@@ -65,6 +86,26 @@ const RSVP = () => {
     showBottomPartClass = 'show';
   }
 
+  if (isSubmitted) {
+    return (
+      <div
+        className={`card page-component z-depth-1 center ${mdl.colors.primary}`}
+      >
+        <h2
+          className={`page-header-text ${mdl.colors.mainText} ${
+            mdl.text.mainShadow
+          } ${mdl.text.fonts.mainContent}`}
+        >
+          {title}
+        </h2>
+        <p className={`submit-message ${mdl.colors.mainText}`}>
+          {successfulSubmitMessage}
+        </p>
+      </div>
+    );
+  }
+
+  // TODO: include instructions on entering in info for each member of party
   return (
     <div
       className={`card page-component z-depth-1 center ${mdl.colors.primary}`}
