@@ -54,3 +54,7 @@ a:hover {
 .input-field > label {
   position: static;
 }
+
+select {
+  display: block;
+}

@@ -46,6 +46,40 @@
     "altAccessCodeErrorMessage": "Sorry, but something went wrong on our end. Please try again later.",
     "confirmationQuery": "Can you make our celebration at [Steiner Ranch Steakhouse](https://www.steinersteakhouse.com/) in Austin, TX, on Sunday, January 12, 2020?",
     "successfulSubmitMessage": "Congrats! You have sucessfully submitted your RSVP. If you have any\n          further questions, please don't hesitate to reach out to Flora or\n          Graham.",
-    "invalidInputError": "Oops! You must enter in both your first and last names. Please try again."
+    "invalidInputError": "Oops! You must enter in your first name, last name, and entrée selection. Please try again.",
+    "entreeSelectionInstructions" : "Please select your entrée.",
+    "entreeOptions": [
+      {
+        "id": 1,
+        "title": "12 oz Prime Rib",
+        "value": "primeRib",
+        "isSelected": false
+      },
+      {
+        "id": 2,
+        "title": "Salmon Florentine",
+        "value": "salmon",
+        "isSelected": false
+      },
+      {
+        "id": 3,
+        "title": "Chicken Lago",
+        "value": "chicken",
+        "isSelected": false
+      },
+      {
+        "id": 4,
+        "title": "Pasta",
+        "value": "pasta",
+        "isSelected": false
+      },
+      {
+        "id": 5,
+        "title": "Choose your entrée.",
+        "value": "default",
+        "isSelected": true
+      }
+    ],
+    "noEntreeError": "Sorry, but you must enter a valid entrée choice. Please try again."
   }
 }

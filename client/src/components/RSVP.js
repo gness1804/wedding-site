@@ -10,6 +10,8 @@ const RSVP = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [accessCode, setAccessCode] = useState('');
+  const [entreeChoice, setEntreeChoice] = useState('default');
+
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { state } = useContext(SiteContext);
   const {
@@ -38,6 +40,9 @@ const RSVP = () => {
     accessCodeInputHelperText,
     successfulSubmitMessage,
     invalidInputError,
+    entreeOptions,
+    entreeSelectionInstructions,
+    noEntreeError,
   } = rsvp;
 
   const activateSuccessState = () => {
@@ -45,7 +50,7 @@ const RSVP = () => {
     setFirstName('');
     setLastName('');
     setIsComing(true);
-    // reset meal choices and any other states that I add
+    setEntreeChoice('default');
     setIsSubmitted(true);
   };
 
@@ -58,6 +63,10 @@ const RSVP = () => {
       alert(invalidInputError);
       return;
     }
+    if (isComing && entreeChoice === 'default') {
+      alert(noEntreeError);
+      return;
+    }
     try {
       const response = await axios.post(url, {
         isTest: process.env.NODE_ENV === 'development',
@@ -65,7 +74,7 @@ const RSVP = () => {
         lastName,
         isComing,
         accessCode,
-        // plus meal choices and any other states that I add
+        entreeChoice,
       });
       if (response && response.status && response.status === 200) {
         activateSuccessState();
@@ -85,6 +94,26 @@ const RSVP = () => {
   if (isComing) {
     showBottomPartClass = 'show';
   }
+
+  const entreesSelectionElement = (
+    <div className="entrees-selection-elem input-field">
+      <h4>{entreeSelectionInstructions}</h4>
+      <select
+        value={entreeChoice}
+        onChange={e => setEntreeChoice(e.target.value)}
+      >
+        {entreeOptions.map(entree => (
+          <option
+            value={entree.value}
+            disabled={entree.isSelected}
+            key={entree.id}
+          >
+            {entree.title}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
 
   if (isSubmitted) {
     return (
@@ -198,7 +227,7 @@ const RSVP = () => {
         </form>
       </div>
       <div className={`is-coming-form-container ${showBottomPartClass}`}>
-        <p>I should only show when the user is coming.</p>
+        {entreesSelectionElement}
       </div>
       {/*maybe include a textarea where they can add any notes to us*/}
       <button onClick={sendData}>Send</button>
