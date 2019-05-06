@@ -47,7 +47,7 @@
     "confirmationQuery": "Can you make our celebration at [Steiner Ranch Steakhouse](https://www.steinersteakhouse.com/) in Austin, TX, on Sunday, January 12, 2020?",
     "successfulSubmitMessage": "Congrats! You have sucessfully submitted your RSVP. If you have any\n          further questions, please don't hesitate to reach out to Flora or\n          Graham.",
     "invalidInputError": "Oops! You must enter in your first name, last name, and entrée selection. Please try again.",
-    "entreeSelectionInstructions" : "Please select your entrée.",
+    "entreeSelectionInstructions": "Please select your entrée.",
     "entreeOptions": [
       {
         "id": 1,

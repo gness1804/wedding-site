@@ -26,13 +26,7 @@ const GuestSchema = new mongoose.Schema({
   },
   entreeChoice: {
     type: String,
-    enum: [
-      '12 oz Prime Rib',
-      'Salmon Florentine',
-      'Chicken Lago',
-      'Pasta',
-      'default',
-    ],
+    enum: ['primeRib', 'salmon', 'chicken', 'pasta', 'default'],
     required: true,
   },
   ageRange: {},
