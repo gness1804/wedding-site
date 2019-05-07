@@ -11,6 +11,7 @@ const RSVP = () => {
   const [lastName, setLastName] = useState('');
   const [accessCode, setAccessCode] = useState('');
   const [entreeChoice, setEntreeChoice] = useState('default');
+  const [age, setAge] = useState('ofDrinkingAge');
 
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { state } = useContext(SiteContext);
@@ -49,6 +50,7 @@ const RSVP = () => {
     entreeSelectionInstructions,
     noEntreeError,
     ageSelectorInstructions,
+    ageSelectorOptions,
   } = rsvp;
 
   const { reception, receptionLong } = dates;
@@ -83,6 +85,7 @@ const RSVP = () => {
         isComing,
         accessCode,
         entreeChoice,
+        age,
       });
       if (response && response.status && response.status === 200) {
         activateSuccessState();
@@ -126,6 +129,20 @@ const RSVP = () => {
   const ageSelectionElement = (
     <form action="#">
       <h4>{ageSelectorInstructions.replace('{{date}}', reception)}</h4>
+      {ageSelectorOptions.map(opt => (
+        <p key={opt.id}>
+          <label>
+            <input
+              name={opt.name}
+              type="radio"
+              onChange={() => setAge(opt.value)}
+              value={opt.value}
+              checked={age === opt.value}
+            />
+            <span>{opt.labelText}</span>
+          </label>
+        </p>
+      ))}
     </form>
   );
 

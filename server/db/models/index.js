@@ -29,9 +29,10 @@ const GuestSchema = new mongoose.Schema({
     enum: ['primeRib', 'salmon', 'chicken', 'pasta', 'default'],
     required: true,
   },
-  ageRange: {
+  age: {
     type: String,
     enum: ['child', 'adultButCantDrink', 'ofDrinkingAge'],
+    required: true,
   },
 });
 

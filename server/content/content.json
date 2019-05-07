@@ -81,6 +81,29 @@
       }
     ],
     "noEntreeError": "Sorry, but you must enter a valid entrée choice. Please try again.",
-    "ageSelectorInstructions": "Please select your age as of {{date}}."
+    "ageSelectorInstructions": "Please select your age as of {{date}}.",
+    "ageSelectorOptions": [
+      {
+        "id": 1,
+        "name": "ageSelectors",
+        "labelText": "Under 18",
+        "value": "child",
+        "checked": false
+      },
+      {
+        "id": 2,
+        "name": "ageSelectors",
+        "labelText": "18-20",
+        "value": "adultButCantDrink",
+        "checked": false
+      },
+      {
+        "id": 3,
+        "name": "ageSelectors",
+        "labelText": "21+",
+        "value": "ofDrinkingAge",
+        "checked": true
+      }
+    ]
   }
 }
