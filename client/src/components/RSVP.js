@@ -16,10 +16,15 @@ const RSVP = () => {
   const { state } = useContext(SiteContext);
   const {
     pageContent: { rsvp },
+    dates,
   } = state;
 
   // this has to be hardcoded because if this shows up, it means that CMS data has not come back yet
-  if (!rsvp || Object.keys(rsvp).length === 0) {
+  if (
+    !rsvp ||
+    Object.keys(rsvp).length === 0 ||
+    Object.keys(dates).length === 0
+  ) {
     return (
       <>
         <h1>Loading...</h1>
@@ -43,7 +48,10 @@ const RSVP = () => {
     entreeOptions,
     entreeSelectionInstructions,
     noEntreeError,
+    ageSelectorInstructions,
   } = rsvp;
+
+  const { reception, receptionLong } = dates;
 
   const activateSuccessState = () => {
     setAccessCode('');
@@ -113,6 +121,12 @@ const RSVP = () => {
         ))}
       </select>
     </div>
+  );
+
+  const ageSelectionElement = (
+    <form action="#">
+      <h4>{ageSelectorInstructions.replace('{{date}}', reception)}</h4>
+    </form>
   );
 
   if (isSubmitted) {
@@ -197,7 +211,9 @@ const RSVP = () => {
           </>
         </form>
         <form action="#" className="confirmation-form">
-          <ReactMarkdown source={confirmationQuery} />
+          <ReactMarkdown
+            source={confirmationQuery.replace('{{date}}', receptionLong)}
+          />
           <p>
             <label>
               <input
@@ -228,6 +244,7 @@ const RSVP = () => {
       </div>
       <div className={`is-coming-form-container ${showBottomPartClass}`}>
         {entreesSelectionElement}
+        {ageSelectionElement}
       </div>
       {/*maybe include a textarea where they can add any notes to us*/}
       <button onClick={sendData}>Send</button>
