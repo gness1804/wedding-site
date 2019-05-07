@@ -34,6 +34,10 @@ const GuestSchema = new mongoose.Schema({
     enum: ['child', 'adultButCantDrink', 'ofDrinkingAge'],
     required: true,
   },
+  additionalNote: {
+    type: String,
+    required: false,
+  },
 });
 
 const Guest = mongoose.model('Guest', GuestSchema);

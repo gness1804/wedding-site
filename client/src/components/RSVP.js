@@ -61,6 +61,8 @@ const RSVP = () => {
     setLastName('');
     setIsComing(true);
     setEntreeChoice('default');
+    setAge('ofDrinkingAge');
+    // setNote('');
     setIsSubmitted(true);
   };
 
