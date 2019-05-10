@@ -104,6 +104,8 @@
         "value": "ofDrinkingAge",
         "checked": true
       }
-    ]
+    ],
+    "noteInstructions": "If you have anything you would like to share with the bride and groom, please write it here.",
+    "notePlaceholder": "Your thoughts..."
   }
 }

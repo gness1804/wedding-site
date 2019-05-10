@@ -12,6 +12,7 @@ const RSVP = () => {
   const [accessCode, setAccessCode] = useState('');
   const [entreeChoice, setEntreeChoice] = useState('default');
   const [age, setAge] = useState('ofDrinkingAge');
+  const [note, setNote] = useState('');
 
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { state } = useContext(SiteContext);
@@ -51,6 +52,8 @@ const RSVP = () => {
     noEntreeError,
     ageSelectorInstructions,
     ageSelectorOptions,
+    notePlaceholder,
+    noteInstructions,
   } = rsvp;
 
   const { reception, receptionLong } = dates;
@@ -62,7 +65,7 @@ const RSVP = () => {
     setIsComing(true);
     setEntreeChoice('default');
     setAge('ofDrinkingAge');
-    // setNote('');
+    setNote('');
     setIsSubmitted(true);
   };
 
@@ -88,6 +91,7 @@ const RSVP = () => {
         accessCode,
         entreeChoice,
         age,
+        additionalNote: note,
       });
       if (response && response.status && response.status === 200) {
         activateSuccessState();
@@ -265,7 +269,14 @@ const RSVP = () => {
         {entreesSelectionElement}
         {ageSelectionElement}
       </div>
-      {/*maybe include a textarea where they can add any notes to us*/}
+      <label>
+        {noteInstructions}
+        <textarea
+          placeholder={notePlaceholder}
+          value={note}
+          onChange={e => setNote(e.target.value)}
+        />
+      </label>
       <button onClick={sendData}>Send</button>
     </div>
   );
