@@ -14,7 +14,7 @@
     "eslint-plugin-react": "^7.12.4",
     "express": "^4.16.4",
     "micro": "^9.3.3",
-    "mongoose": "^5.5.4"
+    "mongoose": "5.4.23"
   },
   "devDependencies": {
     "jest": "^24.7.1",
