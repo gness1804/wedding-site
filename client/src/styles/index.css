@@ -53,6 +53,8 @@ a:hover {
 
 .input-field > label {
   position: static;
+  font-size: 1.25rem;
+  color: #edce8e;
 }
 
 select {
