@@ -69,6 +69,9 @@ const loopThroughFiles = files => {
   }
 };
 
+/**
+ * @returns {Promise<Function | void>} - promise that resolves into nothing or a function to go through any changed files
+ */
 const checkForWarnings = () =>
   getListOfChangedFiles()
     .then(data => data.stdout.split('\n'))
