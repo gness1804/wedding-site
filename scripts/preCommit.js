@@ -27,9 +27,10 @@ const getCurrentBranch = () =>
   promisifiedExec('git rev-parse --abbrev-ref HEAD');
 
 /**
-* @returns {Promise<Function>} - promise that resolves into child process call
-*/
-const getListOfChangedFiles = () => promisifiedExec('git diff HEAD --name-only');
+ * @returns {Promise<Function>} - promise that resolves into child process call
+ */
+const getListOfChangedFiles = () =>
+  promisifiedExec('git diff HEAD --name-only');
 
 /**
  *
@@ -60,7 +61,7 @@ const checkFile = data => {
  *
  * @param {string[]} files - array of strings corresponding to file names
  */
-const loopThroughFiles = (files) => {
+const loopThroughFiles = files => {
   for (const file of files) {
     if (file) {
       promisifiedReadFile(file, 'utf-8').then(fileData => checkFile(fileData));
