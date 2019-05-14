@@ -4,7 +4,12 @@ const { exec } = require('child_process');
 
 const promisifiedExec = util.promisify(exec);
 const promisifiedReadFile = util.promisify(readFile);
+const forbiddenBranches = ['master', 'develop'];
 
+/**
+ *
+ * @param {string} message - the error message to display
+ */
 const resetAndExit = message => {
   promisifiedExec('git reset HEAD .')
     .then(() => {
@@ -15,29 +20,47 @@ const resetAndExit = message => {
     });
 };
 
-const forbiddenBranches = ['master', 'develop'];
-
+/**
+ * @returns {Promise<Function>} - promise that resolves into child process call
+ */
 const getCurrentBranch = () =>
   promisifiedExec('git rev-parse --abbrev-ref HEAD');
 
-const getListOfChangedFiles = () => promisifiedExec('git diff --name-only');
+/**
+* @returns {Promise<Function>} - promise that resolves into child process call
+*/
+const getListOfChangedFiles = () => promisifiedExec('git diff HEAD --name-only');
 
-const checkFile = async data => {
-  if (data.match(/debugger/g) && data.match(/debugger/g).length) {
-    resetAndExit('Error: debugger. Exiting.');
-  }
-  if (data.match(/console/g) && data.match(/console/g).length) {
-    resetAndExit('Error: console statement. Exiting.');
-  }
-  if (data.match(/it.only/g) && data.match(/it.only/g).length) {
-    resetAndExit('Error: it.only. Exiting.');
-  }
-  if (data.match(/revert/g) && data.match(/revert/g).length) {
-    resetAndExit('Error: revert. Exiting.');
-  }
+/**
+ *
+ * @param {string} data - the contents of the file to check against
+ * @returns {Promise<Function | void>} - promise that resolves or that rejects into a function
+ * that exists the program
+ */
+const checkFile = data => {
+  return new Promise((resolve, reject) => {
+    if (data.match(/debugger/g) && data.match(/debugger/g).length) {
+      reject(resetAndExit('Error: debugger. Exiting.'));
+    }
+    if (data.match(/console/g) && data.match(/console/g).length) {
+      reject(resetAndExit('Error: console statement. Exiting.'));
+    }
+    if (data.match(/it.only/g) && data.match(/it.only/g).length) {
+      reject(resetAndExit('Error: it.only. Exiting.'));
+    }
+    if (data.match(/revert/g) && data.match(/revert/g).length) {
+      reject(resetAndExit('Error: revert. Exiting.'));
+    } else {
+      resolve();
+    }
+  });
 };
 
-const loopThroughFiles = files => {
+/**
+ *
+ * @param {string[]} files - array of strings corresponding to file names
+ */
+const loopThroughFiles = (files) => {
   for (const file of files) {
     if (file) {
       promisifiedReadFile(file, 'utf-8').then(fileData => checkFile(fileData));
@@ -63,9 +86,7 @@ getCurrentBranch()
         )
       : undefined,
   )
-  .then(() => {
-    checkForWarnings();
-  })
+  .then(() => checkForWarnings())
   .then(() => promisifiedExec('npm run prettier'))
   .then(() => promisifiedExec('npm run lint'))
   .then(() => promisifiedExec('npm run stylelint'))
