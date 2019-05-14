@@ -12,15 +12,6 @@ module.exports = {
     browser: true,
   },
   extends: ['airbnb-base'],
-  // check if imports actually resolve
-  // 'settings': {
-  //   'import/resolver': {
-  //     'webpack': {
-  //       'config': 'build/webpack.base.conf.js'
-  //     }
-  //   }
-  // },
-  // add your custom rules here
   'rules': {
     'no-console': 'error',
     'func-names': 'off',
@@ -46,6 +37,7 @@ module.exports = {
     'jsx-a11y/no-static-element-interactions': 'off',
     'react/jsx-no-bind': 'off',
     'class-methods-use-this': 'off',
+    'no-confusing-arrow': 'off',
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
   }
