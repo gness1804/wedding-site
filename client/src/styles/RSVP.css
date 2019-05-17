@@ -7,11 +7,6 @@
   font-size: 4rem;
 }
 
-.general-instructions {
-  font-size: 16px;
-  line-height: 1.7rem;
-}
-
 .forms-container {
   display: flex;
   flex-direction: column;
@@ -29,6 +24,10 @@
 
 .confirmation-form label .radio-button-text {
   font-size: 1.25rem;
+}
+
+.confirmation-details {
+  margin-bottom: 2rem;
 }
 
 .names-entry-form {
@@ -59,6 +58,10 @@
 
   .names-entry-form {
     flex-direction: row;
+  }
+
+  .names-entry-form .input-field:first-child {
+    margin-right: 1rem;
   }
 
   .entrees-selection-elem {

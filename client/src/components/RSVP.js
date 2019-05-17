@@ -174,7 +174,9 @@ const RSVP = () => {
 
   return (
     <div
-      className={`card page-component z-depth-1 center rsvp-main-container ${mdl.colors.primary} ${mdl.colors.whiteText}`}
+      className={`card page-component z-depth-1 center rsvp-main-container ${
+        mdl.colors.primary
+      } ${mdl.colors.whiteText}`}
     >
       <h2
         className={`page-header-text ${mdl.colors.mainText} ${
@@ -183,7 +185,7 @@ const RSVP = () => {
       >
         {title}
       </h2>
-      <p className="general-instructions">{generalInstructions}</p>
+      <h4 className="general-instructions">{generalInstructions}</h4>
       <div className="forms-container">
         <form className="access-code-entry-form">
           <div className="input-field">
@@ -203,7 +205,6 @@ const RSVP = () => {
           </div>
         </form>
         <form className="names-entry-form" action="#">
-          <>
             <div className="input-field">
               <label htmlFor="first-name">
                 {firstNameLabel}
@@ -232,11 +233,11 @@ const RSVP = () => {
                 />
               </label>
             </div>
-          </>
         </form>
         <form action="#" className="confirmation-form">
           <ReactMarkdown
             source={confirmationQuery.replace('{{date}}', receptionLong)}
+            className="confirmation-details"
           />
           <p>
             <label>

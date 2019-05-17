@@ -45,7 +45,7 @@
     "accessCodeInputHelperText": "Please see your invitation for the code.",
     "accessCodeErrorMessage": "Wrong access code. You should have received an access code in your wedding invitation. If you have lost or do not remember it, please contact Flora or Graham.",
     "altAccessCodeErrorMessage": "Sorry, but something went wrong on our end. Please try again later.",
-    "confirmationQuery": "Can you make our celebration at [Steiner Ranch Steakhouse](https://www.steinersteakhouse.com/) in Austin, TX, on {{date}}?",
+    "confirmationQuery": "#### Can you make our celebration at [Steiner Ranch Steakhouse](https://www.steinersteakhouse.com/) in Austin, TX, on {{date}}?",
     "successfulSubmitMessage": "Congrats! You have sucessfully submitted your RSVP. If you have any\n          further questions, please don't hesitate to reach out to Flora or\n          Graham.",
     "invalidInputError": "Oops! You must enter in your first name, last name, and entrée selection. Please try again.",
     "entreeSelectionInstructions": "Please select your entrée.",
