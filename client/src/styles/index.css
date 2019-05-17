@@ -60,3 +60,12 @@ a:hover {
 select {
   display: block;
 }
+
+/* buttons */
+.btn {
+  background-color: #1c205d;
+}
+
+.btn:hover {
+  background-color: #2f46ff;
+}
