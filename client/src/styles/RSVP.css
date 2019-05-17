@@ -1,6 +1,15 @@
+.rsvp-main-container {
+  padding: 2rem;
+}
+
 .page-header-text {
   font-weight: 700;
   font-size: 4rem;
+}
+
+.general-instructions {
+  font-size: 16px;
+  line-height: 1.7rem;
 }
 
 .forms-container {

@@ -36,6 +36,7 @@
   },
   "rsvp": {
     "title": "RSVP for Reception",
+    "generalInstructions": "Please fill our a new form for each member of your party. For example, if you are a family of three, please complete this form once for each of the three members of your family.",
     "isComingYes": "Yes! Count me in!",
     "isComingNo": "I am sorry, but I must send my regrets.",
     "firstNameLabel": "First Name",

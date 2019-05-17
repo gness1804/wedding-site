@@ -36,6 +36,7 @@ const RSVP = () => {
 
   const {
     title,
+    generalInstructions,
     isComingYes,
     isComingNo,
     firstNameLabel,
@@ -171,10 +172,9 @@ const RSVP = () => {
     );
   }
 
-  // TODO: include instructions on entering in info for each member of party
   return (
     <div
-      className={`card page-component z-depth-1 center ${mdl.colors.primary}`}
+      className={`card page-component z-depth-1 center rsvp-main-container ${mdl.colors.primary} ${mdl.colors.whiteText}`}
     >
       <h2
         className={`page-header-text ${mdl.colors.mainText} ${
@@ -183,6 +183,7 @@ const RSVP = () => {
       >
         {title}
       </h2>
+      <p className="general-instructions">{generalInstructions}</p>
       <div className="forms-container">
         <form className="access-code-entry-form">
           <div className="input-field">
