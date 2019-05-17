@@ -33,5 +33,80 @@
     "introText": "### 你 好 and welcome everyone!",
     "detailsText": "We are thrilled to be tying the knot soon and hope that each and every one of you will be able to join us. \n\n Our ceremony will take place in Flora's home city of Beijing, China. Due to logistical constraints, only close family members will attend. However, we will also have a reception in Austin, Texas, where we live.",
     "callToAction": "Come out and help us celebrate! Be sure to **[RSVP](/rsvp)**."
+  },
+  "rsvp": {
+    "title": "RSVP for Reception",
+    "generalInstructions": "Please fill our a new form for each member of your party. For example, if you are a family of three, please complete this form once for each of the three members of your family.",
+    "isComingYes": "Yes! Count me in!",
+    "isComingNo": "I am sorry, but I must send my regrets.",
+    "firstNameLabel": "First Name",
+    "lastNameLabel": "Last Name",
+    "accessCodeLabel": "Enter Access Code",
+    "accessCodeInputHelperText": "Please see your invitation for the code.",
+    "accessCodeErrorMessage": "Wrong access code. You should have received an access code in your wedding invitation. If you have lost or do not remember it, please contact Flora or Graham.",
+    "altAccessCodeErrorMessage": "Sorry, but something went wrong on our end. Please try again later.",
+    "confirmationQuery": "#### Can you make our celebration at [Steiner Ranch Steakhouse](https://www.steinersteakhouse.com/) in Austin, TX, on {{date}}?",
+    "successfulSubmitMessage": "Congrats! You have sucessfully submitted your RSVP. If you have any\n          further questions, please don't hesitate to reach out to Flora or\n          Graham.",
+    "invalidInputError": "Oops! You must enter in your first name, last name, and entrée selection. Please try again.",
+    "entreeSelectionInstructions": "Please select your entrée.",
+    "entreeOptions": [
+      {
+        "id": 1,
+        "title": "12 oz Prime Rib",
+        "value": "primeRib",
+        "isSelected": false
+      },
+      {
+        "id": 2,
+        "title": "Salmon Florentine",
+        "value": "salmon",
+        "isSelected": false
+      },
+      {
+        "id": 3,
+        "title": "Chicken Lago",
+        "value": "chicken",
+        "isSelected": false
+      },
+      {
+        "id": 4,
+        "title": "Pasta",
+        "value": "pasta",
+        "isSelected": false
+      },
+      {
+        "id": 5,
+        "title": "Choose your entrée.",
+        "value": "default",
+        "isSelected": true
+      }
+    ],
+    "noEntreeError": "Sorry, but you must enter a valid entrée choice. Please try again.",
+    "ageSelectorInstructions": "Please select your age as of {{date}}.",
+    "ageSelectorOptions": [
+      {
+        "id": 1,
+        "name": "ageSelectors",
+        "labelText": "Under 18",
+        "value": "child",
+        "checked": false
+      },
+      {
+        "id": 2,
+        "name": "ageSelectors",
+        "labelText": "18-20",
+        "value": "adultButCantDrink",
+        "checked": false
+      },
+      {
+        "id": 3,
+        "name": "ageSelectors",
+        "labelText": "21+",
+        "value": "ofDrinkingAge",
+        "checked": true
+      }
+    ],
+    "noteInstructions": "If you have anything you would like to share with the bride and groom, please write it here.",
+    "notePlaceholder": "Your thoughts..."
   }
 }

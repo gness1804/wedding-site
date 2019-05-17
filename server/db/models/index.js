@@ -24,26 +24,18 @@ const GuestSchema = new mongoose.Schema({
     type: Boolean,
     required: true,
   },
-
-  event: {
-    type: String,
-    enum: ['Ceremony', 'Reception', 'Both'],
-    required: false,
-  },
   entreeChoice: {
-    // for the reception; required if they select reception or both as their event
     type: String,
-    enum: ['Chicken', 'Salmon', 'Steak', 'Pasta'], // replace with the real options
-    required: false,
+    enum: ['primeRib', 'salmon', 'chicken', 'pasta', 'default'],
+    required: true,
   },
-  isChild: {
-    type: Boolean,
-    required: false,
+  age: {
+    type: String,
+    enum: ['child', 'adultButCantDrink', 'ofDrinkingAge'],
+    required: true,
   },
-  isAge21Plus: {
-    // used to count how many alcohol drinkers there will be
-    // instruct them to select no if they are 21+ but do not drink
-    type: Boolean,
+  additionalNote: {
+    type: String,
     required: false,
   },
 });

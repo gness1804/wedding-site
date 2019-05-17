@@ -17,11 +17,17 @@ const Guest = mongoose.model('Guest');
 const rsvpService = async (req, res) => {
   const data = await text(req);
   const parsedData = JSON.parse(data);
-  if (parsedData.accessCode !== process.env.ACCESS_CODE) {
+  if (
+    parsedData.accessCode !== process.env.ACCESS_CODE &&
+    parsedData.accessCode !== process.env.DEV_ACCESS_CODE
+  ) {
     res.statusCode = 403;
     res.statusMessage =
       'Error: you are not authorized to modify this resource.';
     return res.end();
+  }
+  if (parsedData.accessCode === process.env.DEV_ACCESS_CODE) {
+    parsedData.isTest = true;
   }
   try {
     const guest = await new Guest(parsedData).save();
