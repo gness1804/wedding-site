@@ -205,34 +205,34 @@ const RSVP = () => {
           </div>
         </form>
         <form className="names-entry-form" action="#">
-            <div className="input-field">
-              <label htmlFor="first-name">
-                {firstNameLabel}
-                <input
-                  type="text"
-                  value={firstName}
-                  className="validate"
-                  id="first-name"
-                  onChange={e => {
-                    setFirstName(e.target.value);
-                  }}
-                />
-              </label>
-            </div>
-            <div className="input-field">
-              <label htmlFor="last-name">
-                {lastNameLabel}
-                <input
-                  type="text"
-                  value={lastName}
-                  className="validate"
-                  id="last-name"
-                  onChange={e => {
-                    setLastName(e.target.value);
-                  }}
-                />
-              </label>
-            </div>
+          <div className="input-field">
+            <label htmlFor="first-name">
+              {firstNameLabel}
+              <input
+                type="text"
+                value={firstName}
+                className="validate"
+                id="first-name"
+                onChange={e => {
+                  setFirstName(e.target.value);
+                }}
+              />
+            </label>
+          </div>
+          <div className="input-field">
+            <label htmlFor="last-name">
+              {lastNameLabel}
+              <input
+                type="text"
+                value={lastName}
+                className="validate"
+                id="last-name"
+                onChange={e => {
+                  setLastName(e.target.value);
+                }}
+              />
+            </label>
+          </div>
         </form>
         <form action="#" className="confirmation-form">
           <ReactMarkdown
@@ -271,7 +271,7 @@ const RSVP = () => {
         {entreesSelectionElement}
         {ageSelectionElement}
       </div>
-      <label>
+      <label className={`note-instructions ${mdl.colors.whiteText}`}>
         {noteInstructions}
         <textarea
           placeholder={notePlaceholder}
