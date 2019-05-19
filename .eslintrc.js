@@ -24,7 +24,7 @@ module.exports = {
     'max-len': 'off',
     'no-restricted-syntax': 'off',
     'no-underscore-dangle': 'off',
-    'no-unused-vars': 'error',
+    'no-unused-vars': 'warn',
     'arrow-parens': 'off',
     'operator-linebreak': 'off',
     'implicit-arrow-linebreak': 'off',
