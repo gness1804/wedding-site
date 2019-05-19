@@ -71,8 +71,9 @@ const RSVP = () => {
   };
 
   const sendData = async () => {
+    const domain = process.env.NODE_ENV === 'development' ? 'http://localhost:8004' : 'https://flora-and-grahams-wedding.grahamnessler.now.sh';
     const url =
-      'https://flora-and-grahams-wedding.grahamnessler.now.sh/api/rsvpService.js';
+      `${domain}/api/rsvpService.js`;
     if (!firstName || !lastName) {
       alert(invalidInputError);
       return;

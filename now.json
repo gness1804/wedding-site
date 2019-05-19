@@ -27,7 +27,9 @@
       "src": "/api/(.*)",
       "dest": "/api/$1",
       "headers": {
-        "access-control-allow-origin": "*"
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST",
+        "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept"
       },
       "methods": [
         "POST",
