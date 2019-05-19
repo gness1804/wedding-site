@@ -17,9 +17,18 @@ const handleOutput = (error, stdout, stderr) => {
   process.stderr.write(stderr);
 };
 
-execSync(
-  `now -e ACCESS_CODE="${process.env.ACCESS_CODE}" -e DEV_ACCESS_CODE="${
-    process.env.DEV_ACCESS_CODE
-  }" -e DATABASE="${process.env.DATABASE}"`,
-  handleOutput,
-);
+if (process.argv[2] === '-d') {
+  execSync(
+    `now -e ACCESS_CODE="${process.env.ACCESS_CODE}" -e DEV_ACCESS_CODE="${
+      process.env.DEV_ACCESS_CODE
+    }" -e DATABASE="${process.env.DATABASE}" -d`,
+    handleOutput,
+  );
+} else {
+  execSync(
+    `now -e ACCESS_CODE="${process.env.ACCESS_CODE}" -e DEV_ACCESS_CODE="${
+      process.env.DEV_ACCESS_CODE
+    }" -e DATABASE="${process.env.DATABASE}"`,
+    handleOutput,
+  );
+}

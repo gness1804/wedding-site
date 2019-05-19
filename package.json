@@ -34,6 +34,7 @@
     "stylelint:fix": "npm run stylelint --fix",
     "prettier": "prettier --write src/**/** src/* api/**/**",
     "deploy": "node scripts/deploy.js",
+    "deploy:debug": "node scripts/deploy.js -d",
     "lambda-debug": "now-lambda",
     "eject": "react-scripts eject"
   },
