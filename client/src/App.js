@@ -33,18 +33,12 @@ const App = () => {
 
   const loadContent = async () => {
     try {
-      const contentUrl =
-        process.env.NODE_ENV !== 'development'
-          ? 'https://flora-and-grahams-wedding.grahamnessler.now.sh/server/contentService.js'
-          : '/api/v1/content/page-content';
+      const contentUrl = 'https://flora-and-grahams-wedding.grahamnessler.now.sh/server/contentService.js';
       const contentRes = await axios.get(contentUrl);
 
       dispatch(getPageContentCreator(contentRes.data));
 
-      const datesUrl =
-        process.env.NODE_ENV !== 'development'
-          ? 'https://flora-and-grahams-wedding.grahamnessler.now.sh/server/datesService.js'
-          : '/api/v1/content/dates';
+      const datesUrl = 'https://flora-and-grahams-wedding.grahamnessler.now.sh/server/datesService.js';
       const datesRes = await axios.get(datesUrl);
 
       dispatch(getDatesCreator(datesRes.data));
