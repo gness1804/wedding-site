@@ -28,7 +28,7 @@
     "now-build": "react-scripts build",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom --no-watch",
-    "snapshots:client": "npm run test -- -u",
+    "snapshots": "npm run test -- -u",
     "lint": "eslint .",
     "stylelint": "stylelint src/**/*.css",
     "stylelint:fix": "npm run stylelint --fix",

@@ -1,4 +1,4 @@
-/* global it */
+/* global it, describe, expect, jest */
 
 /* eslint-disable-next-line no-unused-vars */
 import React from 'react';
