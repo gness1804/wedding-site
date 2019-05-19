@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "dotenv": "^7.0.0",
     "nodemon": "^1.18.11",
     "eslint": "5.12.0",
     "babel-eslint": "9.0.0",
@@ -32,7 +33,7 @@
     "prettier:client": "cd client && npm run prettier && cd -",
     "prettier:server": "cd server && npm run prettier && cd -",
     "prettier": "npm run prettier:root && npm run prettier:client && npm run prettier:server",
-    "deploy": "now",
+    "deploy": "node scripts/deploy.js",
     "deploy:debug": "now -d",
     "lambda-debug": "now-lambda"
   },
