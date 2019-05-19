@@ -24,6 +24,8 @@
   "scripts": {
     "reset": "npm prune && npm install",
     "dev": "react-scripts start",
+    "now-dev": "react-scripts start",
+    "now-build": "react-scripts build",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom --no-watch",
     "snapshots:client": "npm run test -- -u",

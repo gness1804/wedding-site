@@ -8,9 +8,32 @@
       "config": {
         "distDir": "build"
       }
+    },
+    {
+      "src": "/api/contentService.js",
+      "use": "@now/node"
+    },
+    {
+      "src": "/api/datesService.js",
+      "use": "@now/node"
+    },
+    {
+      "src": "/api/rsvpService.js",
+      "use": "@now/node"
     }
   ],
   "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1",
+      "headers": {
+        "access-control-allow-origin": "*"
+      },
+      "methods": [
+        "POST",
+        "GET"
+      ]
+    },
     {
       "src": "/static/(.*)",
       "headers": {
