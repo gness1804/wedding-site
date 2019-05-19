@@ -32,15 +32,16 @@ const App = () => {
 
   const loadContent = async () => {
     try {
-      const domain = process.env.NODE_ENV === 'development' ? 'http://localhost:8004' : 'https://flora-and-grahams-wedding.grahamnessler.now.sh';
-      const contentUrl =
-        `${domain}/api/contentService.js`;
+      const domain =
+        process.env.NODE_ENV === 'development'
+          ? 'http://localhost:8004'
+          : 'https://flora-and-grahams-wedding.grahamnessler.now.sh';
+      const contentUrl = `${domain}/api/contentService.js`;
       const contentRes = await axios.get(contentUrl);
 
       dispatch(getPageContentCreator(contentRes.data));
 
-      const datesUrl =
-        `${domain}/api/datesService.js`;
+      const datesUrl = `${domain}/api/datesService.js`;
       const datesRes = await axios.get(datesUrl);
 
       dispatch(getDatesCreator(datesRes.data));
