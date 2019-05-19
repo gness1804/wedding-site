@@ -3,11 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "dotenv": "^7.0.0",
-    "nodemon": "^1.18.11",
-    "eslint": "5.12.0",
     "babel-eslint": "9.0.0",
-    "eslint-config-airbnb": "^17.1.0"
+    "dotenv": "^7.0.0",
+    "eslint": "5.12.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "express": "^4.16.4",
+    "micro": "^9.3.3",
+    "mongoose": "5.4.23",
+    "nodemon": "^1.18.11"
   },
   "scripts": {
     "reset": "npm prune && npm install",
@@ -20,7 +26,6 @@
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "dev:server": "cd client && npm run build && cd .. && npm run start",
     "start": "nodemon server/app.js",
-    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
     "test": "npm run test:client && npm run test:server",
     "test:client": "cd client && npm run test && cd -",
     "test:server": "cd server && npm run test && cd -",
