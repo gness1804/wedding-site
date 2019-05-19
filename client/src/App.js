@@ -33,12 +33,14 @@ const App = () => {
 
   const loadContent = async () => {
     try {
-      const contentUrl = 'https://flora-and-grahams-wedding.grahamnessler.now.sh/server/contentService.js';
+      const contentUrl =
+        'https://flora-and-grahams-wedding.grahamnessler.now.sh/api/contentService.js';
       const contentRes = await axios.get(contentUrl);
 
       dispatch(getPageContentCreator(contentRes.data));
 
-      const datesUrl = 'https://flora-and-grahams-wedding.grahamnessler.now.sh/server/datesService.js';
+      const datesUrl =
+        'https://flora-and-grahams-wedding.grahamnessler.now.sh/api/datesService.js';
       const datesRes = await axios.get(datesUrl);
 
       dispatch(getDatesCreator(datesRes.data));
