@@ -24,8 +24,8 @@ const Header = () => {
 
   const { header } = content;
 
-  const daysUntilChinaEvent = Math.floor(calcCountDownDate(dates.austinEvent));
-  const daysUntilAustinEvent = Math.floor(calcCountDownDate(dates.chinaEvent));
+  const daysUntilChinaEvent = Math.floor(calcCountDownDate(dates.chinaEvent));
+  const daysUntilAustinEvent = Math.floor(calcCountDownDate(dates.austinEvent));
 
   if (daysUntilChinaEvent && daysUntilAustinEvent) {
     counterElem = (
@@ -54,6 +54,7 @@ const Header = () => {
 
   // TODO: hide ceremony and reception links
   // Replace with links to new pages for Austin and Beijing celebrations
+  // Also commented out Our Story links; need to revive them once the page is built
   const { home, ceremony, reception, rsvp, ourStory } = header.links;
   const linksElem = (
     <div className="nav-content header-links">
@@ -94,7 +95,7 @@ const Header = () => {
             {rsvp.text}
           </Link>
         </li>
-        <li className="tab">
+        {/* <li className="tab">
           <Link
             className={`${mdl.colors.mainText}`}
             to={ourStory.url}
@@ -102,7 +103,7 @@ const Header = () => {
           >
             {ourStory.text}
           </Link>
-        </li>
+        </li> */}
       </ul>
 
       <ul className="center header-links-mobile">
@@ -126,11 +127,11 @@ const Header = () => {
             <i className="material-icons">person_add</i>
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link to={ourStory.url} title={ourStory.text}>
             <i className="material-icons">library_books</i>
           </Link>
-        </li>
+        </li> */}
       </ul>
     </div>
   );
