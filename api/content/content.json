@@ -31,7 +31,7 @@
     "mainPicAltText": "Flora and I on the Texas A&M University campus, Jan. 2019.",
     "mainPicDescription": "Flora and I on the Texas A&M University campus, Jan. 2019.",
     "introText": "### 你 好 and welcome everyone!",
-    "detailsText": "We are thrilled to be tying the knot soon and hope that each and every one of you will be able to join us. \n\n Our celebration will consist of two events: a ceremony and reception in Flora's home city of Beijing, China, and a dinner party (really a second reception) in Austin, Texas, USA, where we both reside. Due to logistical constraints, only Flora's relatives living in China and Graham's close family members will be able to attend the Beijing celebration. However, if you are reading this, you probably have received or will soon receive an invitation to the Austin celebration. \n\n As we take this first step in our journey together as husband and wife, we look forward to recognizing the proverbial village of people who made this day possible. That's you! ",
+    "detailsText": "We are thrilled to be tying the knot soon and hope that each and every one of you will be able to join us. \n\n Our celebration will consist of two events: a ceremony and reception in Flora's home city of Beijing, China, and a dinner party (really a second reception) in Austin, Texas, USA, where we both reside. Due to logistical constraints, only Flora's relatives and friends living in China and Graham's close family members will be able to attend the Beijing celebration. However, if you are reading this, you probably have received or will soon receive an invitation to the Austin celebration. \n\n As we take this first step in our journey together as husband and wife, we look forward to recognizing the proverbial village of people who made this day possible. That's you! ",
     "callToAction": "Come out and help us celebrate! Be sure to **[RSVP](/rsvp)** for the Austin celebration (those attending the Beijing celebration will RSVP through a different avenue)."
   },
   "rsvp": {
@@ -46,7 +46,7 @@
     "accessCodeErrorMessage": "Wrong access code. You should have received an access code in your wedding invitation. If you have lost or do not remember it, please contact Flora or Graham.",
     "altAccessCodeErrorMessage": "Sorry, but something went wrong on our end. Please try again later.",
     "confirmationQuery": "#### Can you make our celebration at [Steiner Ranch Steakhouse](https://www.steinersteakhouse.com/) in Austin, TX, on {{date}}?",
-    "successfulSubmitMessage": "Congrats! You have sucessfully submitted your RSVP. If you have any\n          further questions, please don't hesitate to reach out to Flora or\n          Graham.",
+    "successfulSubmitMessage": "Congrats! You have successfully submitted your RSVP. If you have any\n          further questions, please don't hesitate to reach out to Flora or\n          Graham.",
     "invalidInputError": "Oops! You must enter in your first name, last name, and entrée selection. Please try again.",
     "entreeSelectionInstructions": "Please select your entrée.",
     "entreeOptions": [
