@@ -24,10 +24,10 @@ const Header = () => {
 
   const { header } = content;
 
-  const daysUntilCeremony = Math.floor(calcCountDownDate(dates.ceremony));
-  const daysUntilReception = Math.floor(calcCountDownDate(dates.reception));
+  const daysUntilChinaEvent = Math.floor(calcCountDownDate(dates.austinEvent));
+  const daysUntilAustinEvent = Math.floor(calcCountDownDate(dates.chinaEvent));
 
-  if (daysUntilCeremony && daysUntilReception) {
+  if (daysUntilChinaEvent && daysUntilAustinEvent) {
     counterElem = (
       <div
         className={`counter-elem card center z-depth-2 ${mdl.colors.primary} ${
@@ -36,16 +36,16 @@ const Header = () => {
       >
         <ReactMarkdown
           className={`${mdl.colors.mainText} ${mdl.text.mainShadow}`}
-          source={header.counterWedding.replace(
+          source={header.counterAustinEvent.replace(
             '{{counter}}',
-            daysUntilCeremony,
+            daysUntilChinaEvent,
           )}
         />
         <ReactMarkdown
           className={`${mdl.colors.mainText} ${mdl.text.mainShadow}`}
           source={header.counterReception.replace(
             '{{counter}}',
-            daysUntilReception,
+            daysUntilAustinEvent,
           )}
         />
       </div>
