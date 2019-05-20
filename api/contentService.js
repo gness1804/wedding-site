@@ -4,8 +4,13 @@ const util = require('util');
 
 const promisifiedReadFile = util.promisify(readFile);
 
-const datesService = (req, res) => {
-  const file = path.join(__dirname, './content/dates.json');
+/**
+ * serves up JSON content for the site
+ * @param {object} req - the express req object
+ * @param {object} res - the express res object
+ */
+const contentService = (req, res) => {
+  const file = path.join(__dirname, './content/content.json');
   promisifiedReadFile(file, 'utf-8')
     .then(result => res.end(result))
     .catch(err =>
@@ -16,4 +21,4 @@ const datesService = (req, res) => {
     );
 };
 
-module.exports = datesService;
+module.exports = contentService;

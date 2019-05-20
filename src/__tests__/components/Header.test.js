@@ -1,14 +1,14 @@
-/* global it */
+/* global it, describe, expect, jest */
 
 /* eslint-disable-next-line no-unused-vars */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 /* eslint-disable-next-line no-unused-vars */
-import App from '../../components/Home';
+import App from '../../components/Header';
 import SiteContext from '../../context';
 
-describe('Home.', () => {
+describe('Header.', () => {
   const state = {
     pageContent: {},
     dates: {},
@@ -26,7 +26,7 @@ describe('Home.', () => {
     ReactDOM.unmountComponentAtNode(div);
   });
 
-  it('renders correctly without content values.', () => {
+  it('renders correctly without dates or content values.', () => {
     const tree = renderer
       .create(
         <SiteContext.Provider value={{ state, dispatch }}>

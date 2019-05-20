@@ -24,11 +24,12 @@ module.exports = {
     'max-len': 'off',
     'no-restricted-syntax': 'off',
     'no-underscore-dangle': 'off',
-    'no-unused-vars': 'error',
+    'no-unused-vars': 'warn',
     'arrow-parens': 'off',
     'operator-linebreak': 'off',
     'implicit-arrow-linebreak': 'off',
     'function-paren-newline': 'off',
+    'object-curly-newline': 'off',
     // React-specific rules: delete if not using React
     'react/prefer-stateless-function': 'off',
     'react/jsx-filename-extension': 'off',

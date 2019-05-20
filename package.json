@@ -3,38 +3,43 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "nodemon": "^1.18.11",
-    "eslint": "5.12.0",
+    "axios": "^0.18.0",
     "babel-eslint": "9.0.0",
-    "eslint-config-airbnb": "^17.1.0"
+    "dotenv": "^7.0.0",
+    "eslint": "5.12.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "express": "^4.16.4",
+    "micro": "^9.3.3",
+    "mongoose": "5.4.23",
+    "nodemon": "^1.18.11",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-markdown": "^4.0.8",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "2.1.8"
   },
   "scripts": {
     "reset": "npm prune && npm install",
-    "add:client": "cd client && npm run reset && cd -",
-    "add:server": "cd server && npm run reset && cd -",
-    "add:root": "npm run reset",
-    "add": "npm run add:root && npm run add:client && npm run add:server",
-    "client": "cd client && npm run start",
-    "server": "nodemon server.js",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-    "dev:server": "cd client && npm run build && cd .. && npm run start",
-    "start": "nodemon server/app.js",
-    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
-    "test": "npm run test:client && npm run test:server",
-    "test:client": "cd client && npm run test && cd -",
-    "test:server": "cd server && npm run test && cd -",
-    "snapshots:client": "cd client && npm run test -- -u ; cd -",
-    "lint": "eslint scripts && npm run lint:server && npm run lint:client",
-    "lint:server": "cd server && npm run lint && cd -",
-    "lint:client": "cd client && npm run lint && cd -",
-    "stylelint": "cd client && npm run stylelint && cd -",
-    "prettier:root": "prettier --write scripts/*.js",
-    "prettier:client": "cd client && npm run prettier && cd -",
-    "prettier:server": "cd server && npm run prettier && cd -",
-    "prettier": "npm run prettier:root && npm run prettier:client && npm run prettier:server",
-    "deploy": "now",
-    "deploy:debug": "now -d",
-    "lambda-debug": "now-lambda"
+    "dev": "concurrently --kill-others-on-fail \"npm run lambda-debug\" \"now dev\"",
+    "now-dev": "react-scripts start",
+    "now-build": "react-scripts build",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom --no-watch",
+    "snapshots": "npm run test -- -u",
+    "lint": "eslint .",
+    "stylelint": "stylelint src/**/*.css",
+    "stylelint:fix": "npm run stylelint --fix",
+    "prettier": "prettier --write src/**/** src/* api/**/**",
+    "deploy": "node scripts/deploy.js",
+    "deploy:debug": "node scripts/deploy.js -d",
+    "lambda-debug": "now-lambda",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
   },
   "browserslist": [
     ">0.2%",
@@ -45,7 +50,10 @@
   "devDependencies": {
     "concurrently": "^4.1.0",
     "eslint-plugin-import": "^2.17.2",
+    "jest": "23.6.0",
     "now-lambda-runner": "^3.3.0",
-    "prettier": "^1.17.1"
+    "prettier": "1.16.4",
+    "react-test-renderer": "^16.8.6",
+    "stylelint": "^9.10.1"
   }
 }

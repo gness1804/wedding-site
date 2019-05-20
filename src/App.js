@@ -2,7 +2,6 @@
 import React, { useContext, useReducer, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import axios from 'axios';
-/* eslint-disable-next-line no-unused-vars */
 import SiteContext from './context';
 import reducer from './reducer';
 import { getPageContent, getDates } from './actions';
@@ -33,18 +32,16 @@ const App = () => {
 
   const loadContent = async () => {
     try {
-      const contentUrl =
-        process.env.NODE_ENV !== 'development'
-          ? 'https://flora-and-grahams-wedding.grahamnessler.now.sh/server/contentService.js'
-          : '/api/v1/content/page-content';
+      const domain =
+        process.env.NODE_ENV === 'development'
+          ? 'http://localhost:8004'
+          : 'https://flora-and-grahams-wedding.grahamnessler.now.sh';
+      const contentUrl = `${domain}/api/contentService.js`;
       const contentRes = await axios.get(contentUrl);
 
       dispatch(getPageContentCreator(contentRes.data));
 
-      const datesUrl =
-        process.env.NODE_ENV !== 'development'
-          ? 'https://flora-and-grahams-wedding.grahamnessler.now.sh/server/datesService.js'
-          : '/api/v1/content/dates';
+      const datesUrl = `${domain}/api/datesService.js`;
       const datesRes = await axios.get(datesUrl);
 
       dispatch(getDatesCreator(datesRes.data));

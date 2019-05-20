@@ -1,43 +1,47 @@
-/* global it */
+/* global it, describe, expect */
 
 /* eslint-disable-next-line no-unused-vars */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 /* eslint-disable-next-line no-unused-vars */
-import App from '../../components/Header';
-import SiteContext from '../../context';
+import { BrowserRouter as Router } from 'react-router-dom';
+import App from '../../components/NotFound';
 
-describe('Header.', () => {
-  const state = {
-    pageContent: {},
-    dates: {},
-  };
-  const dispatch = jest.fn();
-
+describe('NotFound.', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
-      <SiteContext.Provider value={{ state, dispatch }}>
+      <Router>
         <App />
-      </SiteContext.Provider>,
+      </Router>,
       div,
     );
     ReactDOM.unmountComponentAtNode(div);
   });
 
-  it('renders correctly without dates or content values.', () => {
+  it('renders correctly.', () => {
     const tree = renderer
       .create(
-        <SiteContext.Provider value={{ state, dispatch }}>
+        <Router>
           <App />
-        </SiteContext.Provider>,
+        </Router>,
       )
       .toJSON();
     expect(tree).toMatchInlineSnapshot(`
-<h1>
-  Loading...
-</h1>
+<div
+  className="card page-component not-found z-depth-1 red darken-4"
+>
+  <h1>
+    Sorry, this page does not exist. Please try again.
+  </h1>
+  <a
+    href="/"
+    onClick={[Function]}
+  >
+    Home
+  </a>
+</div>
 `);
   });
 });

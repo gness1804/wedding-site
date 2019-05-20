@@ -1,20 +1,25 @@
-/* global it */
+/* global it, describe, expect */
 
 /* eslint-disable-next-line no-unused-vars */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 /* eslint-disable-next-line no-unused-vars */
-import { BrowserRouter as Router } from 'react-router-dom';
-import App from '../../components/NotFound';
+import App from '../../components/RSVP';
+import SiteContext from '../../context';
 
-describe('NotFound.', () => {
+describe('RSVP.', () => {
+  const state = {
+    pageContent: {},
+    dates: {},
+  };
+
   it('renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
-      <Router>
+      <SiteContext.Provider value={{ state }}>
         <App />
-      </Router>,
+      </SiteContext.Provider>,
       div,
     );
     ReactDOM.unmountComponentAtNode(div);
@@ -23,25 +28,15 @@ describe('NotFound.', () => {
   it('renders correctly.', () => {
     const tree = renderer
       .create(
-        <Router>
+        <SiteContext.Provider value={{ state }}>
           <App />
-        </Router>,
+        </SiteContext.Provider>,
       )
       .toJSON();
     expect(tree).toMatchInlineSnapshot(`
-<div
-  className="card page-component not-found z-depth-1 red darken-4"
->
-  <h1>
-    Sorry, this page does not exist. Please try again.
-  </h1>
-  <a
-    href="/"
-    onClick={[Function]}
-  >
-    Home
-  </a>
-</div>
+<h1>
+  Loading...
+</h1>
 `);
   });
 });
