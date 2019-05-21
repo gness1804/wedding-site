@@ -23,8 +23,8 @@
   },
   "scripts": {
     "reset": "npm prune && npm install",
-    "dev": "concurrently --kill-others-on-fail \"npm run lambda-debug\" \"now dev\"",
-    "now-dev": "react-scripts start",
+    "dev": "react-scripts start",
+    "now-dev": "PORT=3000 react-scripts start",
     "now-build": "react-scripts build",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom --no-watch",
