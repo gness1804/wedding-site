@@ -28,8 +28,8 @@
   },
   "home": {
     "mainPic": "https://drive.google.com/uc?id=1vu9VWM4aZhF9pp5MWGyX9Qg7YjaevU_0",
-    "mainPicAltText": "Flora and I on the Texas A&M University campus, Jan. 2019.",
-    "mainPicDescription": "Flora and I on the Texas A&M University campus, Jan. 2019.",
+    "mainPicAltText": "Flora and Graham on the Texas A&M University campus, Jan. 2019.",
+    "mainPicDescription": "Flora and Graham on the Texas A&M University campus, Jan. 2019.",
     "introText": "### 你 好 and welcome everyone!",
     "detailsText": "We are thrilled to be tying the knot soon and hope that each and every one of you will be able to join us. \n\n Our celebration will consist of two events: a ceremony and reception in Flora's home city of Beijing, China, and a dinner party (really a second reception) in Austin, Texas, USA, where we both reside. Due to logistical constraints, only Flora's relatives and friends living in China and Graham's close family members will be able to attend the Beijing celebration. However, if you are reading this, you probably have received or will soon receive an invitation to the Austin celebration. \n\n As we take this first step in our journey together as husband and wife, we look forward to recognizing the proverbial village of people who made this day possible. That's you! ",
     "callToAction": "Come out and help us celebrate! Be sure to **[RSVP](/rsvp)** for the Austin celebration (those attending the Beijing celebration will RSVP through a different avenue)."
@@ -108,5 +108,10 @@
     ],
     "noteInstructions": "If you have anything you would like to share with the bride and groom, please write it here.",
     "notePlaceholder": "Your thoughts..."
+  },
+  "ourStory": {
+    "title": "Our Story",
+    "mainImage": "https://drive.google.com/uc?id=1YzM-orhxOXly4laPNF6v5hZi5j2EczjYrw",
+    "mainText": "Flora and Graham grew up on opposite ends of the earth"
   }
 }
