@@ -69,3 +69,10 @@ select {
 .btn:hover {
   background-color: #2f46ff;
 }
+
+@media (min-width: 900px) {
+  .main-pic {
+    max-width: 70%;
+    margin: 0 auto;
+  }
+}

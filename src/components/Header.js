@@ -52,7 +52,7 @@ const Header = () => {
     );
   }
 
-  // TODO: hide ceremony and reception links
+  // TODO:
   // Replace with links to new pages for Austin and Beijing celebrations
   const { home, ceremony, reception, rsvp, ourStory } = header.links;
   const linksElem = (
