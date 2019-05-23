@@ -23,7 +23,7 @@
   },
   "scripts": {
     "reset": "npm prune && npm install",
-    "dev": "react-scripts start",
+    "dev": "concurrently \"npm run lambda-debug\" \"react-scripts start\"",
     "now-dev": "PORT=3000 react-scripts start",
     "now-build": "react-scripts build",
     "build": "react-scripts build",
