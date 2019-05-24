@@ -2,6 +2,7 @@ import React from 'react';
 import mdl from '../design/masterDesignLanguage';
 import '../styles/Reception.css';
 
+// TODO: add title to iframe and site copy from content.json
 const Reception = () => {
   const mapKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
   return (
