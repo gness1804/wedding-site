@@ -1,8 +1,8 @@
 {
   "header": {
     "title": "Flora and Graham's Wedding",
-    "counterWedding": "### **{{counter}}** days to go to the [ceremony](/ceremony)!!",
-    "counterReception": "### **{{counter}}** days to go to the [reception](/reception)!!",
+    "counterAustinEvent": "### **{{counter}}** days to go to the Beijing celebration!!",
+    "counterReception": "### **{{counter}}** days to go to the Austin celebration!!",
     "links": {
       "home": {
         "text": "Home",
@@ -28,14 +28,14 @@
   },
   "home": {
     "mainPic": "https://drive.google.com/uc?id=1vu9VWM4aZhF9pp5MWGyX9Qg7YjaevU_0",
-    "mainPicAltText": "Flora and I on the Texas A&M University campus, Jan. 2019.",
-    "mainPicDescription": "Flora and I on the Texas A&M University campus, Jan. 2019.",
+    "mainPicAltText": "Flora and Graham on the Texas A&M University campus, Jan. 2019.",
+    "mainPicDescription": "Flora and Graham on the Texas A&M University campus, Jan. 2019.",
     "introText": "### 你 好 and welcome everyone!",
-    "detailsText": "We are thrilled to be tying the knot soon and hope that each and every one of you will be able to join us. \n\n Our ceremony will take place in Flora's home city of Beijing, China. Due to logistical constraints, only close family members will attend. However, we will also have a reception in Austin, Texas, where we live.",
-    "callToAction": "Come out and help us celebrate! Be sure to **[RSVP](/rsvp)**."
+    "detailsText": "We are thrilled to be tying the knot soon and hope that each and every one of you will be able to join us. \n\n Our celebration will consist of two events: a ceremony and reception in Flora's home city of Beijing, China, on **October 26, 2019**, and a dinner party (really a second reception) in Austin, Texas, USA, where we both reside, on **January 12, 2020**. Due to logistical constraints, only Flora's relatives and friends living in China and Graham's close family members will be able to attend the Beijing celebration. However, if you are reading this, you probably have received or will soon receive an invitation to the Austin celebration. \n\n As we take this first step in [our journey together as husband and wife](/our-story), we look forward to recognizing the proverbial village of people who made this day possible. That's you!",
+    "callToAction": "Come out and help us celebrate! Be sure to **[RSVP](/rsvp)** for the Austin celebration (those attending the Beijing celebration will RSVP through a different avenue)."
   },
   "rsvp": {
-    "title": "RSVP for Reception",
+    "title": "RSVP for Austin Celebration",
     "generalInstructions": "Please fill our a new form for each member of your party. For example, if you are a family of three, please complete this form once for each of the three members of your family.",
     "isComingYes": "Yes! Count me in!",
     "isComingNo": "I am sorry, but I must send my regrets.",
@@ -46,7 +46,7 @@
     "accessCodeErrorMessage": "Wrong access code. You should have received an access code in your wedding invitation. If you have lost or do not remember it, please contact Flora or Graham.",
     "altAccessCodeErrorMessage": "Sorry, but something went wrong on our end. Please try again later.",
     "confirmationQuery": "#### Can you make our celebration at [Steiner Ranch Steakhouse](https://www.steinersteakhouse.com/) in Austin, TX, on {{date}}?",
-    "successfulSubmitMessage": "Congrats! You have sucessfully submitted your RSVP. If you have any\n          further questions, please don't hesitate to reach out to Flora or\n          Graham.",
+    "successfulSubmitMessage": "Congrats! You have successfully submitted your RSVP. If you have any\n          further questions, please don't hesitate to reach out to Flora or\n          Graham.",
     "invalidInputError": "Oops! You must enter in your first name, last name, and entrée selection. Please try again.",
     "entreeSelectionInstructions": "Please select your entrée.",
     "entreeOptions": [
@@ -108,5 +108,12 @@
     ],
     "noteInstructions": "If you have anything you would like to share with the bride and groom, please write it here.",
     "notePlaceholder": "Your thoughts..."
+  },
+  "ourStory": {
+    "title": "Our Story",
+    "subtitle": "### \"Love Never Dies\"",
+    "mainImage": "https://drive.google.com/uc?id=1kp5xFFqhGqDt75OWOU4mnDQ6lqC4K4Te",
+    "mainImageAltText": "Flora and Graham at the Lady Bird Wildflower Center.",
+    "mainText": "Graham and Flora's story began at a coffee shop in Austin, Texas, in October 2018. Over a lively conversation and hot teas, each quickly realized that there was something special about the other. Following this first date, the pair discovered more mutual interests and a deep interpersonal compatibility in the course of hikes, trips to the movies, and dinners, many consisting of Flora's wonderful Chinese home cooking. The couple also quickly discovered their shared love of history, and Flora is always teaching Graham something new about Chinese history. The highlight of this early dating phase was going to see the appropriately-named opera \"Love Never Dies.\" Then, each met one of the other's parents over the holidays when they were in town. \n\n Around the time of the Chinese New Year, in early February, both came to realize that they had found their special someone. From there, plans were formulated, the other parents were met, and the idea to get married in Flora's hometown of Beijing was hatched. However, in light of the logistical and financial difficulties posed by travel to China for the couple's North American friends and relatives, they decided that a second celebration in their city of residence, Austin, was needed. Hence, the Austin celebration! [RSVP now](/rsvp) if you have not already! \n\n Flora is an attorney in Austin specializing in immigration. She grew up in Beijing and came to the United States about 15 years ago. She got her LLM degree from Indiana University - Bloomington and her JD degree from Penn State University. She moved to Austin about 6 years ago. \n\n Graham was born and raised in Bryan/College Station, Texas (go Aggies!), and attended the College of William and Mary in Virginia before obtaining his PhD in History from the University of Michigan. He proceeded to live and teach in several different US states before deciding to change careers into software development. Fortuitously, he found a job in Austin, close to his father and his old hometown. He works as a web developer now and also enjoys side projects such as building this website and starting to learn Mandarin Chinese."
   }
 }

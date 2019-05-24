@@ -57,7 +57,7 @@ const RSVP = () => {
     noteInstructions,
   } = rsvp;
 
-  const { reception, receptionLong } = dates;
+  const { austinEvent, austinEventLong } = dates;
 
   const activateSuccessState = () => {
     setAccessCode('');
@@ -74,7 +74,7 @@ const RSVP = () => {
     const domain =
       process.env.NODE_ENV === 'development'
         ? 'http://localhost:8004'
-        : 'https://flora-and-grahams-wedding.grahamnessler.now.sh';
+        : `https://${window.location.host}`;
     const url = `${domain}/api/rsvpService.js`;
     if (!firstName || !lastName) {
       alert(invalidInputError);
@@ -136,7 +136,7 @@ const RSVP = () => {
 
   const ageSelectionElement = (
     <form action="#">
-      <h4>{ageSelectorInstructions.replace('{{date}}', reception)}</h4>
+      <h4>{ageSelectorInstructions.replace('{{date}}', austinEvent)}</h4>
       {ageSelectorOptions.map(opt => (
         <p key={opt.id}>
           <label>
@@ -237,7 +237,7 @@ const RSVP = () => {
         </form>
         <form action="#" className="confirmation-form">
           <ReactMarkdown
-            source={confirmationQuery.replace('{{date}}', receptionLong)}
+            source={confirmationQuery.replace('{{date}}', austinEventLong)}
             className="confirmation-details"
           />
           <p>

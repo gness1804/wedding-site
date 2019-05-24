@@ -24,10 +24,10 @@ const Header = () => {
 
   const { header } = content;
 
-  const daysUntilCeremony = Math.floor(calcCountDownDate(dates.ceremony));
-  const daysUntilReception = Math.floor(calcCountDownDate(dates.reception));
+  const daysUntilChinaEvent = Math.floor(calcCountDownDate(dates.chinaEvent));
+  const daysUntilAustinEvent = Math.floor(calcCountDownDate(dates.austinEvent));
 
-  if (daysUntilCeremony && daysUntilReception) {
+  if (daysUntilChinaEvent && daysUntilAustinEvent) {
     counterElem = (
       <div
         className={`counter-elem card center z-depth-2 ${mdl.colors.primary} ${
@@ -36,22 +36,24 @@ const Header = () => {
       >
         <ReactMarkdown
           className={`${mdl.colors.mainText} ${mdl.text.mainShadow}`}
-          source={header.counterWedding.replace(
+          source={header.counterAustinEvent.replace(
             '{{counter}}',
-            daysUntilCeremony,
+            daysUntilChinaEvent,
           )}
         />
         <ReactMarkdown
           className={`${mdl.colors.mainText} ${mdl.text.mainShadow}`}
           source={header.counterReception.replace(
             '{{counter}}',
-            daysUntilReception,
+            daysUntilAustinEvent,
           )}
         />
       </div>
     );
   }
 
+  // TODO:
+  // Replace with links to new pages for Austin and Beijing celebrations
   const { home, ceremony, reception, rsvp, ourStory } = header.links;
   const linksElem = (
     <div className="nav-content header-links">
@@ -65,7 +67,7 @@ const Header = () => {
             {home.text}
           </Link>
         </li>
-        <li className="tab">
+        {/* <li className="tab">
           <Link
             className={`${mdl.colors.mainText}`}
             to={ceremony.url}
@@ -73,8 +75,8 @@ const Header = () => {
           >
             {ceremony.text}
           </Link>
-        </li>
-        <li className="tab">
+        </li> */}
+        {/* <li className="tab">
           <Link
             className={`${mdl.colors.mainText}`}
             to={reception.url}
@@ -82,7 +84,7 @@ const Header = () => {
           >
             {reception.text}
           </Link>
-        </li>
+        </li> */}
         <li className="tab">
           <Link
             className={`${mdl.colors.mainText}`}
@@ -109,16 +111,16 @@ const Header = () => {
             <i className="material-icons">home</i>
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link to={ceremony.url} title={ceremony.text}>
             <i className="material-icons">account_balance</i>
           </Link>
-        </li>
-        <li>
+        </li> */}
+        {/* <li>
           <Link to={reception.url} title={reception.text}>
             <i className="material-icons">local_bar</i>
           </Link>
-        </li>
+        </li> */}
         <li>
           <Link to={rsvp.url} title={rsvp.text}>
             <i className="material-icons">person_add</i>

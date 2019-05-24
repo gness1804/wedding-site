@@ -1,6 +1,6 @@
 {
   "name": "wedding-site",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
@@ -23,8 +23,8 @@
   },
   "scripts": {
     "reset": "npm prune && npm install",
-    "dev": "concurrently --kill-others-on-fail \"npm run lambda-debug\" \"now dev\"",
-    "now-dev": "react-scripts start",
+    "dev": "concurrently \"npm run lambda-debug\" \"react-scripts start\"",
+    "now-dev": "PORT=3000 react-scripts start",
     "now-build": "react-scripts build",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom --no-watch",
