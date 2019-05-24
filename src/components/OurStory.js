@@ -41,7 +41,7 @@ const OurStory = () => {
         source={subtitle}
       />
       <div className={`card ${mdl.colors.whiteBackground}`}>
-        <div className="card-image main-pic">
+        <div className="card-image main-pic our-story-pic">
           <img src={mainImage} alt={mainImageAltText} />
         </div>
       </div>
