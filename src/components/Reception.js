@@ -5,7 +5,9 @@ import '../styles/Reception.css';
 const Reception = () => {
   const mapKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
   return (
-    <div className={`card page-component z-depth-1 center ${mdl.colors.primary}`}>
+    <div
+      className={`card page-component z-depth-1 center ${mdl.colors.primary}`}
+    >
       <p>I am the reception component.</p>
       {mapKey && (
         <iframe
