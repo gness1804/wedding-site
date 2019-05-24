@@ -13,17 +13,4 @@ describe('Reception.', () => {
     ReactDOM.render(<App />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
-
-  it('renders correctly.', () => {
-    const tree = renderer.create(<App />).toJSON();
-    expect(tree).toMatchInlineSnapshot(`
-<div
-  className="card page-component z-depth-1 red darken-4"
->
-  <p>
-    I am the reception component.
-  </p>
-</div>
-`);
-  });
 });
