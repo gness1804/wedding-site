@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import ReactMarkdown from 'react-markdown';
 import mdl from '../design/masterDesignLanguage';
 import SiteContext from '../context';
+import '../styles/OurStory.css';
 
 const OurStory = () => {
   const { state } = useContext(SiteContext);
@@ -18,7 +19,7 @@ const OurStory = () => {
     );
   }
 
-  const { title, mainImage, mainText, subtitle } = ourStory;
+  const { title, mainImage, mainText, subtitle, mainImageAltText } = ourStory;
 
   return (
     <div
@@ -33,10 +34,15 @@ const OurStory = () => {
       >
         {title}
       </h2>
-      <p>{subtitle}</p>
+      <ReactMarkdown
+        className={`${mdl.colors.mainText} ${mdl.text.mainShadow} ${
+          mdl.text.fonts.mainHeading
+        } our-story-subtitle`}
+        source={subtitle}
+      />
       <div className={`card ${mdl.colors.whiteBackground}`}>
         <div className="card-image main-pic">
-          <img src={mainImage} alt="" />
+          <img src={mainImage} alt={mainImageAltText} />
         </div>
       </div>
       <ReactMarkdown className={`${mdl.colors.whiteText}`} source={mainText} />
