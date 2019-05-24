@@ -35,7 +35,7 @@ const App = () => {
       const domain =
         process.env.NODE_ENV === 'development'
           ? 'http://localhost:8004'
-          : 'https://flora-and-grahams-wedding.grahamnessler.now.sh';
+          : `https://${window.location.host}`;
       const contentUrl = `${domain}/api/contentService.js`;
       const contentRes = await axios.get(contentUrl);
 
