@@ -84,7 +84,7 @@ const Header = () => {
           >
             {reception.text}
           </Link>
-        </li> */}
+        </li>
         <li className="tab">
           <Link
             className={`${mdl.colors.mainText}`}
@@ -94,7 +94,7 @@ const Header = () => {
             {rsvp.text}
           </Link>
         </li>
-        {/* <li className="tab">
+        <li className="tab">
           <Link
             className={`${mdl.colors.mainText}`}
             to={ourStory.url}
@@ -102,7 +102,7 @@ const Header = () => {
           >
             {ourStory.text}
           </Link>
-        </li> */}
+        </li>
       </ul>
 
       <ul className="center header-links-mobile">
@@ -120,17 +120,17 @@ const Header = () => {
           <Link to={reception.url} title={reception.text}>
             <i className="material-icons">local_bar</i>
           </Link>
-        </li> */}
+        </li>
         <li>
           <Link to={rsvp.url} title={rsvp.text}>
             <i className="material-icons">person_add</i>
           </Link>
         </li>
-        {/* <li>
+        <li>
           <Link to={ourStory.url} title={ourStory.text}>
             <i className="material-icons">library_books</i>
           </Link>
-        </li> */}
+        </li>
       </ul>
     </div>
   );
