@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import ReactMarkdown from 'react-markdown';
 import mdl from '../design/masterDesignLanguage';
 import SiteContext from '../context';
+import Img from './legos/Img';
 import '../styles/Home.css';
 
 const Home = () => {
@@ -26,9 +27,7 @@ const Home = () => {
       }`}
     >
       <div className={`card ${mdl.colors.whiteBackground}`}>
-        <div className="card-image main-pic">
-          <img src={home.mainPic} alt={home.mainPicAltText} />
-        </div>
+        <Img src={home.mainPic} altText={home.mainPicAltText} />
         <div className="card-content">
           <p>{home.mainPicDescription}</p>
         </div>

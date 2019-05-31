@@ -3,6 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import mdl from '../design/masterDesignLanguage';
 import SiteContext from '../context';
 import H2 from './legos/H2';
+import Img from './legos/Img';
 import '../styles/Reception.css';
 
 const Reception = () => {
@@ -31,10 +32,7 @@ const Reception = () => {
       }`}
     >
       <H2 text={title} />
-      <ReactMarkdown
-        className={`${mdl.colors.mainText}`}
-        source={subtitle}
-      />
+      <ReactMarkdown className={`${mdl.colors.mainText}`} source={subtitle} />
       {process.env.NODE_ENV !== 'development' && mapKey && (
         <iframe
           className="google-map-container"
@@ -45,9 +43,7 @@ const Reception = () => {
           allowFullScreen
         />
       )}
-      <div className="card-image main-pic">
-        <img src={mainImage} alt={mainImageAltText} />
-      </div>
+      <Img src={mainImage} altText={mainImageAltText} />
     </div>
   );
 };
