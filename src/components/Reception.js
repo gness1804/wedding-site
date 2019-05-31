@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import mdl from '../design/masterDesignLanguage';
 import SiteContext from '../context';
+import H2 from './legos/H2';
 import '../styles/Reception.css';
 
 const Reception = () => {
@@ -28,13 +29,7 @@ const Reception = () => {
         mdl.colors.whiteText
       }`}
     >
-      <h2
-        className={`page-header-text ${mdl.colors.mainText} ${
-          mdl.text.mainShadow
-        } ${mdl.text.fonts.mainContent}`}
-      >
-        {title}
-      </h2>
+      <H2 text={title} />
       {process.env.NODE_ENV !== 'development' && mapKey && (
         <iframe
           className="google-map-container"
