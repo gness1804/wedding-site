@@ -118,6 +118,9 @@
   },
   "reception": {
     "title": "Austin Celebration",
-    "mapTitle": "Map of Steiner Ranch Steakhouse."
+    "mapTitle": "Map of Steiner Ranch Steakhouse.",
+    "subtitle": "### Steiner Ranch Steakhouse, Jan. 12, 2020, @ 4:00pm",
+    "mainImage": "https://www.steinersteakhouse.com/img/slides-1.jpg",
+    "mainImageAltText": "Vista from Steiner Ranch Steakhouse"
   }
 }
