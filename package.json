@@ -32,7 +32,7 @@
     "lint": "eslint .",
     "stylelint": "stylelint src/**/*.css",
     "stylelint:fix": "npm run stylelint --fix",
-    "prettier": "prettier --write src/**/** src/* api/**/**",
+    "prettier": "prettier --write src/**/**/** src/* src/**/** api/**/**",
     "deploy": "node scripts/deploy.js",
     "deploy:debug": "node scripts/deploy.js -d",
     "lambda-debug": "now-lambda",
