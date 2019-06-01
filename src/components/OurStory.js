@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import ReactMarkdown from 'react-markdown';
 import mdl from '../design/masterDesignLanguage';
 import SiteContext from '../context';
+import H2 from './legos/H2';
+import Img from './legos/Img';
 import '../styles/OurStory.css';
 
 const OurStory = () => {
@@ -27,13 +29,7 @@ const OurStory = () => {
         mdl.padding.mainPaddingAllSides
       }`}
     >
-      <h2
-        className={`page-header-text ${mdl.colors.mainText} ${
-          mdl.text.mainShadow
-        } ${mdl.text.fonts.mainContent}`}
-      >
-        {title}
-      </h2>
+      <H2 text={title} />
       <ReactMarkdown
         className={`${mdl.colors.mainText} ${mdl.text.mainShadow} ${
           mdl.text.fonts.mainHeading
@@ -41,9 +37,11 @@ const OurStory = () => {
         source={subtitle}
       />
       <div className={`card ${mdl.colors.whiteBackground}`}>
-        <div className="card-image main-pic our-story-pic">
-          <img src={mainImage} alt={mainImageAltText} />
-        </div>
+        <Img
+          src={mainImage}
+          altText={mainImageAltText}
+          styleClass="our-story-pic"
+        />
       </div>
       <ReactMarkdown className={`${mdl.colors.whiteText}`} source={mainText} />
     </div>

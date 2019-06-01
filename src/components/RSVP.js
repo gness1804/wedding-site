@@ -3,6 +3,8 @@ import axios from 'axios';
 import ReactMarkdown from 'react-markdown';
 import SiteContext from '../context';
 import mdl from '../design/masterDesignLanguage';
+import H2 from './legos/H2';
+import Button from './legos/Button';
 import '../styles/RSVP.css';
 
 const RSVP = () => {
@@ -159,13 +161,7 @@ const RSVP = () => {
       <div
         className={`card page-component z-depth-1 center ${mdl.colors.primary}`}
       >
-        <h2
-          className={`page-header-text ${mdl.colors.mainText} ${
-            mdl.text.mainShadow
-          } ${mdl.text.fonts.mainContent}`}
-        >
-          {title}
-        </h2>
+        <H2 text={title} />
         <p className={`submit-message ${mdl.colors.mainText}`}>
           {successfulSubmitMessage}
         </p>
@@ -179,13 +175,7 @@ const RSVP = () => {
         mdl.colors.primary
       } ${mdl.colors.whiteText}`}
     >
-      <h2
-        className={`page-header-text ${mdl.colors.mainText} ${
-          mdl.text.mainShadow
-        } ${mdl.text.fonts.mainContent}`}
-      >
-        {title}
-      </h2>
+      <H2 text={title} />
       <h4 className="general-instructions">{generalInstructions}</h4>
       <div className="forms-container">
         <form className="access-code-entry-form">
@@ -280,9 +270,7 @@ const RSVP = () => {
           onChange={e => setNote(e.target.value)}
         />
       </label>
-      <button className="btn waves-effect waves-light" onClick={sendData}>
-        Send <i className="material-icons right">send</i>
-      </button>
+      <Button onClick={sendData} text="Send" icon="send" title="Send" />
     </div>
   );
 };

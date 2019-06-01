@@ -24,19 +24,4 @@ describe('RSVP.', () => {
     );
     ReactDOM.unmountComponentAtNode(div);
   });
-
-  it('renders correctly.', () => {
-    const tree = renderer
-      .create(
-        <SiteContext.Provider value={{ state }}>
-          <App />
-        </SiteContext.Provider>,
-      )
-      .toJSON();
-    expect(tree).toMatchInlineSnapshot(`
-<h1>
-  Loading...
-</h1>
-`);
-  });
 });
