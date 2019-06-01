@@ -62,7 +62,7 @@ const Reception = () => {
         className={`${mdl.colors.whiteText}`}
         source={venueDescription}
       />
-      <Button onClick={goToRSVPPage} text="RSVP" />
+      <Button onClick={goToRSVPPage} text="RSVP" title="RSVP" />
     </div>
   );
 };

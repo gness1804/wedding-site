@@ -7,8 +7,9 @@ import mdl from '../../design/masterDesignLanguage';
  * @param {string} param0.text - the buton text
  * @param {string} [param0.icon=send|null] - optional icon to appear on the button
  * @param {string} [param0.styleClass] - optional class for styling
+ * @param {string} [param0.title] - optional title
  */
-const Button = ({ onClick, text, icon = '', styleClass = '' }) => {
+const Button = ({ onClick, text, icon = '', styleClass = '', title = '' }) => {
   let iconElem = null;
   if (icon === 'send') {
     iconElem = <i className="material-icons right">send</i>;
@@ -18,6 +19,7 @@ const Button = ({ onClick, text, icon = '', styleClass = '' }) => {
     <button
       className={`btn waves-effect waves-light ${styleClass}`}
       onClick={onClick}
+      title={title}
     >
       {text} {iconElem}
     </button>

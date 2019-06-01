@@ -270,7 +270,7 @@ const RSVP = () => {
           onChange={e => setNote(e.target.value)}
         />
       </label>
-      <Button onClick={sendData} text="Send" icon="send" />
+      <Button onClick={sendData} text="Send" icon="send" title="Send" />
     </div>
   );
 };
