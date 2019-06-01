@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import SiteContext from '../context';
 import mdl from '../design/masterDesignLanguage';
 import H2 from './legos/H2';
+import Button from './legos/Button';
 import '../styles/RSVP.css';
 
 const RSVP = () => {
@@ -269,9 +270,7 @@ const RSVP = () => {
           onChange={e => setNote(e.target.value)}
         />
       </label>
-      <button className="btn waves-effect waves-light" onClick={sendData}>
-        Send <i className="material-icons right">send</i>
-      </button>
+      <Button onClick={sendData} text="Send" icon="send" />
     </div>
   );
 };
