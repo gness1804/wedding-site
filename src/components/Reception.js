@@ -4,6 +4,7 @@ import mdl from '../design/masterDesignLanguage';
 import SiteContext from '../context';
 import H2 from './legos/H2';
 import Img from './legos/Img';
+import Button from './legos/Button';
 import '../styles/Reception.css';
 
 const Reception = () => {
@@ -32,6 +33,11 @@ const Reception = () => {
 
   const mapKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
+  const goToRSVPPage = () => {
+    const protocol = process.env.NODE_ENV === 'development' ? 'http://' : 'https://';
+    window.location.assign(`${protocol}${window.location.host}/rsvp`);
+  };
+
   return (
     <div
       className={`card page-component z-depth-1 center ${mdl.colors.primary} ${
@@ -55,6 +61,7 @@ const Reception = () => {
         className={`${mdl.colors.whiteText}`}
         source={venueDescription}
       />
+      <Button onClick={goToRSVPPage} text="RSVP" />
     </div>
   );
 };
