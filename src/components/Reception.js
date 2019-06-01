@@ -34,7 +34,8 @@ const Reception = () => {
   const mapKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
   const goToRSVPPage = () => {
-    const protocol = process.env.NODE_ENV === 'development' ? 'http://' : 'https://';
+    const protocol =
+      process.env.NODE_ENV === 'development' ? 'http://' : 'https://';
     window.location.assign(`${protocol}${window.location.host}/rsvp`);
   };
 
@@ -42,7 +43,7 @@ const Reception = () => {
     <div
       className={`card page-component z-depth-1 center ${mdl.colors.primary} ${
         mdl.colors.whiteText
-      }`}
+      } ${mdl.padding.mainPaddingAllSides}`}
     >
       <H2 text={title} />
       <ReactMarkdown className={`${mdl.colors.mainText}`} source={subtitle} />
