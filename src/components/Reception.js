@@ -21,7 +21,14 @@ const Reception = () => {
     );
   }
 
-  const { title, mapTitle, subtitle, mainImage, mainImageAltText } = reception;
+  const {
+    title,
+    mapTitle,
+    subtitle,
+    mainImage,
+    mainImageAltText,
+    venueDescription,
+  } = reception;
 
   const mapKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
@@ -44,6 +51,10 @@ const Reception = () => {
         />
       )}
       <Img src={mainImage} altText={mainImageAltText} />
+      <ReactMarkdown
+        className={`${mdl.colors.whiteText}`}
+        source={venueDescription}
+      />
     </div>
   );
 };
