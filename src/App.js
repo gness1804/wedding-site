@@ -1,4 +1,4 @@
-/* eslint-disable-next-line no-unused-vars */
+/* eslint-disable no-unused-vars */
 import React, { useContext, useReducer, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import axios from 'axios';
@@ -14,6 +14,7 @@ import RSVP from './components/RSVP';
 import Engagement from './components/Engagement';
 import NotFound from './components/NotFound';
 import mdl from './design/masterDesignLanguage';
+/* eslint-enable no-unused-vars */
 
 const App = () => {
   const initState = useContext(SiteContext);

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useContext, useState } from 'react';
 import axios from 'axios';
 import ReactMarkdown from 'react-markdown';
@@ -6,6 +7,7 @@ import mdl from '../design/masterDesignLanguage';
 import H2 from './legos/H2';
 import Button from './legos/Button';
 import '../styles/RSVP.css';
+/* eslint-enable no-unused-vars */
 
 const RSVP = () => {
   const [isComing, setIsComing] = useState(true);

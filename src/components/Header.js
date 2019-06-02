@@ -1,4 +1,4 @@
-/* eslint-disable-next-line no-unused-vars */
+/* eslint-disable no-unused-vars */
 import React, { useContext } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Link } from 'react-router-dom';
@@ -6,6 +6,7 @@ import SiteContext from '../context';
 import calcCountDownDate from '../helpers/calcCountdownDate';
 import mdl from '../design/masterDesignLanguage';
 import '../styles/Header.css';
+/* eslint-enable no-unused-vars */
 
 const Header = () => {
   const { state } = useContext(SiteContext);
@@ -54,7 +55,7 @@ const Header = () => {
 
   const {
     home,
-    ceremony,
+    // ceremony,
     reception,
     rsvp,
     ourStory,

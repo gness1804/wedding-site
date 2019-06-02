@@ -1,5 +1,7 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import mdl from '../../design/masterDesignLanguage';
+/* eslint-enable no-unused-vars */
 
 /**
  *

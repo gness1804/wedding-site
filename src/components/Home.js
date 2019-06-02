@@ -1,9 +1,11 @@
+/* eslint-disable no-unused-vars */
 import React, { useContext } from 'react';
 import ReactMarkdown from 'react-markdown';
 import mdl from '../design/masterDesignLanguage';
 import SiteContext from '../context';
 import Img from './legos/Img';
 import '../styles/Home.css';
+/* eslint-enable no-unused-vars */
 
 const Home = () => {
   const { state } = useContext(SiteContext);

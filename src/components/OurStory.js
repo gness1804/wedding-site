@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useContext } from 'react';
 import ReactMarkdown from 'react-markdown';
 import mdl from '../design/masterDesignLanguage';
@@ -5,6 +6,7 @@ import SiteContext from '../context';
 import H2 from './legos/H2';
 import Img from './legos/Img';
 import '../styles/OurStory.css';
+/* eslint-enable no-unused-vars */
 
 const OurStory = () => {
   const { state } = useContext(SiteContext);

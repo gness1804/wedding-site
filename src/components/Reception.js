@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useContext } from 'react';
 import ReactMarkdown from 'react-markdown';
 import mdl from '../design/masterDesignLanguage';
@@ -6,6 +7,7 @@ import H2 from './legos/H2';
 import Img from './legos/Img';
 import Button from './legos/Button';
 import '../styles/Reception.css';
+/* eslint-enable no-unused-vars */
 
 const Reception = () => {
   const { state } = useContext(SiteContext);
