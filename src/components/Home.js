@@ -5,6 +5,7 @@ import mdl from '../design/masterDesignLanguage';
 import SiteContext from '../context';
 import Img from './legos/Img';
 import BodyText from './legos/BodyText';
+import H3 from './legos/H3';
 import '../styles/Home.css';
 /* eslint-enable no-unused-vars */
 
@@ -35,7 +36,7 @@ const Home = () => {
           <p>{home.mainPicDescription}</p>
         </div>
       </div>
-      <BodyText text={home.introText} styleClass={`${mdl.colors.mainText}`} />
+      <H3 text={home.introText} />
       <BodyText text={home.detailsText} />
       <BodyText text={home.callToAction} />
     </div>

@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import mdl from '../design/masterDesignLanguage';
 import SiteContext from '../context';
 import H2 from './legos/H2';
+import H3 from './legos/H3';
 import Img from './legos/Img';
 import BodyText from './legos/BodyText';
 /* eslint-enable no-unused-vars */
@@ -25,6 +26,7 @@ const Engagement = () => {
 
   const { title, partyTitle, partyMainText } = engagement;
 
+  // TODO: add our engagement photo and brief story
   return (
     <div
       className={`card page-component z-depth-1 center ${mdl.colors.primary} ${
@@ -32,7 +34,7 @@ const Engagement = () => {
       }`}
     >
       <H2 text={title} />
-      <ReactMarkdown className={`${mdl.colors.mainText}`} source={partyTitle} />
+      <H3 text={partyTitle} />
       <BodyText text={partyMainText} />
     </div>
   );

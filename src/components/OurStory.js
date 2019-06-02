@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import mdl from '../design/masterDesignLanguage';
 import SiteContext from '../context';
 import H2 from './legos/H2';
+import H3 from './legos/H3';
 import Img from './legos/Img';
 import BodyText from './legos/BodyText';
 import '../styles/OurStory.css';
@@ -33,11 +34,11 @@ const OurStory = () => {
       }`}
     >
       <H2 text={title} />
-      <ReactMarkdown
-        className={`${mdl.colors.mainText} ${mdl.text.mainShadow} ${
+      <H3
+        text={subtitle}
+        styleClass={`${mdl.text.mainShadow} ${
           mdl.text.fonts.mainHeading
         } our-story-subtitle`}
-        source={subtitle}
       />
       <div className={`card ${mdl.colors.whiteBackground}`}>
         <Img

@@ -8,13 +8,13 @@ import mdl from '../../design/masterDesignLanguage';
  *
  * @param {Object} param0 - the props
  * @param {string} param0.text - the text to display
- * @param {string} [param0.styleClass] - optional class for styling
+ * @param {string} [param0.styleClass] - optional class to add for styling
  */
-const BodyText = ({ text, styleClass = '' }) => (
+const H3 = ({ text, styleClass = '' }) => (
   <ReactMarkdown
-    className={`${mdl.colors.whiteText} ${styleClass}`}
-    source={text}
+    className={`${mdl.colors.mainText} ${styleClass}`}
+    source={`### ${text}`}
   />
 );
 
-export default BodyText;
+export default H3;

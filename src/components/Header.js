@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import SiteContext from '../context';
 import calcCountDownDate from '../helpers/calcCountdownDate';
 import mdl from '../design/masterDesignLanguage';
+import H3 from './legos/H3';
 import '../styles/Header.css';
 /* eslint-enable no-unused-vars */
 
@@ -35,19 +36,19 @@ const Header = () => {
           mdl.padding.mainPaddingAllSides
         } ${mdl.text.fonts.mainHeading}`}
       >
-        <ReactMarkdown
-          className={`${mdl.colors.mainText} ${mdl.text.mainShadow}`}
-          source={header.counterAustinEvent.replace(
+        <H3
+          text={header.counterBeijingEvent.replace(
             '{{counter}}',
             daysUntilChinaEvent,
           )}
+          styleClass={`${mdl.text.mainShadow}`}
         />
-        <ReactMarkdown
-          className={`${mdl.colors.mainText} ${mdl.text.mainShadow}`}
-          source={header.counterReception.replace(
+        <H3
+          text={header.counterAustinEvent.replace(
             '{{counter}}',
             daysUntilAustinEvent,
           )}
+          styleClass={`${mdl.text.mainShadow}`}
         />
       </div>
     );

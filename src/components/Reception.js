@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import mdl from '../design/masterDesignLanguage';
 import SiteContext from '../context';
 import H2 from './legos/H2';
+import H3 from './legos/H3';
 import Img from './legos/Img';
 import Button from './legos/Button';
 import BodyText from './legos/BodyText';
@@ -44,10 +45,13 @@ const Reception = () => {
 
   return (
     <div
-      className={`card page-component z-depth-1 center ${mdl.colors.primary} ${mdl.padding.mainPaddingAllSides}`}
+      className={`card page-component z-depth-1 center ${mdl.colors.primary} ${
+        mdl.padding.mainPaddingAllSides
+      }`}
     >
       <H2 text={title} />
-      <ReactMarkdown className={`${mdl.colors.mainText}`} source={subtitle} />
+      {/* <ReactMarkdown className={`${mdl.colors.mainText}`} source={subtitle} /> */}
+      <H3 text={subtitle} />
       {process.env.NODE_ENV !== 'development' && mapKey && (
         <iframe
           className="google-map-container"
