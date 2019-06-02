@@ -52,9 +52,15 @@ const Header = () => {
     );
   }
 
-  // TODO:
-  // Replace with links to new pages for Austin and Beijing celebrations
-  const { home, ceremony, reception, rsvp, ourStory } = header.links;
+  const {
+    home,
+    ceremony,
+    reception,
+    rsvp,
+    ourStory,
+    engagement,
+  } = header.links;
+
   const linksElem = (
     <div className="nav-content header-links">
       <ul className="tabs tabs-transparent center header-links-desktop">
@@ -103,6 +109,15 @@ const Header = () => {
             {ourStory.text}
           </Link>
         </li>
+        <li className="tab">
+          <Link
+            className={`${mdl.colors.mainText}`}
+            to={engagement.url}
+            title={engagement.text}
+          >
+            {engagement.text}
+          </Link>
+        </li>
       </ul>
 
       <ul className="center header-links-mobile">
@@ -129,6 +144,11 @@ const Header = () => {
         <li>
           <Link to={ourStory.url} title={ourStory.text}>
             <i className="material-icons">library_books</i>
+          </Link>
+        </li>
+        <li>
+          <Link to={engagement.url} title={engagement.text}>
+            <i className="material-icons">favorite</i>
           </Link>
         </li>
       </ul>
