@@ -22,7 +22,7 @@ const Engagement = () => {
     );
   }
 
-  const { title } = engagement;
+  const { title, partyTitle, partyMainText } = engagement;
 
   return (
     <div
@@ -31,6 +31,11 @@ const Engagement = () => {
       }`}
     >
       <H2 text={title} />
+      <ReactMarkdown className={`${mdl.colors.mainText}`} source={partyTitle} />
+      <ReactMarkdown
+        className={`${mdl.colors.whiteText}`}
+        source={partyMainText}
+      />
     </div>
   );
 };
