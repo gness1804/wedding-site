@@ -5,6 +5,7 @@ import mdl from '../design/masterDesignLanguage';
 import SiteContext from '../context';
 import H2 from './legos/H2';
 import Img from './legos/Img';
+import BodyText from './legos/BodyText';
 import '../styles/OurStory.css';
 /* eslint-enable no-unused-vars */
 
@@ -45,7 +46,7 @@ const OurStory = () => {
           styleClass="our-story-pic"
         />
       </div>
-      <ReactMarkdown className={`${mdl.colors.whiteText}`} source={mainText} />
+      <BodyText text={mainText} />
     </div>
   );
 };

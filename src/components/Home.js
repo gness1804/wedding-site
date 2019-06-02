@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import mdl from '../design/masterDesignLanguage';
 import SiteContext from '../context';
 import Img from './legos/Img';
+import BodyText from './legos/BodyText';
 import '../styles/Home.css';
 /* eslint-enable no-unused-vars */
 
@@ -34,18 +35,9 @@ const Home = () => {
           <p>{home.mainPicDescription}</p>
         </div>
       </div>
-      <ReactMarkdown
-        className={`${mdl.colors.mainText}`}
-        source={home.introText}
-      />
-      <ReactMarkdown
-        className={`${mdl.colors.whiteText}`}
-        source={home.detailsText}
-      />
-      <ReactMarkdown
-        className={`${mdl.colors.whiteText}`}
-        source={home.callToAction}
-      />
+      <BodyText text={home.introText} styleClass={`${mdl.colors.mainText}`} />
+      <BodyText text={home.detailsText} />
+      <BodyText text={home.callToAction} />
     </div>
   );
 };

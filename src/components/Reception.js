@@ -6,6 +6,7 @@ import SiteContext from '../context';
 import H2 from './legos/H2';
 import Img from './legos/Img';
 import Button from './legos/Button';
+import BodyText from './legos/BodyText';
 import '../styles/Reception.css';
 /* eslint-enable no-unused-vars */
 
@@ -43,9 +44,7 @@ const Reception = () => {
 
   return (
     <div
-      className={`card page-component z-depth-1 center ${mdl.colors.primary} ${
-        mdl.colors.whiteText
-      } ${mdl.padding.mainPaddingAllSides}`}
+      className={`card page-component z-depth-1 center ${mdl.colors.primary} ${mdl.padding.mainPaddingAllSides}`}
     >
       <H2 text={title} />
       <ReactMarkdown className={`${mdl.colors.mainText}`} source={subtitle} />
@@ -60,10 +59,7 @@ const Reception = () => {
         />
       )}
       <Img src={mainImage} altText={mainImageAltText} />
-      <ReactMarkdown
-        className={`${mdl.colors.whiteText}`}
-        source={venueDescription}
-      />
+      <BodyText text={venueDescription} />
       <Button onClick={goToRSVPPage} text="RSVP" title="RSVP" />
     </div>
   );

@@ -5,6 +5,7 @@ import mdl from '../design/masterDesignLanguage';
 import SiteContext from '../context';
 import H2 from './legos/H2';
 import Img from './legos/Img';
+import BodyText from './legos/BodyText';
 /* eslint-enable no-unused-vars */
 
 const Engagement = () => {
@@ -32,10 +33,7 @@ const Engagement = () => {
     >
       <H2 text={title} />
       <ReactMarkdown className={`${mdl.colors.mainText}`} source={partyTitle} />
-      <ReactMarkdown
-        className={`${mdl.colors.whiteText}`}
-        source={partyMainText}
-      />
+      <BodyText text={partyMainText} />
     </div>
   );
 };
