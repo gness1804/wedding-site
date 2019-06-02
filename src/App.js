@@ -11,6 +11,7 @@ import Ceremony from './components/Ceremony';
 import OurStory from './components/OurStory';
 import Reception from './components/Reception';
 import RSVP from './components/RSVP';
+import Engagement from './components/Engagement';
 import NotFound from './components/NotFound';
 import mdl from './design/masterDesignLanguage';
 
@@ -71,6 +72,7 @@ const App = () => {
             <Route path="/reception" component={Reception} />
             <Route path="/rsvp" component={RSVP} />
             <Route path="/our-story" component={OurStory} />
+            <Route path="/engagement" component={Engagement} />
             <Route component={NotFound} />
           </Switch>
         </div>
