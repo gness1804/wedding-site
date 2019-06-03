@@ -8,7 +8,7 @@ import './styles.css';
  *
  * @param {Object} param0 - the props
  * @param {string} param0.src - the source
- * @param {string} param0.alt - the alt text
+ * @param {string} param0.altText - the alt text
  * @param {string} [param0.styleClass] - optional class for styling
  */
 const Img = ({ src, altText, styleClass = '' }) => {

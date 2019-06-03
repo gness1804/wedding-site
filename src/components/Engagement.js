@@ -24,7 +24,14 @@ const Engagement = () => {
     );
   }
 
-  const { title, partyTitle, partyMainText } = engagement;
+  const {
+    title,
+    partyTitle,
+    partyMainText,
+    storyTitle,
+    engagementPhoto,
+    engagementPhotoAltText,
+  } = engagement;
 
   // TODO: add our engagement photo and brief story
   return (
@@ -36,6 +43,8 @@ const Engagement = () => {
       <H2 text={title} />
       <H3 text={partyTitle} />
       <BodyText text={partyMainText} />
+      <H3 text={storyTitle} />
+      <Img src={engagementPhoto} altText={engagementPhotoAltText} />
     </div>
   );
 };
