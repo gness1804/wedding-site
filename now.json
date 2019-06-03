@@ -20,6 +20,10 @@
     {
       "src": "/api/rsvpService.js",
       "use": "@now/node"
+    },
+    {
+      "src": "/api/imagesService.js",
+      "use": "@now/node"
     }
   ],
   "routes": [

@@ -11,12 +11,14 @@ import BodyText from './legos/BodyText';
 
 const Engagement = () => {
   const { state } = useContext(SiteContext);
+
   const {
     pageContent: { engagement },
+    images: { engagementPhoto, engagementPhotoAltText },
   } = state;
 
   // this has to be hardcoded because if this shows up, it means that CMS data has not come back yet
-  if (!engagement || Object.keys(engagement).length === 0) {
+  if (!engagement || Object.keys(engagement).length === 0 || !engagementPhoto || Object.keys(engagementPhoto).length === 0) {
     return (
       <>
         <h1>Loading...</h1>
@@ -29,8 +31,6 @@ const Engagement = () => {
     partyTitle,
     partyMainText,
     storyTitle,
-    engagementPhoto,
-    engagementPhotoAltText,
   } = engagement;
 
   // TODO: add our engagement photo and brief story

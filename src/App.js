@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import axios from 'axios';
 import SiteContext from './context';
 import reducer from './reducer';
-import { getPageContent, getDates } from './actions';
+import { getPageContent, getDates, getImages } from './actions';
 import Header from './components/Header';
 import Home from './components/Home';
 import Ceremony from './components/Ceremony';
@@ -26,10 +26,14 @@ const App = () => {
     pageContent: data,
   });
 
-  // action creators
   const getDatesCreator = data => ({
     ...getDates,
     dates: data,
+  });
+
+  const getImagesCreator = data => ({
+    ...getImages,
+    images: data,
   });
 
   const loadContent = async () => {
@@ -47,6 +51,11 @@ const App = () => {
       const datesRes = await axios.get(datesUrl);
 
       dispatch(getDatesCreator(datesRes.data));
+
+      const imagesUrl = `${domain}/api/imagesService.js`;
+      const imagesRes = await axios.get(imagesUrl);
+
+      dispatch(getImagesCreator(imagesRes.data));
     } catch (err) {
       throw new Error(
         `Error fetching page content: ${err.message || JSON.stringify(err)}`,

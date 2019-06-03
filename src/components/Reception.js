@@ -50,7 +50,6 @@ const Reception = () => {
       }`}
     >
       <H2 text={title} />
-      {/* <ReactMarkdown className={`${mdl.colors.mainText}`} source={subtitle} /> */}
       <H3 text={subtitle} />
       {process.env.NODE_ENV !== 'development' && mapKey && (
         <iframe
