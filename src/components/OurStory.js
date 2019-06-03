@@ -14,6 +14,7 @@ const OurStory = () => {
   const { state } = useContext(SiteContext);
   const {
     pageContent: { ourStory },
+    images: { ourStoryImage, ourStoryImageAltText },
   } = state;
 
   // this has to be hardcoded because if this shows up, it means that CMS data has not come back yet
@@ -25,7 +26,7 @@ const OurStory = () => {
     );
   }
 
-  const { title, mainImage, mainText, subtitle, mainImageAltText } = ourStory;
+  const { title, mainText, subtitle } = ourStory;
 
   return (
     <div
@@ -41,11 +42,13 @@ const OurStory = () => {
         } our-story-subtitle`}
       />
       <div className={`card ${mdl.colors.whiteBackground}`}>
-        <Img
-          src={mainImage}
-          altText={mainImageAltText}
-          styleClass="our-story-pic"
-        />
+        {ourStoryImage && Object.keys(ourStoryImage).length && (
+          <Img
+            src={ourStoryImage}
+            altText={ourStoryImageAltText}
+            styleClass="our-story-pic"
+          />
+        )}
       </div>
       <BodyText text={mainText} />
     </div>

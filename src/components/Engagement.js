@@ -18,7 +18,7 @@ const Engagement = () => {
   } = state;
 
   // this has to be hardcoded because if this shows up, it means that CMS data has not come back yet
-  if (!engagement || Object.keys(engagement).length === 0 || !engagementPhoto || Object.keys(engagementPhoto).length === 0) {
+  if (!engagement || Object.keys(engagement).length === 0) {
     return (
       <>
         <h1>Loading...</h1>
@@ -26,12 +26,7 @@ const Engagement = () => {
     );
   }
 
-  const {
-    title,
-    partyTitle,
-    partyMainText,
-    storyTitle,
-  } = engagement;
+  const { title, partyTitle, partyMainText, storyTitle } = engagement;
 
   // TODO: add our engagement photo and brief story
   return (
@@ -44,7 +39,9 @@ const Engagement = () => {
       <H3 text={partyTitle} />
       <BodyText text={partyMainText} />
       <H3 text={storyTitle} />
-      <Img src={engagementPhoto} altText={engagementPhotoAltText} />
+      {engagementPhoto && Object.keys(engagementPhoto).length && (
+        <Img src={engagementPhoto} altText={engagementPhotoAltText} />
+      )}
     </div>
   );
 };
