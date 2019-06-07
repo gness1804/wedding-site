@@ -13,6 +13,7 @@ const Home = () => {
   const { state } = useContext(SiteContext);
   const {
     pageContent: { home },
+    images: { heroImage, heroImageAltText },
   } = state;
 
   // this has to be hardcoded because if this shows up, it means that CMS data has not come back yet
@@ -31,7 +32,9 @@ const Home = () => {
       }`}
     >
       <div className={`card ${mdl.colors.whiteBackground}`}>
-        <Img src={home.mainPic} altText={home.mainPicAltText} />
+        {heroImage && Object.keys(heroImage).length > 0 && (
+          <Img src={heroImage} altText={heroImageAltText} />
+        )}
         <div className="card-content">
           <p>{home.mainPicDescription}</p>
         </div>

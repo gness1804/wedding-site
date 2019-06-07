@@ -42,7 +42,7 @@ const OurStory = () => {
         } our-story-subtitle`}
       />
       <div className={`card ${mdl.colors.whiteBackground}`}>
-        {ourStoryImage && Object.keys(ourStoryImage).length && (
+        {ourStoryImage && Object.keys(ourStoryImage).length > 0 && (
           <Img
             src={ourStoryImage}
             altText={ourStoryImageAltText}
