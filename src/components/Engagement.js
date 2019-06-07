@@ -45,9 +45,14 @@ const Engagement = () => {
     );
   }
 
-  const { title, partyTitle, partyMainText, storyTitle } = engagement;
+  const {
+    title,
+    partyTitle,
+    partyMainText,
+    storyTitle,
+    storyDetails,
+  } = engagement;
 
-  // TODO: add brief story
   return (
     <div
       className={`card page-component z-depth-1 center ${mdl.colors.primary} ${
@@ -59,6 +64,7 @@ const Engagement = () => {
       <BodyText text={partyMainText} />
       <H3 text={storyTitle} />
       <Img src={engagementPhoto} altText={engagementPhotoAltText} />
+      <BodyText text={storyDetails} />
     </div>
   );
 };
