@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import mdl from '../design/masterDesignLanguage';
 import SiteContext from '../context';
@@ -7,18 +7,38 @@ import H2 from './legos/H2';
 import H3 from './legos/H3';
 import Img from './legos/Img';
 import BodyText from './legos/BodyText';
+import doIContainValidData from '../helpers/doIContainValidData';
 /* eslint-enable no-unused-vars */
 
 const Engagement = () => {
   const { state } = useContext(SiteContext);
+  const [isLoading, setIsLoading] = useState(true);
 
   const {
     pageContent: { engagement },
     images: { engagementPhoto, engagementPhotoAltText },
   } = state;
 
+  const checkIfValidData = async () => {
+    const pending = [
+      doIContainValidData(engagement),
+      doIContainValidData(engagementPhoto),
+      doIContainValidData(engagementPhotoAltText),
+    ];
+    const results = await Promise.all(pending);
+    if (results.includes(false)) {
+      setIsLoading(true);
+    } else {
+      setIsLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    checkIfValidData();
+  });
+
   // this has to be hardcoded because if this shows up, it means that CMS data has not come back yet
-  if (!engagement || Object.keys(engagement).length === 0) {
+  if (isLoading) {
     return (
       <>
         <h1>Loading...</h1>
@@ -28,7 +48,7 @@ const Engagement = () => {
 
   const { title, partyTitle, partyMainText, storyTitle } = engagement;
 
-  // TODO: add our engagement photo and brief story
+  // TODO: add brief story
   return (
     <div
       className={`card page-component z-depth-1 center ${mdl.colors.primary} ${
@@ -39,9 +59,7 @@ const Engagement = () => {
       <H3 text={partyTitle} />
       <BodyText text={partyMainText} />
       <H3 text={storyTitle} />
-      {engagementPhoto && Object.keys(engagementPhoto).length && (
-        <Img src={engagementPhoto} altText={engagementPhotoAltText} />
-      )}
+      <Img src={engagementPhoto} altText={engagementPhotoAltText} />
     </div>
   );
 };
