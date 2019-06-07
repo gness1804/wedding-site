@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import mdl from '../design/masterDesignLanguage';
 import SiteContext from '../context';
@@ -9,16 +9,33 @@ import Img from './legos/Img';
 import Button from './legos/Button';
 import BodyText from './legos/BodyText';
 import '../styles/Reception.css';
+import doIContainValidData from '../helpers/doIContainValidData';
 /* eslint-enable no-unused-vars */
 
 const Reception = () => {
   const { state } = useContext(SiteContext);
+  const [isLoading, setIsLoading] = useState(true);
+
   const {
     pageContent: { reception },
   } = state;
 
+  const checkIfValidData = async () => {
+    const pending = [doIContainValidData(reception)];
+    const results = await Promise.all(pending);
+    if (results.includes(false)) {
+      setIsLoading(true);
+    } else {
+      setIsLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    checkIfValidData();
+  });
+
   // this has to be hardcoded because if this shows up, it means that CMS data has not come back yet
-  if (!reception || Object.keys(reception).length === 0) {
+  if (isLoading) {
     return (
       <>
         <h1>Loading...</h1>

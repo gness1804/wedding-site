@@ -1,22 +1,38 @@
 /* eslint-disable no-unused-vars */
-import React, { useContext } from 'react';
-import ReactMarkdown from 'react-markdown';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import SiteContext from '../context';
 import calcCountDownDate from '../helpers/calcCountdownDate';
 import mdl from '../design/masterDesignLanguage';
 import H3 from './legos/H3';
 import '../styles/Header.css';
+import doIContainValidData from '../helpers/doIContainValidData';
 /* eslint-enable no-unused-vars */
 
 const Header = () => {
   const { state } = useContext(SiteContext);
+  const [isLoading, setIsLoading] = useState(true);
+
   const { pageContent: content, dates } = state;
 
   let counterElem = null;
 
+  const checkIfValidData = async () => {
+    const pending = [doIContainValidData(content), doIContainValidData(dates)];
+    const results = await Promise.all(pending);
+    if (results.includes(false)) {
+      setIsLoading(true);
+    } else {
+      setIsLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    checkIfValidData();
+  });
+
   // this has to be hardcoded because if this shows up, it means that CMS data has not come back yet
-  if (Object.keys(content).length === 0 || Object.keys(dates).length === 0) {
+  if (isLoading) {
     return (
       <>
         <h1>Loading...</h1>
