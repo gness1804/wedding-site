@@ -68,7 +68,7 @@ const OurStory = () => {
           styleClass="our-story-pic"
         />
       </div>
-      <BodyText text={mainText} />
+      <BodyText text={mainText} styleClass="our-story-text" />
     </div>
   );
 };
