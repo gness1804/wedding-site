@@ -4,6 +4,12 @@ import ReactMarkdown from 'react-markdown';
 import mdl from '../../design/masterDesignLanguage';
 /* eslint-enable no-unused-vars */
 
+const Paragraph = ({ children }) => (
+  <p className="paragraph-text">{children}</p>
+);
+
+const renderers = { paragraph: Paragraph };
+
 /**
  *
  * @param {Object} param0 - the props
@@ -14,6 +20,7 @@ const BodyText = ({ text, styleClass = '' }) => (
   <ReactMarkdown
     className={`${mdl.colors.whiteText} ${styleClass}`}
     source={text}
+    renderers={renderers}
   />
 );
 
