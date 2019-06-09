@@ -1,3 +1,11 @@
 .our-story-pic img {
   max-height: 700px;
 }
+
+.our-story-text {
+  text-align: left;
+}
+
+.paragraph-text {
+  font-size: 18px;
+}

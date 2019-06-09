@@ -1,4 +1,5 @@
-import React, { useContext, useState } from 'react';
+/* eslint-disable no-unused-vars */
+import React, { useContext, useState, useEffect } from 'react';
 import axios from 'axios';
 import ReactMarkdown from 'react-markdown';
 import SiteContext from '../context';
@@ -6,6 +7,8 @@ import mdl from '../design/masterDesignLanguage';
 import H2 from './legos/H2';
 import Button from './legos/Button';
 import '../styles/RSVP.css';
+import doIContainValidData from '../helpers/doIContainValidData';
+/* eslint-enable no-unused-vars */
 
 const RSVP = () => {
   const [isComing, setIsComing] = useState(true);
@@ -16,6 +19,8 @@ const RSVP = () => {
   const [age, setAge] = useState('ofDrinkingAge');
   const [note, setNote] = useState('');
 
+  const [isLoading, setIsLoading] = useState(true);
+
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { state } = useContext(SiteContext);
   const {
@@ -23,12 +28,22 @@ const RSVP = () => {
     dates,
   } = state;
 
+  const checkIfValidData = async () => {
+    const pending = [doIContainValidData(rsvp), doIContainValidData(dates)];
+    const results = await Promise.all(pending);
+    if (results.includes(false)) {
+      setIsLoading(true);
+    } else {
+      setIsLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    checkIfValidData();
+  });
+
   // this has to be hardcoded because if this shows up, it means that CMS data has not come back yet
-  if (
-    !rsvp ||
-    Object.keys(rsvp).length === 0 ||
-    Object.keys(dates).length === 0
-  ) {
+  if (isLoading) {
     return (
       <>
         <h1>Loading...</h1>

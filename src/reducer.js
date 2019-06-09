@@ -10,6 +10,11 @@ const reducer = (state, action) => {
         dates: action.dates,
       });
     }
+    case 'GET_IMAGES': {
+      return Object.assign({}, state, {
+        images: action.images,
+      });
+    }
     default:
       return state;
   }

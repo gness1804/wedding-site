@@ -1,20 +1,41 @@
-import React, { useContext } from 'react';
+/* eslint-disable no-unused-vars */
+import React, { useContext, useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import mdl from '../design/masterDesignLanguage';
 import SiteContext from '../context';
 import H2 from './legos/H2';
+import H3 from './legos/H3';
 import Img from './legos/Img';
 import Button from './legos/Button';
+import BodyText from './legos/BodyText';
 import '../styles/Reception.css';
+import doIContainValidData from '../helpers/doIContainValidData';
+/* eslint-enable no-unused-vars */
 
 const Reception = () => {
   const { state } = useContext(SiteContext);
+  const [isLoading, setIsLoading] = useState(true);
+
   const {
     pageContent: { reception },
   } = state;
 
+  const checkIfValidData = async () => {
+    const pending = [doIContainValidData(reception)];
+    const results = await Promise.all(pending);
+    if (results.includes(false)) {
+      setIsLoading(true);
+    } else {
+      setIsLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    checkIfValidData();
+  });
+
   // this has to be hardcoded because if this shows up, it means that CMS data has not come back yet
-  if (!reception || Object.keys(reception).length === 0) {
+  if (isLoading) {
     return (
       <>
         <h1>Loading...</h1>
@@ -42,11 +63,11 @@ const Reception = () => {
   return (
     <div
       className={`card page-component z-depth-1 center ${mdl.colors.primary} ${
-        mdl.colors.whiteText
-      } ${mdl.padding.mainPaddingAllSides}`}
+        mdl.padding.mainPaddingAllSides
+      }`}
     >
       <H2 text={title} />
-      <ReactMarkdown className={`${mdl.colors.mainText}`} source={subtitle} />
+      <H3 text={subtitle} />
       {process.env.NODE_ENV !== 'development' && mapKey && (
         <iframe
           className="google-map-container"
@@ -58,10 +79,7 @@ const Reception = () => {
         />
       )}
       <Img src={mainImage} altText={mainImageAltText} />
-      <ReactMarkdown
-        className={`${mdl.colors.whiteText}`}
-        source={venueDescription}
-      />
+      <BodyText text={venueDescription} />
       <Button onClick={goToRSVPPage} text="RSVP" title="RSVP" />
     </div>
   );

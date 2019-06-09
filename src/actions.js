@@ -8,4 +8,9 @@ const getDates = {
   dates: {},
 };
 
-export { getPageContent, getDates };
+const getImages = {
+  type: 'GET_IMAGES',
+  images: {},
+};
+
+export { getPageContent, getDates, getImages };

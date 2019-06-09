@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 import mdl from '../../design/masterDesignLanguage';
 /* eslint-enable no-unused-vars */
 
@@ -9,16 +10,11 @@ import mdl from '../../design/masterDesignLanguage';
  * @param {string} param0.text - the text to display
  * @param {string} [param0.styleClass] - optional class to add for styling
  */
-const H2 = ({ text, styleClass = '' }) => {
-  return (
-    <h2
-      className={`page-header-text ${mdl.colors.mainText} ${
-        mdl.text.mainShadow
-      } ${mdl.text.fonts.mainContent} ${styleClass}`}
-    >
-      {text}
-    </h2>
-  );
-};
+const H3 = ({ text, styleClass = '' }) => (
+  <ReactMarkdown
+    className={`${mdl.colors.mainText} ${styleClass}`}
+    source={`### ${text}`}
+  />
+);
 
-export default H2;
+export default H3;

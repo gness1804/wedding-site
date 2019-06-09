@@ -6,24 +6,23 @@ import H2 from './legos/H2';
 import H3 from './legos/H3';
 import Img from './legos/Img';
 import BodyText from './legos/BodyText';
-import '../styles/OurStory.css';
 import doIContainValidData from '../helpers/doIContainValidData';
 /* eslint-enable no-unused-vars */
 
-const OurStory = () => {
+const Engagement = () => {
   const { state } = useContext(SiteContext);
   const [isLoading, setIsLoading] = useState(true);
 
   const {
-    pageContent: { ourStory },
-    images: { ourStoryImage, ourStoryImageAltText },
+    pageContent: { engagement },
+    images: { engagementPhoto, engagementPhotoAltText },
   } = state;
 
   const checkIfValidData = async () => {
     const pending = [
-      doIContainValidData(ourStory),
-      doIContainValidData(ourStoryImage),
-      doIContainValidData(ourStoryImageAltText),
+      doIContainValidData(engagement),
+      doIContainValidData(engagementPhoto),
+      doIContainValidData(engagementPhotoAltText),
     ];
     const results = await Promise.all(pending);
     if (results.includes(false)) {
@@ -46,7 +45,13 @@ const OurStory = () => {
     );
   }
 
-  const { title, mainText, subtitle } = ourStory;
+  const {
+    title,
+    partyTitle,
+    partyMainText,
+    storyTitle,
+    storyDetails,
+  } = engagement;
 
   return (
     <div
@@ -55,22 +60,13 @@ const OurStory = () => {
       }`}
     >
       <H2 text={title} />
-      <H3
-        text={subtitle}
-        styleClass={`${mdl.text.mainShadow} ${
-          mdl.text.fonts.mainHeading
-        } our-story-subtitle`}
-      />
-      <div className={`card ${mdl.colors.whiteBackground}`}>
-        <Img
-          src={ourStoryImage}
-          altText={ourStoryImageAltText}
-          styleClass="our-story-pic"
-        />
-      </div>
-      <BodyText text={mainText} styleClass="our-story-text" />
+      <H3 text={partyTitle} />
+      <BodyText text={partyMainText} />
+      <H3 text={storyTitle} />
+      <Img src={engagementPhoto} altText={engagementPhotoAltText} />
+      <BodyText text={storyDetails} />
     </div>
   );
 };
 
-export default OurStory;
+export default Engagement;
