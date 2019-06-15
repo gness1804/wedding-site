@@ -54,4 +54,5 @@ promisifiedReadFile(packageFile, 'utf-8')
     process.stderr.write(
       `Error augmenting app version: ${err.message || JSON.stringify(err)}`,
     );
+    process.exit(1);
   });
