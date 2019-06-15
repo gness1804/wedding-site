@@ -9,9 +9,11 @@ require('dotenv').config();
 const promisifiedReadFile = promisify(readFile);
 const promisifiedWriteFile = promisify(writeFile);
 const packageFile = join(__dirname, '../package.json');
+const readmeFile = join(__dirname, '../README.md');
 
 // eslint-disable-next-line no-useless-escape
-const versionRegex = /"version": "\d\.\d\.\d",/;
+const versionRegexPackage = /"version": "\d\.\d\.\d",/;
+const versionRegexReadme = /Version: \d\.\d.\d\n/;
 
 program
   .version('1.0.0')
@@ -35,9 +37,14 @@ const newVersion = semver.inc(version, upgradeVar);
 
 promisifiedReadFile(packageFile, 'utf-8')
   .then(contents =>
-    contents.replace(versionRegex, `"version": "${newVersion}",`),
+    contents.replace(versionRegexPackage, `"version": "${newVersion}",`),
   )
   .then(contents => promisifiedWriteFile(packageFile, contents))
+  .then(() => promisifiedReadFile(readmeFile, 'utf-8'))
+  .then(contents =>
+    contents.replace(versionRegexReadme, `Version: ${newVersion}\n`),
+  )
+  .then(contents => promisifiedWriteFile(readmeFile, contents))
   .then(() => {
     process.stdout.write(
       `Successfully upgraded app version! New version: ${newVersion}.\n`,
