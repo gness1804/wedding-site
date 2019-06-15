@@ -35,10 +35,7 @@
         "Access-Control-Allow-Methods": "GET, POST",
         "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept"
       },
-      "methods": [
-        "POST",
-        "GET"
-      ]
+      "methods": ["POST", "GET"]
     },
     {
       "src": "/static/(.*)",
