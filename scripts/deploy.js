@@ -7,7 +7,6 @@ require('dotenv').config();
  * @param {object} stdout - stdout object
  * @param {object} stderr - stderr object
  */
-
 const handleOutput = (error, stdout, stderr) => {
   if (error) {
     process.stderr.write(`Error: ${error.message || JSON.stringify(error)}`);
@@ -17,18 +16,26 @@ const handleOutput = (error, stdout, stderr) => {
   process.stderr.write(stderr);
 };
 
-if (process.argv[2] === '-d') {
+if (process.argv.indexOf('-d') !== -1) {
   execSync(
     `now -e ACCESS_CODE="${process.env.ACCESS_CODE}" -e DEV_ACCESS_CODE="${
       process.env.DEV_ACCESS_CODE
-    }" -e DATABASE="${process.env.DATABASE}" -e REACT_APP_GOOGLE_MAPS_API_KEY="${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}" -d`,
+    }" -e DATABASE="${
+      process.env.DATABASE
+    }" -e REACT_APP_GOOGLE_MAPS_API_KEY="${
+      process.env.REACT_APP_GOOGLE_MAPS_API_KEY
+    }" -d`,
     handleOutput,
   );
 } else {
   execSync(
     `now -e ACCESS_CODE="${process.env.ACCESS_CODE}" -e DEV_ACCESS_CODE="${
       process.env.DEV_ACCESS_CODE
-    }" -e DATABASE="${process.env.DATABASE}" -e REACT_APP_GOOGLE_MAPS_API_KEY="${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}"`,
+    }" -e DATABASE="${
+      process.env.DATABASE
+    }" -e REACT_APP_GOOGLE_MAPS_API_KEY="${
+      process.env.REACT_APP_GOOGLE_MAPS_API_KEY
+    }"`,
     handleOutput,
   );
 }
