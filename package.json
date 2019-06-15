@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "babel-eslint": "9.0.0",
+    "commander": "^2.20.0",
     "dotenv": "^7.0.0",
     "eslint": "5.12.0",
     "eslint-config-airbnb": "^17.1.0",
@@ -31,13 +32,17 @@
     "test": "react-scripts test --env=jsdom --no-watch",
     "snapshots": "npm run test -- -u",
     "lint": "eslint .",
+    "lint:fix": "npm run lint -- --fix",
     "stylelint": "stylelint src/**/*.css",
     "stylelint:fix": "npm run stylelint --fix",
     "prettier": "prettier --write src/**/**/** src/* src/**/** api/**/**",
     "deploy": "node scripts/deploy.js",
     "deploy:debug": "node scripts/deploy.js -d",
     "lambda-debug": "now-lambda",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "version": "node scripts/version.js",
+    "version:minor": "node scripts/version.js --minor",
+    "version:major": "node scripts/version.js --major"
   },
   "eslintConfig": {
     "extends": "react-app"

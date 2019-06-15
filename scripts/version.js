@@ -1,24 +1,50 @@
-const { execSync } = require('child_process');
-const readline = require('readline');
+const semver = require('semver');
+const program = require('commander');
+const { readFile, writeFile } = require('fs');
+const { promisify } = require('util');
+const { join } = require('path');
+const { version } = require('../package');
 require('dotenv').config();
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
+const promisifiedReadFile = promisify(readFile);
+const promisifiedWriteFile = promisify(writeFile);
+const packageFile = join(__dirname, '../package.json');
 
-rl.question('Which version type is this: patch, minor, or major?', answer => {
-  const currentVersion = process.env.npm_package_version;
-  const upgradeVar = answer.toLowerCase();
+// eslint-disable-next-line no-useless-escape
+const versionRegex = /"version": "\d\.\d\.\d",/;
 
-  console.log('upgradeVar:', upgradeVar);
-  // console.log('sanity check');
+program
+  .version('1.0.0')
+  .option('-p, --patch', 'Patch or bug fix.')
+  .option('-i, --minor', 'Minor fix, or feature.')
+  .option(
+    '-a, --major',
+    'Major fix, such as a significant revamp or major new feature.',
+  )
+  .parse(process.argv);
 
-  //fail the program if upgradeVar is not one of patch, minor, or major.
+let upgradeVar = 'patch';
 
-  //if possible, automatically upgrade the package.json version using regex replace
+if (program.minor) {
+  upgradeVar = 'minor';
+} else if (program.major) {
+  upgradeVar = 'major';
+}
 
-  rl.close();
-});
+const newVersion = semver.inc(version, upgradeVar);
 
-// execSync('semver -i  1.2.3 patch');
+promisifiedReadFile(packageFile, 'utf-8')
+  .then(contents =>
+    contents.replace(versionRegex, `"version": "${newVersion}",`),
+  )
+  .then(contents => promisifiedWriteFile(packageFile, contents))
+  .then(() => {
+    process.stdout.write(
+      `Successfully upgraded app version! New version: ${newVersion}.\n`,
+    );
+  })
+  .catch(err => {
+    process.stderr.write(
+      `Error augmenting app version: ${err.message || JSON.stringify(err)}`,
+    );
+  });
