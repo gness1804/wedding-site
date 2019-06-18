@@ -75,7 +75,7 @@ const App = () => {
             mdl.text.fonts.mainContent
           }`}
         >
-          <Header />
+          <Route path="*" component={Header} />
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/ceremony" component={Ceremony} />

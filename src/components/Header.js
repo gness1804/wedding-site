@@ -5,11 +5,12 @@ import SiteContext from '../context';
 import calcCountDownDate from '../helpers/calcCountdownDate';
 import mdl from '../design/masterDesignLanguage';
 import H3 from './legos/H3';
+import HeaderLink from './legos/HeaderLink';
 import '../styles/Header.css';
 import doIContainValidData from '../helpers/doIContainValidData';
 /* eslint-enable no-unused-vars */
 
-const Header = () => {
+const Header = ({ match }) => {
   const { state } = useContext(SiteContext);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -39,6 +40,8 @@ const Header = () => {
       </>
     );
   }
+
+  const { url } = match;
 
   const { header } = content;
 
@@ -70,72 +73,41 @@ const Header = () => {
     );
   }
 
-  const {
-    home,
-    // ceremony,
-    reception,
-    rsvp,
-    ourStory,
-    engagement,
-  } = header.links;
+  const { home, reception, rsvp, ourStory, engagement } = header.links;
 
   const linksElem = (
     <div className="nav-content header-links">
       <ul className="tabs tabs-transparent center header-links-desktop">
-        <li className="tab">
-          <Link
-            className={`${mdl.colors.mainText}`}
-            to={home.url}
-            title={home.text}
-          >
-            {home.text}
-          </Link>
-        </li>
-        {/* <li className="tab">
-          <Link
-            className={`${mdl.colors.mainText}`}
-            to={ceremony.url}
-            title={ceremony.text}
-          >
-            {ceremony.text}
-          </Link>
-        </li> */}
-        <li className="tab">
-          <Link
-            className={`${mdl.colors.mainText}`}
-            to={reception.url}
-            title={reception.text}
-          >
-            {reception.text}
-          </Link>
-        </li>
-        <li className="tab">
-          <Link
-            className={`${mdl.colors.mainText}`}
-            to={rsvp.url}
-            title={rsvp.text}
-          >
-            {rsvp.text}
-          </Link>
-        </li>
-        <li className="tab">
-          <Link
-            className={`${mdl.colors.mainText}`}
-            to={ourStory.url}
-            title={ourStory.text}
-          >
-            {ourStory.text}
-          </Link>
-        </li>
-        <li className="tab">
-          <Link
-            className={`${mdl.colors.mainText}`}
-            to={engagement.url}
-            title={engagement.text}
-          >
-            {engagement.text}
-          </Link>
-        </li>
+        <HeaderLink
+          path={home.url}
+          tooltip={home.text}
+          text={home.text}
+          isSelected={url === home.url}
+        />
+        <HeaderLink
+          path={reception.url}
+          tooltip={reception.text}
+          text={reception.text}
+          isSelected={url === reception.url}
+        />
+        <HeaderLink
+          path={rsvp.url}
+          tooltip={rsvp.text}
+          text={rsvp.text}
+          isSelected={url === rsvp.url}
+        />
+        <HeaderLink
+          path={ourStory.url}
+          tooltip={ourStory.text}
+          text={ourStory.text}
+          isSelected={url === ourStory.url}
+        />
+        <HeaderLink
+          path={engagement.url}
+          tooltip={engagement.text}
+          text={engagement.text}
+          isSelected={url === engagement.url}
+        />
       </ul>
 
       <ul className="center header-links-mobile">
@@ -144,11 +116,6 @@ const Header = () => {
             <i className="material-icons">home</i>
           </Link>
         </li>
-        {/* <li>
-          <Link to={ceremony.url} title={ceremony.text}>
-            <i className="material-icons">account_balance</i>
-          </Link>
-        </li> */}
         <li>
           <Link to={reception.url} title={reception.text}>
             <i className="material-icons">local_bar</i>
