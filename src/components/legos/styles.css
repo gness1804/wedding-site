@@ -9,3 +9,10 @@
 .paragraph-text {
   font-size: 18px;
 }
+
+.selected.mainText {
+  background: -webkit-linear-gradient(right, #ffffff, #e6e8ed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
