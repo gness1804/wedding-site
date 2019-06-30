@@ -61,14 +61,15 @@ const Engagement = () => {
       }`}
     >
       <H2 text={title} />
-      <H3 text={partyTitle} />
-      <BodyText text={partyMainText} />
       <Img
         src={engagementPhoto}
         altText={engagementPhotoAltText}
         imgStyleClass="engagement-photo"
         figCaption={storyDetails}
       />
+      <H3 text={partyTitle} />
+      <Img src={engagementPartyPhoto} altText={engagementPartyPhotoAltText} />
+      <BodyText text={partyMainText} />
     </div>
   );
 };
