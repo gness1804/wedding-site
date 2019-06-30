@@ -1,6 +1,6 @@
 # Flora and Graham's Wedding Site
 
-Version: 1.2.3
+Version: 1.3.0
 
 [Production site](https://flora-and-grahams-wedding.grahamnessler.now.sh/)
 
