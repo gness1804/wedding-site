@@ -52,13 +52,7 @@ const Engagement = () => {
     );
   }
 
-  const {
-    title,
-    partyTitle,
-    partyMainText,
-    storyTitle,
-    storyDetails,
-  } = engagement;
+  const { title, partyTitle, partyMainText, storyDetails } = engagement;
 
   return (
     <div
@@ -69,9 +63,12 @@ const Engagement = () => {
       <H2 text={title} />
       <H3 text={partyTitle} />
       <BodyText text={partyMainText} />
-      <H3 text={storyTitle} />
-      <Img src={engagementPhoto} altText={engagementPhotoAltText} />
-      <BodyText text={storyDetails} />
+      <Img
+        src={engagementPhoto}
+        altText={engagementPhotoAltText}
+        imgStyleClass="engagement-photo"
+        figCaption={storyDetails}
+      />
     </div>
   );
 };

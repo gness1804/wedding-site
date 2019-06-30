@@ -16,3 +16,13 @@
   -webkit-text-fill-color: transparent;
   font-weight: 700;
 }
+
+figcaption {
+  color: #ffffff;
+}
+
+@media (min-width: 900px) {
+  .engagement-photo {
+    max-height: 700px;
+  }
+}
