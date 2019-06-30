@@ -4,7 +4,6 @@ const { exec } = require('child_process');
 
 const promisifiedExec = util.promisify(exec);
 const promisifiedReadFile = util.promisify(readFile);
-const forbiddenBranches = ['master', 'develop'];
 
 /**
  *
@@ -79,17 +78,6 @@ const checkForWarnings = () =>
 
 /* eslint-disable indent */
 getCurrentBranch()
-  .then(ret => {
-    const currentBranch = ret.stdout.trim().replace('\n', '');
-    return forbiddenBranches.find(branch => branch === currentBranch);
-  })
-  .then(ret =>
-    ret
-      ? resetAndExit(
-          `Oops, you are on the ${ret} branch. Please switch branches before you commit.`,
-        )
-      : undefined,
-  )
   .then(() => checkForWarnings())
   .then(() => promisifiedExec('npm run prettier'))
   .then(() => promisifiedExec('npm run lint'))
