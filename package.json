@@ -35,7 +35,7 @@
     "lint:fix": "npm run lint -- --fix",
     "stylelint": "stylelint src/**/*.css",
     "stylelint:fix": "npm run stylelint --fix",
-    "prettier": "prettier --write src/**/**/** src/* src/**/** api/**/**",
+    "prettier": "prettier --write src/**/**/*.{js,json} api/**/*.{js,json}",
     "deploy": "node scripts/deploy.js",
     "deploy:debug": "node scripts/deploy.js -d",
     "lambda-debug": "now-lambda",

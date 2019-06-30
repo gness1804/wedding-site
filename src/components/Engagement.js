@@ -15,7 +15,12 @@ const Engagement = () => {
 
   const {
     pageContent: { engagement },
-    images: { engagementPhoto, engagementPhotoAltText },
+    images: {
+      engagementPhoto,
+      engagementPhotoAltText,
+      engagementPartyPhotoAltText,
+      engagementPartyPhoto,
+    },
   } = state;
 
   const checkIfValidData = async () => {
@@ -23,6 +28,8 @@ const Engagement = () => {
       doIContainValidData(engagement),
       doIContainValidData(engagementPhoto),
       doIContainValidData(engagementPhotoAltText),
+      doIContainValidData(engagementPartyPhoto),
+      doIContainValidData(engagementPartyPhotoAltText),
     ];
     const results = await Promise.all(pending);
     if (results.includes(false)) {
@@ -45,13 +52,7 @@ const Engagement = () => {
     );
   }
 
-  const {
-    title,
-    partyTitle,
-    partyMainText,
-    storyTitle,
-    storyDetails,
-  } = engagement;
+  const { title, partyTitle, partyMainText, storyDetails } = engagement;
 
   return (
     <div
@@ -60,11 +61,15 @@ const Engagement = () => {
       }`}
     >
       <H2 text={title} />
+      <Img
+        src={engagementPhoto}
+        altText={engagementPhotoAltText}
+        imgStyleClass="engagement-photo"
+        figCaption={storyDetails}
+      />
       <H3 text={partyTitle} />
+      <Img src={engagementPartyPhoto} altText={engagementPartyPhotoAltText} />
       <BodyText text={partyMainText} />
-      <H3 text={storyTitle} />
-      <Img src={engagementPhoto} altText={engagementPhotoAltText} />
-      <BodyText text={storyDetails} />
     </div>
   );
 };
