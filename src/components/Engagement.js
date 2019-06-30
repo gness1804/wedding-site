@@ -15,7 +15,12 @@ const Engagement = () => {
 
   const {
     pageContent: { engagement },
-    images: { engagementPhoto, engagementPhotoAltText },
+    images: {
+      engagementPhoto,
+      engagementPhotoAltText,
+      engagementPartyPhotoAltText,
+      engagementPartyPhoto,
+    },
   } = state;
 
   const checkIfValidData = async () => {
@@ -23,6 +28,8 @@ const Engagement = () => {
       doIContainValidData(engagement),
       doIContainValidData(engagementPhoto),
       doIContainValidData(engagementPhotoAltText),
+      doIContainValidData(engagementPartyPhoto),
+      doIContainValidData(engagementPartyPhotoAltText),
     ];
     const results = await Promise.all(pending);
     if (results.includes(false)) {
