@@ -7,7 +7,7 @@
     "babel-eslint": "9.0.0",
     "commander": "^2.20.0",
     "dotenv": "^7.0.0",
-    "eslint": "5.12.0",
+    "eslint": "^7.30.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
@@ -16,6 +16,7 @@
     "micro": "^9.3.3",
     "mongoose": "5.4.23",
     "nodemon": "^1.18.11",
+    "pre-commit": "^1.2.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-markdown": "^4.0.8",
@@ -44,6 +45,9 @@
     "version:minor": "node scripts/version.js --minor",
     "version:major": "node scripts/version.js --major"
   },
+  "pre-commit": [
+    "lint"
+  ],
   "eslintConfig": {
     "extends": "react-app"
   },

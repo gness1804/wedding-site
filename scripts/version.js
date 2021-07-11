@@ -3,7 +3,7 @@ const program = require('commander');
 const { readFile, writeFile } = require('fs');
 const { promisify } = require('util');
 const { join } = require('path');
-const { version } = require('../package');
+const { version } = require('../package.json');
 require('dotenv').config();
 
 const promisifiedReadFile = promisify(readFile);
