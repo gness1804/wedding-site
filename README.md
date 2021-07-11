@@ -1,6 +1,6 @@
 # Flora and Graham's Wedding Site
 
-Version: 1.3.0
+Version: 1.3.1
 
 EDIT: the wedding was called off, and consequently the production site was taken down. If you want to see the site, you can clone it and run it locally.
 
