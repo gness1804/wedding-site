@@ -1,11 +1,33 @@
 # Flora and Graham's Wedding Site
 
-Version: 1.3.1
+Version: 1.3.2
 
-EDIT: the wedding was called off, and consequently the production site was taken down. If you want to see the site, you can clone it and run it locally.
+> A wedding website. It contains an RSVP page, "Our Story" page, event pages, and other content.
 
-~~[Production site](https://flora-and-grahams-wedding.grahamnessler.now.sh/)~~
+This is the website that I built for what was supposed to be my wedding in October 2019. Unfortunately, the wedding was called off, but I want to keep this site around as a portfolio piece. I worked hard to build it and it showcases some of my React skills.
 
-Our wedding site. It contains an RSVP page, "Our Story" page, event pages, and other content.
+<br />
+
+## Install
+
+```
+npx degit gness1804/wedding-site
+```
+...Or fork or clone down the traditional way. See [https://github.community/t/the-difference-between-forking-and-cloning-a-repository/10189](https://github.community/t/the-difference-between-forking-and-cloning-a-repository/10189)
+
+In the project root, you'll need to:
+
+```
+npm install OR yarn install
+npm run dev
+```
+
+<br />
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+<br />
+
+## Changelog
+
+[❯ Read the changelog here →](https://github.com/gness1804/wedding-site/blob/main/CHANGELOG.md)
