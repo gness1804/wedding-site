@@ -6,6 +6,8 @@ Version: 1.3.2
 
 This is the website that I built for what was supposed to be my wedding in October 2019. Unfortunately, the wedding was called off, but I want to keep this site around as a portfolio piece. I worked hard to build it and it showcases some of my React skills.
 
+For reasons that should now be clear, this site does not exist "in the wild". However, you can clone it down and run it locally.
+
 <br />
 
 ## Install
@@ -30,4 +32,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Changelog
 
-[❯ Read the changelog here →](https://github.com/gness1804/wedding-site/blob/main/CHANGELOG.md)
+[❯ Read the changelog here →](https://github.com/gness1804/wedding-site/blob/master/CHANGELOG.md)
